@@ -1,7 +1,7 @@
 import React from 'react';
 import App from '../App';
 import ReactDOM from 'react-dom';
-import './Login.css';
+import { Link } from 'react-router-dom';
 
 let type = '';
 
@@ -42,11 +42,11 @@ function TypeImage(tipo) {
 
 function Login() {
   return (
-    <div class="Conteiner">
+    <div class="Login">
       <div class="Image">
         <img class="ImageCars" src="login-1.jpg" alt="cars" />
       </div>
-      <div class="Login">
+      <div class="Container">
         <form>
           <div class="Up">
             <h2>Chosse Account Type</h2>
@@ -62,11 +62,11 @@ function Login() {
             </div>
           </div>
           <div class="Middle">
-            <h4 class="text">
+            <h4>
               Hello{type === '' ? '' : ` Car ${type}`}, please fill the form to
               start
             </h4>
-            <input type="email" name="email" id="email" placeholder="Email" />
+            <input type="email" name="email" id="email" placeholder="E-mail" />
             <input
               type="password"
               name="password"
@@ -85,12 +85,12 @@ function Login() {
           </div>
         </form>
         <div class="Down">
-          <a class="link1" href="/">
+          <Link class="link1" to="/SignUp">
             Not account? Sign Up...
-          </a>
-          <a class="link1" href="/">
+          </Link>
+          <Link class="link1" to="/ForgetPass">
             Forgot Password?
-          </a>
+          </Link>
         </div>
       </div>
     </div>
