@@ -1,6 +1,4 @@
-import React from 'react';
-import App from '../App';
-import ReactDOM from 'react-dom';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 let type = '';
@@ -25,19 +23,63 @@ const Aux2 = {
   margin: '0',
 };
 
-let ImageCar1 = Aux2;
-let ImageCar2 = Aux2;
+function TypeUser() {
+  let [image1, setImage1] = useState(0);
+  let [image2, setImage2] = useState(0);
 
-function TypeImage(tipo) {
-  type = tipo;
-  if (tipo === 'Owner') {
+  let ImageCar1 = Aux2;
+  let ImageCar2 = Aux2;
+
+  if (image1 === 1) {
     ImageCar1 = Aux1;
     ImageCar2 = Aux2;
-  } else {
+  }
+  if (image2 === 1) {
     ImageCar1 = Aux2;
     ImageCar2 = Aux1;
   }
-  ReactDOM.render(<App />, document.getElementById('root'));
+  return (
+    <>
+      <div class="Up">
+        <h2>Chosse Account Type</h2>
+        <div class="TypeUser">
+          <div
+            class="Icon"
+            onClick={() => {
+              type = 'Owner';
+              if (image1 === 0) {
+                setImage1(image1 + 1);
+              }
+              if (image2 === 1) {
+                setImage2(image2 - 1);
+              }
+            }}
+          >
+            <img style={ImageCar1} src="Login-2.png" alt="img1" />
+            <h4 style={ImageCar1}>Car Owner</h4>
+          </div>
+          <div
+            class="Icon"
+            onClick={() => {
+              type = 'Renter';
+              if (image2 === 0) {
+                setImage2(image2 + 1);
+              }
+              if (image1 === 1) {
+                setImage1(image1 - 1);
+              }
+            }}
+          >
+            <img style={ImageCar2} src="Login-3.png" alt="img2" />
+            <h4 style={ImageCar2}>Car Renter</h4>
+          </div>
+        </div>
+      </div>
+      <h4>
+        Hello{type === '' ? '' : ` Car ${type}`}, please fill the form to start
+      </h4>
+    </>
+  );
 }
 
 function Login() {
@@ -48,24 +90,8 @@ function Login() {
       </div>
       <div class="Container">
         <form>
-          <div class="Up">
-            <h2>Chosse Account Type</h2>
-            <div class="TypeUser">
-              <div class="Icon" onClick={(e) => TypeImage('Owner')}>
-                <img style={ImageCar1} src="Login-2.png" alt="img1" />
-                <h4 style={ImageCar1}>Car Owner</h4>
-              </div>
-              <div class="Icon" onClick={(e) => TypeImage('Renter')}>
-                <img style={ImageCar2} src="Login-3.png" alt="img2" />
-                <h4 style={ImageCar2}>Car Renter</h4>
-              </div>
-            </div>
-          </div>
+          <TypeUser />
           <div class="Middle">
-            <h4>
-              Hello{type === '' ? '' : ` Car ${type}`}, please fill the form to
-              start
-            </h4>
             <input type="email" name="email" id="email" placeholder="E-mail" />
             <input
               type="password"

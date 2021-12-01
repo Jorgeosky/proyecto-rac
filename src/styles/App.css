@@ -41,6 +41,7 @@ body,
   width: 100%;
   height: 50%;
   justify-content: center;
+  align-items: center;
 }
 .Login .Container form .Up h2 {
   font-style: normal;
@@ -70,6 +71,11 @@ body,
   outline: none;
   border: 2px solid dodgerblue;
 }
+.Login .Container form h4 {
+  color: #33383d;
+  margin: 20px 0 20px 0;
+  align-self: center;
+}
 .Login .Container form .Middle {
   width: 100%;
   height: 50%;
@@ -77,10 +83,6 @@ body,
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-}
-.Login .Container form .Middle h4 {
-  color: #33383d;
-  margin: 20px 0 20px 0;
 }
 .Login .Container form .Middle input {
   background: #f1eee7;
