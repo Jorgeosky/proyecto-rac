@@ -2,7 +2,7 @@ import { Login } from './pages/Login';
 import ForgetPass from './pages/ForgetPass';
 import SignUp from './pages/SignUp';
 import { Routes, Route, BrowserRouter } from 'react-router-dom';
-import './App.css';
+import './styles/App.css';
 
 function App() {
   return (
