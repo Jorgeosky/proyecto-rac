@@ -1,4 +1,8 @@
-@import './base/config';
+@import './base/fonts';
+@import './base/settings';
+@import './base/bases';
+@import './components/buttons';
 @import './components/login';
 @import './components/forgotpass';
 @import './components/signup';
+@import './components/search';
