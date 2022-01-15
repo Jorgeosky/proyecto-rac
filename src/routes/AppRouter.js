@@ -5,6 +5,7 @@ import ForgetPass from '../pages/ForgetPass';
 import SignUp from '../pages/SignUp';
 import Profile from '../pages/Profile';
 import Home from '../pages/Home';
+import SearchPage from '../pages/SearchPage';
 
 export const AppRouter = () => {
 	return (
@@ -15,6 +16,7 @@ export const AppRouter = () => {
 				<Route path="/profile" element={<Profile />} />
 				<Route path="/forgetpass" element={<ForgetPass />} />
 				<Route path="/signup" element={<SignUp />} />
+				<Route path="/search" element={<SearchPage />} />
 			</Routes>
 		</BrowserRouter>
 	);
