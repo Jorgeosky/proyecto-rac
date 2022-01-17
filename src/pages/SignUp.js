@@ -32,12 +32,12 @@ export default function SignUp() {
 				/>
 				<div className="confirm">
 					<label for="checkbox">
-						<input id="checkbox" name="checkbox" type="checkbox" />I
-						acccept the terms of Use {'&'} Privacy Policy
+						<input id="checkbox" name="checkbox" type="checkbox" />
+						I acccept the terms of Use {'&'} Privacy Policy
 					</label>
 				</div>
 				<button type="submit">
-					<h2>Register Now</h2>
+					<h3>Register Now</h3>
 				</button>
 			</form>
 		</div>

@@ -1,12 +1,13 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 
 export default function Home() {
   return (
-    <div class="HomeSearch">
-      <div class="Options">
-        <div class="Header">
+    <div className="HomeSearch">
+      <div className="Options">
+        <div className="Header">
           <h2 id="homeLogo">Rent Car Logo</h2>
-          <div class="TransportType">
+          <div className="TransportType">
             <a href="." id="carType">
               Automoviles
             </a>
@@ -17,29 +18,29 @@ export default function Home() {
               Motos
             </a>
           </div>
-          <div class="UserOptions">
-            <a href="." class="BecomeHost">
+          <Link to="/profile" className="UserOptions">
+            <a href="." className="BecomeHost">
               Become a host
             </a>
-            <button class="UserMenu">
-              <div class="dropdown">
-                <button class="dropbtn"></button>
-                <div class="dropdown-content">
-                  <a href=".">Sign In</a>
-                  <a href=".">Sign Up</a>
+            <div className="UserMenu">
+              <div className="dropdown">
+                <div className="dropbtn"></div>
+                <div className="dropdown-content">
+                  <Link to="/signin">Sign In</Link>
+                  <Link to="/signup">Sign Up</Link>
                 </div>
               </div>
-              <div class="User"></div>
-            </button>
-          </div>
+              <div className="User"></div>
+            </div>
+          </Link>
         </div>
-        <div class="Search">
+        <div className="Search">
           <input type="text" placeholder="Selecciona la ciudad" id="location" />
-          <div class="VLine"></div>
+          <div className="VLine"></div>
           <input type="date" id="startDate" />
-          <div class="VLine"></div>
+          <div className="VLine"></div>
           <input type="date" id="endDate" />
-          <button class="SearchButton">Search</button>
+          <Link style={{ textDecoration: "none", color: "black" }} to="/search" className="SearchButton">Search</Link>
         </div>
       </div>
     </div>

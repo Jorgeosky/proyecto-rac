@@ -1,7 +1,7 @@
 .HomeSearch {
   position: absolute;
   width: 100%;
-  height: 610px;
+  height: 100%;
   left: 0px;
   top: 0px;
   background: url(http://trade-submit.com/wp-content/uploads/2019/10/How-To-Choose-The-Right-Rental-Car.jpg);
@@ -127,14 +127,6 @@
             }
           }
 
-          .dropdown:hover .dropdown-content {
-            display: block;
-          }
-
-          .dropdown:hover .dropbtn {
-            background-color: #000000;
-          }
-
           .User {
             position: static;
             width: 24px;
@@ -150,6 +142,10 @@
             flex-grow: 0;
             margin-left: 10px;
           }
+        }
+
+        .UserMenu:hover .dropdown-content {
+          display: block;
         }
       }
     }
@@ -208,8 +204,10 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        padding-left: 10px;
+        padding-right: 10px;
 
-        width: 47px;
+        width: max-content;
         height: 47px;
 
         background: #aaaaaa;

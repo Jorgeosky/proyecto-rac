@@ -30,7 +30,7 @@ export default function Login() {
 						<button class="google1">
 							<div class="google">
 								<img class="imgGoogle" src="Login-4.png" alt="img3" />
-								<p>Or sing-in with google</p>
+								<p>Or sign-in with google</p>
 							</div>
 						</button>
 					</div>

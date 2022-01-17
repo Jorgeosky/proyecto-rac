@@ -90,7 +90,7 @@
           background: #f1eee7;
           border-radius: 8px;
           border: 2px solid transparent;
-          height: 30px;
+          height: 40px;
           width: 60%;
           align-self: center;
           padding-left: 20px;
@@ -105,7 +105,7 @@
         .submit {
           width: 60%;
           align-self: center;
-          height: 30px;
+          height: 40px;
           background: #f1eee7;
           border: 2px solid transparent;
           border-radius: 14px;
@@ -126,11 +126,11 @@
         }
 
         .google1 {
-          height: 35px;
+          height: 40px;
           width: 60%;
           background-color: #2d3748;
           border: 2px solid transparent;
-          border-radius: 3px;
+          border-radius: 14px;
           .google {
             color: white;
             display: flex;
@@ -141,6 +141,7 @@
             justify-content: center;
 
             p {
+              padding-top: 14px;
               font-style: normal;
               font-weight: bold;
             }
