@@ -24,7 +24,6 @@ const Aux2 = {
 export default function TypeUser() {
   console.log(type);
 
-
   let [image1, setImage1] = useState(0);
   let [image2, setImage2] = useState(0);
 
@@ -42,7 +41,7 @@ export default function TypeUser() {
   return (
     <>
       <div class="Up">
-        <h2>Chosse Account Type</h2>
+        <h2>Chosse account type</h2>
         <div class="TypeUser">
           <div
             class="Icon"
@@ -76,7 +75,13 @@ export default function TypeUser() {
           </div>
         </div>
       </div>
-      <input class="typecar" type="text" name="typecar" id="typecar" value={type}></input>
+      <input
+        class="typecar"
+        type="text"
+        name="typecar"
+        id="typecar"
+        value={type}
+      ></input>
     </>
   );
 }

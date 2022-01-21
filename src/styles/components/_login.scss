@@ -1,77 +1,72 @@
 .Login {
-  height: 100%;
   width: 100%;
+  height: 100%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  align-items: center;
 
-  .Image {
+  .ImageCars {
+    width: 100%;
     height: 100%;
-    width: 50%;
-
-    .ImageCars {
-      width: 100%;
-      height: 100%;
-    }
   }
 
   .Container {
     height: 100%;
-    width: 50%;
+    width: 40%;
     display: flex;
     flex-direction: column;
 
     form {
-      width: 100%;
-      height: 80%;
       flex-direction: column;
       display: flex;
-      justify-content: space-between;
 
       .Up {
         display: flex;
         flex-direction: column;
-        width: 100%;
-        height: 50%;
-        justify-content: space-around;
-        align-items: center;
 
         h2 {
-          font-style: normal;
-          font-weight: bolder;
+          font-family: 'Basis Grotesque Pro Regular ';
+          font-size: 38px;
           letter-spacing: -0.05em;
-          color: rgba(35, 33, 48, 0.8);
-          -webkit-text-stroke: 0.5px #a5a6f6;
+          letter-spacing: -0.2px;
           text-align: center;
         }
 
         .TypeUser {
-          width: 100%;
-          height: auto;
           display: flex;
           flex-direction: row;
-          justify-content: space-around;
+          padding-top: 20px;
 
           .Icon {
-            width: 30%;
-            height: 100%;
+            width: 50%;
             display: flex;
             flex-direction: column;
-            border: 2px solid rgba(35, 33, 48, 0);
-            border-radius: 10px;
+            border: 1px solid rgba(35, 33, 48, 0);
             align-items: center;
+            font-family: 'Basis Grotesque Pro Regular ';
+            font-size: 38px;
+            letter-spacing: -0.05em;
+            letter-spacing: -0.2px;
+            cursor: pointer;
+            transition: 0.8s all ease;
           }
 
           .Icon:hover {
             outline: none;
-            border: 2px solid dodgerblue;
+            border: 1px solid #23108d;
           }
         }
       }
 
       h4 {
-        color: #33383d;
-        margin: 20px 0 20px 0;
-        align-self: center;
+        color: #3d3333;
+        margin-top: 10px;
+        margin-bottom: 20px;
+        font-family: 'Basis Grotesque Pro Regular ';
+        font-size: 20px;
+        letter-spacing: -0.05em;
+        letter-spacing: -0.2px;
+        text-align: center;
       }
 
       .typecar {
@@ -79,60 +74,69 @@
       }
 
       .Middle {
-        width: 100%;
-        height: 50%;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
 
         input {
-          background: #f1eee7;
-          border-radius: 8px;
-          border: 2px solid transparent;
-          height: 40px;
-          width: 60%;
+          border: 1px solid #c7c7c7;
+          height: 35px;
+          width: 100%;
           align-self: center;
-          padding-left: 20px;
+          padding: 15px 10px;
+          margin-bottom: 20px;
+          font-family: 'Basis Grotesque Pro';
+          font-size: 13px;
+          font-weight: bold;
+          color: #7a7a7a;
         }
 
         input::placeholder {
           font-style: normal;
-          font-weight: bold;
           color: #3d4d46;
         }
 
         .submit {
-          width: 60%;
+          height: 50px;
+          width: 100%;
           align-self: center;
-          height: 40px;
-          background: #f1eee7;
-          border: 2px solid transparent;
-          border-radius: 14px;
-          font-style: normal;
-          font-weight: bold;
-          color: #3d4d46;
+          outline: none;
+          border: 1px solid #593cfb;
+          background-color: #593cfb;
+          color: #ffff;
+          margin-top: 15px;
+          font-family: 'Basis Grotesque Pro Bold';
+          font-size: 18px;
+          text-align: center;
+          padding: 0 19px;
+          cursor: pointer;
+          transition: 0.8s all ease;
         }
 
-        .submit:active {
-          background: #e0dacd;
+        .submit:hover {
+          background-color: #23108d;
         }
 
         input:hover,
         input:focus,
         .submit:hover {
           outline: none;
-          border: 2px solid dodgerblue;
+          border: 1px solid rgb(0, 0, 0);
         }
 
         .google1 {
-          height: 40px;
-          width: 60%;
-          background-color: #2d3748;
-          border: 2px solid transparent;
-          border-radius: 14px;
+          height: 50px;
+          width: 100%;
+          margin-top: 30px;
+          background-color: transparent;
+          border: 1px solid #7a7a7a;
+          border-radius: 0px;
+          cursor: pointer;
+
+          transition: 0.8s all ease;
           .google {
-            color: white;
+            color: rgb(18, 18, 20);
             display: flex;
             width: 100%;
             height: 100%;
@@ -141,14 +145,15 @@
             justify-content: center;
 
             p {
+              display: flex;
               padding-top: 14px;
-              font-style: normal;
-              font-weight: bold;
+              font-family: 'Basis Grotesque Pro ';
+              font-size: 18px;
             }
 
             .imgGoogle {
               width: auto;
-              height: 80%;
+              height: 50%;
               border-radius: 10px;
               margin-right: 10px;
             }
@@ -157,7 +162,7 @@
 
         .google1:hover {
           outline: none;
-          border: 2px solid dodgerblue;
+          border: solid #000000;
         }
 
         .google1:active {
@@ -173,11 +178,13 @@
       width: 100%;
       height: auto;
       justify-content: space-between;
+      padding-bottom: 20px;
 
       .link1 {
         color: #3d4d46;
         text-decoration: none;
-        font-size: 15px;
+        font-family: 'Basis Grotesque Pro Italic';
+        font-size: 14px;
         padding-right: 30px;
         padding-left: 30px;
       }
