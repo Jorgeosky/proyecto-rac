@@ -6,18 +6,23 @@ import SignUp from '../pages/SignUp';
 import Profile from '../pages/Profile';
 import Home from '../pages/Home';
 import SearchPage from '../pages/SearchPage';
+import { NavbarSearch } from '../components/searchVehicle/NavbarSearch';
+import { UserProvider } from '../components/Context';
 
 export const AppRouter = () => {
 	return (
 		<BrowserRouter>
-			<Routes>
-				<Route path="/" element={<Home />} />
-				<Route path="/signin" element={<Login />} />
-				<Route path="/profile" element={<Profile />} />
-				<Route path="/forgetpass" element={<ForgetPass />} />
-				<Route path="/signup" element={<SignUp />} />
-				<Route path="/search" element={<SearchPage />} />
-			</Routes>
+			<UserProvider>
+				<NavbarSearch />
+				<Routes>
+					<Route path="/" element={<Home />} />
+					<Route path="/signin" element={<Login />} />
+					<Route path="/profile" element={<Profile />} />
+					<Route path="/forgetpass" element={<ForgetPass />} />
+					<Route path="/signup" element={<SignUp />} />
+					<Route path="/search" element={<SearchPage />} />
+				</Routes>
+			</UserProvider>
 		</BrowserRouter>
 	);
 };

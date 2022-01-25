@@ -1,12 +1,8 @@
 import React from 'react';
-import { NavbarSearch } from '../components/searchVehicle/NavbarSearch.js';
 
 export default function SignUp() {
   return (
     <>
-      <header className="header">
-        <NavbarSearch />
-      </header>
       <main>
         <div className="SignUp">
           <div className="separator">

@@ -1,0 +1,27 @@
+nav {
+  font-size: 16px;
+  border-bottom: 1px solid rgba(45, 13, 202, 0.25);
+  background-color: transparent;
+  position: absolute;
+
+  .navbar-brand {
+    font-family: 'Basis Grotesque Pro Bold';
+    font-size: 24px;
+  }
+}
+
+.dropdown-toggle::after {
+  display: none;
+}
+
+.dropdown-menu {
+  position: center;
+}
+.dropdown.dropdown-center {
+  display: inline-block;
+  width: 180px;
+}
+.dropdown-menu.dropdown-menu-center {
+  text-align: center;
+  width: 180px;
+}

@@ -40,11 +40,11 @@ export default function TypeUser() {
   }
   return (
     <>
-      <div class="Up">
+      <div className="Up">
         <h2>Chosse account type</h2>
-        <div class="TypeUser">
+        <div className="TypeUser">
           <div
-            class="Icon"
+            className="Icon"
             onClick={() => {
               type = 'Owner';
               if (image1 === 0) {
@@ -59,7 +59,7 @@ export default function TypeUser() {
             <h4 style={ImageCar1}>Car Owner</h4>
           </div>
           <div
-            class="Icon"
+            className="Icon"
             onClick={() => {
               type = 'Renter';
               if (image2 === 0) {
@@ -76,7 +76,7 @@ export default function TypeUser() {
         </div>
       </div>
       <input
-        class="typecar"
+        className="typecar"
         type="text"
         name="typecar"
         id="typecar"
