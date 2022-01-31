@@ -18,7 +18,7 @@ export default function Login() {
       dispatch({
         type: "LOGIN",
         payload: {
-          user: UserExample,
+          user: { ...UserExample, type },
           isLoggedIn: true
         }
       });

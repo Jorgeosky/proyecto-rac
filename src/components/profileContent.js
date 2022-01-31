@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Nav } from 'react-bootstrap';
-import Formulario from './ProfileContent/Formulario'
-import Messages from './ProfileContent/Messages'
+import Formulario from './ProfileContent/Formulario';
+import Messages from './ProfileContent/Messages';
 import ProfileInfo from './ProfileContent/ProfileInfo';
+import CarPage from './ProfileContent/CarPage';
+import UserContext from './Context';
 
 const styleNav2 = {
   color: "rgba(35, 33, 48, 0.8)",
@@ -19,6 +21,7 @@ const styleNav = {
 
 export default function ProfileContent() {
   const [stateProfile, setStateProfile] = useState('profile');
+  const { state } = useContext(UserContext);
   let content = <></>;
 
   switch (stateProfile) {
@@ -37,7 +40,7 @@ export default function ProfileContent() {
     case 'editDocuments':
       content =
         <div className="profileContent">
-          Editar Documentos
+          <CarPage />
         </div>;
       break;
     case 'messages':
