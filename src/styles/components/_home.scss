@@ -1,7 +1,7 @@
 .Home {
   position: absolute;
   width: 100%;
-  height: 100%;
+  min-height: 100%;
   left: 0px;
   top: 0px;
   background-size: cover;
@@ -17,12 +17,48 @@
 
   .Header {
     display: flex;
+    justify-content: center;
+    align-items: flex-start;
     background: url(http://trade-submit.com/wp-content/uploads/2019/10/How-To-Choose-The-Right-Rental-Car.jpg);
-    justify-content: space-around;
-    align-items: center;
 
     width: 100%;
-    height: 400px;
+    height: 80%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    .Top {
+      margin-top: 30px;
+      background-color: rgba(255, 255, 255, 0.7);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 80%;
+      height: 40%;
+      justify-content: space-around;
+
+      .LinkText {
+        text-decoration: none;
+        background-color: lightskyblue;
+        border: 1px solid gray;
+        width: 10%;
+        height: 20%;
+        color: white;
+        border-radius: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        button {
+          background-color: transparent;
+          text-decoration: none;
+          color: white;
+          border: 0px solid transparent;
+          font-weight: bolder;
+          font-size: 20px;
+        }
+      }
+    }
 
     #homeLogo {
       position: static;

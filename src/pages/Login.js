@@ -7,7 +7,7 @@ import UserContext from '../components/Context';
 let type = '';
 
 export default function Login() {
-  const { setUser } = useContext(UserContext);
+  const { dispatch } = useContext(UserContext);
   const navigate = useNavigate();
 
   function OnSubmit(event) {
@@ -15,7 +15,13 @@ export default function Login() {
     const { email, password } = event.target.elements;
     console.log(email.value, password.value);
     if (UserExample.email === email.value && UserExample.password === password.value) {
-      setUser(UserExample);
+      dispatch({
+        type: "LOGIN",
+        payload: {
+          user: UserExample,
+          isLoggedIn: true
+        }
+      });
       navigate('/profile');
     } else {
       alert('email or password incorrect!')
