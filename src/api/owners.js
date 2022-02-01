@@ -1,9 +1,9 @@
 import http from './http';
 import { clearSession, setSession } from './session';
 
-export async function userSignUp(payload) {
+export async function ownerSignUp(payload) {
   try {
-    const { data: response } = await http.post('/users/signup', payload);
+    const { data: response } = await http.post('/owners/signup', payload);
     const { meta } = response;
     const { token } = meta;
     setSession(token);
@@ -12,9 +12,9 @@ export async function userSignUp(payload) {
     return error;
   }
 }
-export async function userSignIn(payload) {
+export async function ownerSignIn(payload) {
   try {
-    const { data: response } = await http.post('/users/signin', payload);
+    const { data: response } = await http.post('/owners/signin', payload);
     const { meta } = response;
     const { token } = meta;
     setSession(token);

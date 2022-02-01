@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import UserContext from '../Context';
+import { types } from '../../types/types';
 
 export function NavbarSearch() {
   const { state, dispatch } = useContext(UserContext);
@@ -38,7 +39,7 @@ export function NavbarSearch() {
             ) : (
               <>
                 <NavDropdown.Item href="/profile">Profile</NavDropdown.Item>
-                <NavDropdown.Item href="/" onClick={() => dispatch({ type: 'LOGOUT' })}>
+                <NavDropdown.Item href="/" onClick={() => dispatch({ type: types.signout })}>
                   Sign Out
                 </NavDropdown.Item>
               </>

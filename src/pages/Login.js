@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import TypeUser from '../components/typeuser';
 import UserExample from '../components/UserExample';
 import UserContext from '../components/Context';
+import { types } from '../types/types';
 
 const type = '';
 
@@ -14,9 +15,10 @@ export default function Login() {
     event.preventDefault();
     const { email, password } = event.target.elements;
     console.log(email.value, password.value);
+
     if (UserExample.email === email.value && UserExample.password === password.value) {
       dispatch({
-        type: 'LOGIN',
+        type: types.signin,
         payload: {
           user: { ...UserExample, type },
           isLoggedIn: true,

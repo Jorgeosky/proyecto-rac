@@ -27,7 +27,7 @@ instance.interceptors.response.use(
 
     if (error.response.status === 401) {
       clearSession();
-      document.location = `${BASE_URL}/login`; // aqui no usamos navigate, porque no estamos en la capa de React, estamos en la capa de red
+      document.location = `${BASE_URL}/signin`; // aqui no usamos navigate, porque no estamos en la capa de React, estamos en la capa de red
     }
     return Promise.reject(error);
   },
