@@ -1,16 +1,17 @@
 import React from 'react';
 import { Container, Row } from 'react-bootstrap';
+import { v4 as uuidv4 } from 'uuid';
 import { carData } from '../../data/searchVehicle';
 import { VehicleCard } from './VehicleCard';
 
-export const VehicleList = () => {
-	return (
-		<Container fluid className="mt-5 pe-3">
-			<Row sm={2} className="g-4">
-				{carData.map((car, index) => (
-					<VehicleCard key={index} {...car} />
-				))}
-			</Row>
-		</Container>
-	);
-};
+export function VehicleList() {
+  return (
+    <Container className="mt-5 pe-3" fluid>
+      <Row className="g-4" sm={2}>
+        {carData.map((car) => (
+          <VehicleCard key={uuidv4()} {...car} />
+        ))}
+      </Row>
+    </Container>
+  );
+}

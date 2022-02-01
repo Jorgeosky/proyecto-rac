@@ -1,27 +1,27 @@
 import React, { useState } from 'react';
-import { ModalFilter } from './ModalFilter.js';
+import { ModalFilter } from './ModalFilter';
 
-export const SearchButtons = () => {
-	const [filterShow, setFilterSow] = useState(false);
-	const handleFilterOpen = () => setFilterSow(true);
+export function SearchButtons() {
+  const [filterShow, setFilterSow] = useState(false);
+  const handleFilterOpen = () => setFilterSow(true);
 
-	return (
-		<>
-			<button className="btn btn-white" onClick={handleFilterOpen}>
-				<span>Sort By</span>
-			</button>
-			<button className="btn btn-white" onClick={handleFilterOpen}>
-				<span>Price</span>
-			</button>
-			<button className="btn btn-white" onClick={handleFilterOpen}>
-				<span>Delivery</span>
-			</button>
+  return (
+    <>
+      <button className="btn btn-white" onClick={handleFilterOpen} type="button" c>
+        <span>Sort By</span>
+      </button>
+      <button className="btn btn-white" onClick={handleFilterOpen} type="button" c>
+        <span>Price</span>
+      </button>
+      <button className="btn btn-white" onClick={handleFilterOpen} type="button" c>
+        <span>Delivery</span>
+      </button>
 
-			<button className="btn btn-white" onClick={handleFilterOpen}>
-				<i className="fas fa-sliders-h me-2"></i>
-				<span>More Filters</span>
-			</button>
-			<ModalFilter show={filterShow} setShow={setFilterSow} />
-		</>
-	);
-};
+      <button className="btn btn-white" onClick={handleFilterOpen} type="button" c>
+        <i className="fas fa-sliders-h me-2" />
+        <span>More Filters</span>
+      </button>
+      <ModalFilter setShow={setFilterSow} show={filterShow} />
+    </>
+  );
+}

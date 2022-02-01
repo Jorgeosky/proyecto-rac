@@ -24,8 +24,8 @@ const Aux2 = {
 export default function TypeUser() {
   console.log(type);
 
-  let [image1, setImage1] = useState(0);
-  let [image2, setImage2] = useState(0);
+  const [image1, setImage1] = useState(0);
+  const [image2, setImage2] = useState(0);
 
   let ImageCar1 = Aux2;
   let ImageCar2 = Aux2;
@@ -40,11 +40,12 @@ export default function TypeUser() {
   }
   return (
     <>
-      <div class="Up">
+      <div className="Up">
         <h2>Chosse account type</h2>
-        <div class="TypeUser">
+        <div className="TypeUser">
           <div
-            class="Icon"
+            aria-hidden="true"
+            className="Icon"
             onClick={() => {
               type = 'Owner';
               if (image1 === 0) {
@@ -54,12 +55,14 @@ export default function TypeUser() {
                 setImage2(image2 - 1);
               }
             }}
-          >
-            <img style={ImageCar1} src="Login-2.png" alt="img1" />
+            role="button"
+            tabIndex={0}>
+            <img alt="img1" src="Login-2.png" style={ImageCar1} />
             <h4 style={ImageCar1}>Car Owner</h4>
           </div>
           <div
-            class="Icon"
+            aria-hidden="true"
+            className="Icon"
             onClick={() => {
               type = 'Renter';
               if (image2 === 0) {
@@ -69,19 +72,14 @@ export default function TypeUser() {
                 setImage1(image1 - 1);
               }
             }}
-          >
-            <img style={ImageCar2} src="Login-3.png" alt="img2" />
+            role="button"
+            tabIndex={0}>
+            <img alt="img2" src="Login-3.png" style={ImageCar2} />
             <h4 style={ImageCar2}>Car Renter</h4>
           </div>
         </div>
       </div>
-      <input
-        class="typecar"
-        type="text"
-        name="typecar"
-        id="typecar"
-        value={type}
-      ></input>
+      <input className="typecar" id="typecar" name="typecar" type="text" value={type} />
     </>
   );
 }

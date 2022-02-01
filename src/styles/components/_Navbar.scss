@@ -1,0 +1,36 @@
+nav {
+  font-size: 16px;
+  background-color: transparent;
+  height: 60px;
+  flex-direction: row;
+  justify-content: space-between;
+
+  .navbar-brand {
+    font-family: 'Basis Grotesque Pro Bold';
+    font-size: 24px;
+  }
+}
+
+.dropdown-toggle::after {
+  display: none;
+}
+
+#basic-nav-dropdown {
+  margin-right: 100px;
+}
+
+.dropdown-menu {
+  display: flex;
+  width: 90px;
+  margin-right: 100px;
+  flex-direction: column;
+}
+
+.dropdown.dropdown-center {
+  display: inline-block;
+  width: 90px;
+}
+.dropdown-menu.dropdown-menu-center {
+  text-align: center;
+  width: 180px;
+}

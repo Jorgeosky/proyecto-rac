@@ -1,54 +1,57 @@
 import React from 'react';
-import { Modal, Form } from 'react-bootstrap';
+import { Form, Modal } from 'react-bootstrap';
 import { SelectFilter } from './SelectFilter';
-export const ModalFilter = ({ show, setShow }) => {
-	const handleClose = () => setShow(false);
 
-	const handleSubmit = (e) => {
-		e.preventDefault();
-		console.log(e);
-	};
+export function ModalFilter({ show, setShow }) {
+  const handleClose = () => setShow(false);
 
-	return (
-		<Modal
-			className="modal-filter"
-			show={show}
-			onHide={handleClose}
-			scrollable="on">
-			<div className="mt-3 me-3 text-end">
-				<button
-					type="button"
-					className="btn-close"
-					data-bs-dismiss="modal"
-					aria-label="Close"
-					onClick={handleClose}></button>
-			</div>
-			<Form className="ms-3" onSubmit={handleSubmit}>
-				<Modal.Body>
-					<Form.Group controlId="ratingCheck" className="mb-4">
-						<Form.Label>Rating</Form.Label>
-						<Form.Check type="checkbox" id="rating">
-							<Form.Check.Input type="checkbox" isValid />
-							<Form.Check.Label>User ratings</Form.Check.Label>
-						</Form.Check>
-					</Form.Group>
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(e);
+  };
 
-					<Form.Group controlId="deluxeCheck" className="mb-4">
-						<Form.Label>Deluxe Class</Form.Label>
-						<Form.Check type="checkbox" id="deluxe">
-							<Form.Check.Input type="checkbox" isValid />
-							<Form.Check.Label>Luxury Cars</Form.Check.Label>
-						</Form.Check>
-					</Form.Group>
+  return (
+    <Modal
+      className="modal-filter"
+      onHide={handleClose}
+      scrollable="on"
+      show={show}
+    >
+      <div className="mt-3 me-3 text-end">
+        <button
+          aria-label="Close"
+          className="btn-close"
+          data-bs-dismiss="modal"
+          onClick={handleClose}
+          type="button"
+        />
+      </div>
+      <Form className="ms-3" onSubmit={handleSubmit}>
+        <Modal.Body>
+          <Form.Group className="mb-4" controlId="ratingCheck">
+            <Form.Label>Rating</Form.Label>
+            <Form.Check id="rating" type="checkbox">
+              <Form.Check.Input type="checkbox" isValid />
+              <Form.Check.Label>User ratings</Form.Check.Label>
+            </Form.Check>
+          </Form.Group>
 
-					<SelectFilter />
-				</Modal.Body>
-				<Modal.Footer className="ms-3 py-3 justify-content-start ">
-					<button className="btn btn-primary py-1" type="submit">
-						Applied filters
-					</button>
-				</Modal.Footer>
-			</Form>
-		</Modal>
-	);
-};
+          <Form.Group className="mb-4" controlId="deluxeCheck">
+            <Form.Label>Deluxe Class</Form.Label>
+            <Form.Check id="deluxe" type="checkbox">
+              <Form.Check.Input type="checkbox" isValid />
+              <Form.Check.Label>Luxury Cars</Form.Check.Label>
+            </Form.Check>
+          </Form.Group>
+
+          <SelectFilter />
+        </Modal.Body>
+        <Modal.Footer className="ms-3 py-3 justify-content-start ">
+          <button className="btn btn-primary py-1" type="submit">
+            Applied filters
+          </button>
+        </Modal.Footer>
+      </Form>
+    </Modal>
+  );
+}
