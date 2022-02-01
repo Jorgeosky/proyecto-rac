@@ -96,7 +96,23 @@
           font-style: normal;
           color: #3d4d46;
         }
-
+        .passwordField {
+          display: flex;
+          width: 100%;
+          position: relative;
+        }
+        .passwordEye {
+          position: absolute;
+          top: 6px;
+          left: calc(100% - 2.5em);
+        }
+        .passwordEye:hover {
+          cursor: pointer;
+        }
+        .passwordEye i {
+          color: black;
+          font-size: 14px;
+        }
         .submit {
           height: 50px;
           width: 100%;

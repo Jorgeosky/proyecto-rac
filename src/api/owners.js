@@ -3,6 +3,7 @@ import { clearSession, setSession } from './session';
 
 export async function ownerSignUp(payload) {
   try {
+    console.log(payload);
     const { data: response } = await http.post('/owners/signup', payload);
     const { meta } = response;
     const { token } = meta;
@@ -11,6 +12,9 @@ export async function ownerSignUp(payload) {
   } catch (error) {
     return error;
   }
+}
+export async function sendOwner(payload) {
+  await http.post('/owners/initSignUp', payload);
 }
 export async function ownerSignIn(payload) {
   try {

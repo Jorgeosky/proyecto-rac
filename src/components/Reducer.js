@@ -3,6 +3,7 @@ import { types } from '../types/types';
 export const initialState = {
   isLoggedIn: JSON.parse(localStorage.getItem('isLoggedIn')) || false,
   user: JSON.parse(localStorage.getItem('user')) || null,
+  type: JSON.parse(localStorage.getItem('type')) || 'renter',
 };
 
 export const reducer = (state, action) => {
@@ -24,10 +25,18 @@ export const reducer = (state, action) => {
     };
   }
   case types.signout: {
-    localStorage.clear();
+    localStorage.removeItem('user');
+    localStorage.setItem('isLoggedIn', false);
     return {
       isLoggedIn: false,
       user: null,
+      type: 'owner',
+    };
+  }
+  case types.type: {
+    return {
+      ...state,
+      type: action.payload.type,
     };
   }
   default:

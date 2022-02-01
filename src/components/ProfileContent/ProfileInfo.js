@@ -11,7 +11,7 @@ export default function ProfileInfo() {
         <div>
           <h2>
             Username:
-            {`${state.user.name} ${state.user.lastname}`}
+            {`${state.user.firstName} ${state.user.lastName}`}
           </h2>
           <h2>Rate: 4.5</h2>
         </div>
