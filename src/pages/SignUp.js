@@ -29,7 +29,7 @@ export default function SignUp() {
         },
       });
       console.log(data);
-      navigate('/search');
+      navigate('/emailverification');
     } else {
       console.log(data);
     }
