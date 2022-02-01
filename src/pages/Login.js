@@ -4,7 +4,7 @@ import TypeUser from '../components/typeuser';
 import UserExample from '../components/UserExample';
 import UserContext from '../components/Context';
 
-let type = '';
+const type = '';
 
 export default function Login() {
   const { dispatch } = useContext(UserContext);
@@ -16,22 +16,21 @@ export default function Login() {
     console.log(email.value, password.value);
     if (UserExample.email === email.value && UserExample.password === password.value) {
       dispatch({
-        type: "LOGIN",
+        type: 'LOGIN',
         payload: {
           user: { ...UserExample, type },
-          isLoggedIn: true
-        }
+          isLoggedIn: true,
+        },
       });
       navigate('/profile');
     } else {
-      alert('email or password incorrect!')
+      // alert('email or password incorrect!');
     }
   }
 
   return (
     <>
-      <header className="header">
-      </header>
+      <header className="header" />
       <main>
         <div className="Login">
           <div className="Container">
@@ -39,24 +38,14 @@ export default function Login() {
               <TypeUser type={type} />
               <h4>Hello, please fill the form to start</h4>
               <div className="Middle">
-                <input
-                  type="email"
-                  name="email"
-                  id="email"
-                  placeholder="E-mail"
-                />
-                <input
-                  type="password"
-                  name="password"
-                  id="password"
-                  placeholder="Password"
-                />
-                <button type="submit" className="submit">
+                <input id="email" name="email" placeholder="E-mail" type="email" />
+                <input id="password" name="password" placeholder="Password" type="password" />
+                <button className="submit" type="submit">
                   Log in
                 </button>
-                <button className="google1">
+                <button className="google1" type="button">
                   <div className="google">
-                    <img className="imgGoogle" src="Login-4.png" alt="img3" />
+                    <img alt="img3" className="imgGoogle" src="Login-4.png" />
                     <p>Continue with Google</p>
                   </div>
                 </button>

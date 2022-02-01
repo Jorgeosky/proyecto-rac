@@ -1,55 +1,79 @@
 {
-	"name": "proyecto-rac",
-	"version": "0.1.0",
-	"private": true,
-	"dependencies": {
-		"@cloudinary/react": "^1.0.1",
-		"@cloudinary/url-gen": "^1.5.1",
-		"@react-google-maps/api": "^2.7.0",
-		"@testing-library/jest-dom": "^5.16.0",
-		"@testing-library/react": "^11.2.7",
-		"@testing-library/user-event": "^12.8.3",
-		"axios": "^0.25.0",
-		"bootstrap": "^5.1.3",
-		"formik": "^2.2.9",
-		"node-sass": "^7.0.1",
-		"npm": "^8.3.0",
-		"react": "^17.0.2",
-		"react-bootstrap": "^2.0.3",
-		"react-day-picker": "^7.4.10",
-		"react-dom": "^17.0.2",
-		"react-router-dom": "^6.0.2",
-		"react-scripts": "^5.0.0",
-		"react-select": "^5.2.1",
-		"web-vitals": "^1.1.2"
-	},
-	"scripts": {
-		"start": "react-scripts start",
-		"build": "react-scripts build",
-		"test": "react-scripts test",
-		"eject": "react-scripts eject"
-	},
-	"eslintConfig": {
-		"extends": [
-			"react-app",
-			"react-app/jest"
-		]
-	},
-	"browserslist": {
-		"production": [
-			">0.2%",
-			"not dead",
-			"not op_mini all"
-		],
-		"development": [
-			"last 1 chrome version",
-			"last 1 firefox version",
-			"last 1 safari version"
-		]
-	},
-	"devDependencies": {
-		"@wojtekmaj/enzyme-adapter-react-17": "^0.6.6",
-		"enzyme": "^3.11.0",
-		"enzyme-to-json": "^3.6.2"
-	}
+  "name": "proyecto-rac",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@cloudinary/react": "^1.0.1",
+    "@cloudinary/url-gen": "^1.5.1",
+    "@react-google-maps/api": "^2.7.0",
+    "@testing-library/jest-dom": "^5.16.0",
+    "@testing-library/react": "^11.2.7",
+    "@testing-library/user-event": "^12.8.3",
+    "axios": "^0.25.0",
+    "bootstrap": "^5.1.3",
+    "formik": "^2.2.9",
+    "node-sass": "^7.0.1",
+    "npm": "^8.3.0",
+    "react": "^17.0.2",
+    "react-bootstrap": "^2.0.3",
+    "react-day-picker": "^7.4.10",
+    "react-dom": "^17.0.2",
+    "react-router-dom": "^6.0.2",
+    "react-scripts": "^5.0.0",
+    "react-select": "^5.2.1",
+    "web-vitals": "^1.1.2"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "lint": "npm run lint-files -- src --ext .js,.ts,.tsx",
+    "lint:fix": "npm run lint -- --fix ",
+    "lint-files": "eslint --cache --cache-location=.cache/' -f friendly",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "src/**/*.{js,ts,tsx}": [
+      "eslint --fix -f friendly"
+    ]
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@wojtekmaj/enzyme-adapter-react-17": "^0.6.6",
+    "enzyme": "^3.11.0",
+    "enzyme-to-json": "^3.6.2",
+    "eslint": "^8.8.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-formatter-friendly": "^7.0.0",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-jest": "^26.0.0",
+    "eslint-plugin-jest-dom": "^4.0.1",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-promise": "^6.0.0",
+    "eslint-plugin-react": "^7.28.0",
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "husky": "^7.0.4",
+    "lint-staged": "^12.3.2"
+  }
 }

@@ -1,17 +1,16 @@
 import React from 'react';
 
 export default function CarPage() {
-
   return (
     <div>
       <form>
         <p>modelo</p>
-        <input type="text"></input>
+        <input type="text" />
         <p>precio</p>
-        <input type="number"></input>
+        <input type="number" />
         <p>foto</p>
-        <input type="file" alt="carimage"></input>
-        <button type='submit'>Enviar</button>
+        <input alt="carimage" type="file" />
+        <button type="submit">Enviar</button>
       </form>
     </div>
   );

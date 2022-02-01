@@ -1,16 +1,18 @@
-import { createContext, useReducer } from 'react';
-import { reducer, initialState } from './Reducer';
+import { createContext, useMemo, useReducer } from 'react';
+import { initialState, reducer } from './Reducer';
 
 const UserContext = createContext(null);
 
-const UserProvider = ({ children }) => {
+function UserProvider({ children }) {
   const [state, dispatch] = useReducer(reducer, initialState);
-
-  return (
-    <UserContext.Provider value={{ state, dispatch }}>
-      {children}
-    </UserContext.Provider>
-  )
+  const value = useMemo(
+    () => ({
+      state,
+      dispatch,
+    }),
+    [state],
+  );
+  return <UserContext.Provider value={value}>{children}</UserContext.Provider>;
 }
 
 export { UserProvider };

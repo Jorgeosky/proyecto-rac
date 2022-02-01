@@ -9,20 +9,20 @@ import SearchPage from '../pages/SearchPage';
 import { NavbarSearch } from '../components/searchVehicle/NavbarSearch';
 import { UserProvider } from '../components/Context';
 
-export const AppRouter = () => {
-	return (
-		<BrowserRouter>
-			<UserProvider>
-				<NavbarSearch />
-				<Routes>
-					<Route path="/" element={<Home />} />
-					<Route path="/signin" element={<Login />} />
-					<Route path="/profile" element={<Profile />} />
-					<Route path="/forgetpass" element={<ForgetPass />} />
-					<Route path="/signup" element={<SignUp />} />
-					<Route path="/search" element={<SearchPage />} />
-				</Routes>
-			</UserProvider>
-		</BrowserRouter>
-	);
-};
+export function AppRouter() {
+  return (
+    <BrowserRouter>
+      <UserProvider>
+        <NavbarSearch />
+        <Routes>
+          <Route element={<Home />} path="/" />
+          <Route element={<Login />} path="/signin" />
+          <Route element={<Profile />} path="/profile" />
+          <Route element={<ForgetPass />} path="/forgetpass" />
+          <Route element={<SignUp />} path="/signup" />
+          <Route element={<SearchPage />} path="/search" />
+        </Routes>
+      </UserProvider>
+    </BrowserRouter>
+  );
+}

@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import { Link } from 'react-router-dom';
 
 export default function Home() {
@@ -15,8 +15,10 @@ export default function Home() {
         </div> */}
         <div className="Top">
           <h1>Find your drive</h1>
-          <h3>Explore the world's largest car sharing marketplace</h3>
-          <Link to="/search" className="LinkText"><button>Now</button></Link>
+          <h3>Explore the world&apos;s largest car sharing marketplace</h3>
+          <Link className="LinkText" to="/search">
+            <button type="button">Now</button>
+          </Link>
         </div>
         {/* </div>
       <footer className="footer">

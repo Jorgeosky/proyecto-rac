@@ -8,5 +8,5 @@ export default function Profile() {
         <ProfileContent />
       </div>
     </div>
-  )
+  );
 }
