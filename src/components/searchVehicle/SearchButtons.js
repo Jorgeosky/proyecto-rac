@@ -1,27 +1,22 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { ModalFilter } from './ModalFilter';
 
 export function SearchButtons() {
-  const [filterShow, setFilterSow] = useState(false);
-  const handleFilterOpen = () => setFilterSow(true);
-
+  const [filterShow, setFilterShow] = useState(false);
+  const navigate = useNavigate();
+  const handleFilterOpen = () => setFilterShow(true);
+  const handleFilterRemove = () => navigate('/search');
   return (
     <>
       <button className="btn btn-white" onClick={handleFilterOpen} type="button" c>
-        <span>Sort By</span>
-      </button>
-      <button className="btn btn-white" onClick={handleFilterOpen} type="button" c>
-        <span>Price</span>
-      </button>
-      <button className="btn btn-white" onClick={handleFilterOpen} type="button" c>
-        <span>Delivery</span>
-      </button>
-
-      <button className="btn btn-white" onClick={handleFilterOpen} type="button" c>
         <i className="fas fa-sliders-h me-2" />
-        <span>More Filters</span>
+        <span>Filters</span>
       </button>
-      <ModalFilter setShow={setFilterSow} show={filterShow} />
+      <button className="btn btn-white" onClick={handleFilterRemove} type="button" c>
+        <span>Remove Filters</span>
+      </button>
+      <ModalFilter setShow={setFilterShow} show={filterShow} />
     </>
   );
 }

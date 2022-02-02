@@ -1,11 +1,11 @@
-@import './components/home';
 @import './base/fonts';
 @import './base/settings';
 @import './base/bases';
+@import './components/Navbar';
+@import './components/home';
 @import './components/buttons';
 @import './components/login';
 @import './components/forgotpass';
 @import './components/signup';
 @import './components/search';
 @import './components/profile';
-@import './components/Navbar';

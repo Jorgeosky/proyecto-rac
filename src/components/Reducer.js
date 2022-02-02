@@ -1,3 +1,4 @@
+import { clearSession } from '../api/session';
 import { types } from '../types/types';
 
 export const initialState = {
@@ -27,6 +28,7 @@ export const reducer = (state, action) => {
   case types.signout: {
     localStorage.removeItem('user');
     localStorage.setItem('isLoggedIn', false);
+    clearSession();
     return {
       isLoggedIn: false,
       user: null,
