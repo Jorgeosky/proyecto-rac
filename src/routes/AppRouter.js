@@ -11,7 +11,6 @@ import { EmailVerified } from '../pages/EmailVerified';
 import { NavbarSearch } from '../components/searchVehicle/NavbarSearch';
 import { UserProvider } from '../components/Context';
 import ChangePassword from '../pages/ChangePassword';
-import EditProfile from '../pages/EditProfile';
 
 export function AppRouter() {
   return (
@@ -22,7 +21,6 @@ export function AppRouter() {
           <Route element={<Home />} path="/" />
           <Route element={<Login />} path="/signin" />
           <Route element={<Profile />} path="/profile" />
-          <Route element={<EditProfile />} path="/profile/editprofile" />
           <Route element={<ForgetPass />} path="/forgetpass" />
           <Route element={<ChangePassword />} path="/changepass" />
           <Route element={<SignUp />} path="/signup" />

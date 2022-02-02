@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function CarPage() {
+export default function UploadCar() {
   return (
     <div>
       <form>

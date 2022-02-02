@@ -3,17 +3,18 @@ import React from 'react';
 export default function EditProfile() {
   return (
     <main>
-      <div className="SignUp">
+      <div className="editProfile">
+        <h1>Edit profile</h1>
         <form>
-          <div className="names">
+          <div className="doubleInput">
             <div className="nameErrors">
-              <input className="field" name="firstName" placeholder="First Name" type="text" />
+              <input className="field" name="firstName" placeholder="First name" type="text" />
             </div>
             <div className="nameErrors">
-              <input className="field" name="lastName" placeholder="Last Name" type="text" />
+              <input className="field" name="lastName" placeholder="Last name" type="text" />
             </div>
           </div>
-          <div className="names">
+          <div className="doubleInput">
             <div className="nameErrors">
               <input className="field" name="phone" placeholder="Phone" type="text" />
             </div>
@@ -25,6 +26,9 @@ export default function EditProfile() {
           <input className="field" name="email" placeholder="E-mail" type="email" />
           <div className="passwordField">
             <input className="field" name="password" placeholder="Password" />
+            <span aria-hidden="true" className="passwordEye">
+              <i className="fas fa-eye" />
+            </span>
           </div>
           <div className="passwordField">
             <input className="field" name="confirmPassword" placeholder="Confirm Password" />
@@ -33,7 +37,7 @@ export default function EditProfile() {
             </span>
           </div>
 
-          <button type="submit">Sign Up</button>
+          <button type="submit">Update</button>
         </form>
       </div>
     </main>

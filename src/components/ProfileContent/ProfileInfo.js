@@ -1,5 +1,4 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
 import UserContext from '../Context';
 
 export default function ProfileInfo() {
@@ -34,14 +33,6 @@ export default function ProfileInfo() {
       </div>
       <div className="userCard">
         <img alt="profileImg" src="profile_icon.png" />
-        <div className="btnOptions">
-          <Link to="/profile/editprofile">
-            <button type="button">Edit profile</button>
-          </Link>
-          <Link to="/profile/uploadcar">
-            <button type="button">Upload car</button>
-          </Link>
-        </div>
       </div>
 
       {/* <div className="infoCars">

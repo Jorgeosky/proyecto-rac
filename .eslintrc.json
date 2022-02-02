@@ -24,7 +24,7 @@
   "plugins": ["react", "prettier", "react-hooks", "jest", "jest-dom"],
 
   "rules": {
-    "linebreak-style": ["error", "windows"],
+    "linebreak-style": 0,
     "no-console": "off",
     "indent": ["error", 2],
     "no-unused-vars": [

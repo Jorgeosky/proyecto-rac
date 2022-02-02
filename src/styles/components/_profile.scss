@@ -20,35 +20,33 @@
       justify-content: flex-start;
       border-right: 1px solid black;
 
-      .itemListProfile {
-        padding-top: 10px;
-        padding-bottom: 10px;
-        padding-left: 10px;
-        margin-left: 5px;
-        margin-right: 5px;
-        margin-top: 10px;
-        margin-bottom: 10px;
+      .itemListProfile.nav {
+        height: 34px;
+        width: 80%;
+        align-self: center;
+        outline: none;
+        border: 1px solid #593cfb;
+        background-color: #593cfb;
+        color: #ffff;
+        margin-top: 40px;
+        font-family: 'Basis Grotesque Pro Bold';
+        font-size: 15px;
+        text-align: center;
+        padding: 0 19px;
+        cursor: pointer;
+        transition: 0.8s all ease;
       }
 
       .itemListProfile:hover {
-        border-radius: 20px;
-        border: 1px solid blue;
-      }
-
-      .itemListProfile:active {
-        border-radius: 20px;
-        background-color: rgb(177, 176, 176);
-        border: 1px solid blue;
+        background-color: #23108d;
       }
     }
 
     .profileContent {
       width: 85%;
       height: 100%;
-
-      .formulario > div {
-        margin-bottom: 10px;
-      }
+      display: flex;
+      justify-content: center;
 
       .messages {
         width: 100%;
@@ -156,8 +154,8 @@
           justify-content: center;
 
           img {
-            width: 80px;
-            height: 80px;
+            width: 120px;
+            height: 120px;
             border-radius: 50%;
             align-self: center;
           }
@@ -187,6 +185,95 @@
               background-color: #23108d;
             }
           }
+        }
+      }
+
+      .editProfile {
+        width: 505.3px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+
+        h1 {
+          font-family: 'Basis Grotesque Pro Bold';
+          font-size: 38px;
+          letter-spacing: -0.2px;
+          text-align: center;
+          padding-bottom: 50px;
+        }
+
+        .field {
+          border: 1px solid #c7c7c7;
+          height: 35px;
+          width: 100% !important;
+          align-self: center;
+          padding: 3px 50px;
+          margin-top: 10px;
+          font-family: 'Basis Grotesque Pro';
+          font-size: 13px;
+          font-weight: bold;
+          color: #7a7a7a;
+        }
+
+        .field:hover,
+        .field:focus {
+          outline: none;
+          border: 1px solid rgb(0, 0, 0);
+        }
+
+        .doubleInput {
+          width: 100%;
+          display: flex;
+          height: 35px;
+          flex-direction: row;
+          justify-content: space-between;
+          margin-bottom: 15px;
+          gap: 15px;
+
+          .field {
+            width: 49%;
+          }
+        }
+        .passwordField {
+          display: flex;
+          width: 100%;
+          position: relative;
+          margin-top: 10px;
+        }
+        .passwordField input {
+          margin-top: 0;
+        }
+        .passwordEye {
+          position: absolute;
+          top: 6px;
+          left: calc(100% - 2.5em);
+        }
+        .passwordEye:hover {
+          cursor: pointer;
+        }
+        .passwordEye i {
+          color: #7a7a7a;
+          font-size: 14px;
+        }
+        button {
+          height: 50px;
+          width: 100%;
+          align-self: center;
+          outline: none;
+          border: 1px solid #593cfb;
+          background-color: #593cfb;
+          color: #ffff;
+          margin-top: 15px;
+          font-family: 'Basis Grotesque Pro Bold';
+          font-size: 18px;
+          text-align: center;
+          padding: 0 19px;
+          cursor: pointer;
+          transition: 0.8s all ease;
+        }
+
+        button:hover {
+          background-color: #23108d;
         }
       }
     }
