@@ -9,6 +9,16 @@ nav {
     font-family: 'Basis Grotesque Pro Bold';
     font-size: 24px;
   }
+  .nav-search {
+    font-family: 'Basis Grotesque Pro Bold';
+    font-size: 18px;
+  }
+  .header__user-icon {
+    color: rgba(0, 0, 0, 0.7);
+  }
+  .header__user-icon:hover {
+    color: rgba(0, 0, 0, 0.9);
+  }
 }
 
 .dropdown-toggle::after {

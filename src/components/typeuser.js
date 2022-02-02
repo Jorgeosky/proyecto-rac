@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
+import { types } from '../types/types';
+import UserContext from './Context';
 
-let type = '';
 const Aux1 = {
   width: '100%',
   height: '100%',
@@ -22,64 +23,47 @@ const Aux2 = {
 };
 
 export default function TypeUser() {
-  console.log(type);
+  const [user, setUser] = useState(false); // true: owner, false:renter
+  // const [type, setType] = useState('renter');
+  const { dispatch } = useContext(UserContext);
 
-  const [image1, setImage1] = useState(0);
-  const [image2, setImage2] = useState(0);
+  const handleRenter = () => {
+    setUser(false);
 
-  let ImageCar1 = Aux2;
-  let ImageCar2 = Aux2;
+    dispatch({
+      type: types.type,
+      payload: { type: 'renter' },
+    });
+  };
+  const handleOwner = () => {
+    setUser(true);
+    dispatch({
+      type: types.type,
+      payload: { type: 'owner' },
+    });
+  };
 
-  if (image1 === 1) {
-    ImageCar1 = Aux1;
-    ImageCar2 = Aux2;
-  }
-  if (image2 === 1) {
-    ImageCar1 = Aux2;
-    ImageCar2 = Aux1;
-  }
   return (
     <>
       <div className="Up">
         <h2>Chosse account type</h2>
         <div className="TypeUser">
-          <div
-            aria-hidden="true"
-            className="Icon"
-            onClick={() => {
-              type = 'Owner';
-              if (image1 === 0) {
-                setImage1(image1 + 1);
-              }
-              if (image2 === 1) {
-                setImage2(image2 - 1);
-              }
-            }}
-            role="button"
-            tabIndex={0}>
-            <img alt="img1" src="Login-2.png" style={ImageCar1} />
-            <h4 style={ImageCar1}>Car Owner</h4>
+          <div aria-hidden="true" className="Icon" onClick={handleOwner} role="button" tabIndex={0}>
+            <img alt="img1" src="Login-2.png" style={user ? Aux1 : Aux2} />
+            <h4 style={user ? Aux1 : Aux2}>Car Owner</h4>
           </div>
           <div
             aria-hidden="true"
             className="Icon"
-            onClick={() => {
-              type = 'Renter';
-              if (image2 === 0) {
-                setImage2(image2 + 1);
-              }
-              if (image1 === 1) {
-                setImage1(image1 - 1);
-              }
-            }}
+            onClick={handleRenter}
             role="button"
             tabIndex={0}>
-            <img alt="img2" src="Login-3.png" style={ImageCar2} />
-            <h4 style={ImageCar2}>Car Renter</h4>
+            <img alt="img2" src="Login-3.png" style={user ? Aux2 : Aux1} />
+            <h4 style={user ? Aux1 : Aux2}>Car Renter</h4>
           </div>
         </div>
       </div>
-      <input className="typecar" id="typecar" name="typecar" type="text" value={type} />
+      {/* <input className="typecar" id="typecar" name="typecar" type="text" value={type} /> */}
     </>
   );
 }

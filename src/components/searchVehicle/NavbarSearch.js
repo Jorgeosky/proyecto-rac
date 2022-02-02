@@ -6,7 +6,7 @@ import { types } from '../../types/types';
 
 export function NavbarSearch() {
   const { state, dispatch } = useContext(UserContext);
-  console.log(state);
+
   return (
     <Navbar expand="sm" collapseOnSelect>
       <Container fluid>
@@ -16,8 +16,9 @@ export function NavbarSearch() {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="#features">Features</Nav.Link>
-            <Nav.Link href="#pricing">Pricing</Nav.Link>
+            <Nav.Link className="nav-search" href="/search">
+              Search
+            </Nav.Link>
           </Nav>
           <NavDropdown
             id="basic-nav-dropdown"
@@ -39,7 +40,7 @@ export function NavbarSearch() {
             ) : (
               <>
                 <NavDropdown.Item href="/profile">Profile</NavDropdown.Item>
-                <NavDropdown.Item href="/" onClick={() => dispatch({ type: types.signout })}>
+                <NavDropdown.Item href="/signin" onClick={() => dispatch({ type: types.signout })}>
                   Sign Out
                 </NavDropdown.Item>
               </>

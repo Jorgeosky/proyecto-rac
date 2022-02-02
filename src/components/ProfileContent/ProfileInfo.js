@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
 import UserContext from '../Context';
 
 export default function ProfileInfo() {
@@ -6,32 +7,44 @@ export default function ProfileInfo() {
   const { state } = useContext(UserContext);
   return (
     <div className="profileInfo">
-      <div className="top">
-        <img alt="profileImg" src="profile_icon.png" />
-        <div>
-          <h2>
-            Username:
-            {`${state.user.name} ${state.user.lastname}`}
-          </h2>
-          <h2>Rate: 4.5</h2>
-        </div>
-      </div>
       <div className="infoProfile">
-        <h5>
-          E-Mail:
-          {state.user.email}
-        </h5>
-        <h5>
-          Phone Number:
-          {state.user.number}
-        </h5>
-        <h5>
-          city:
-          {state.user.city}
-        </h5>
+        <h1 className="username">{`${state.user.firstName} ${state.user.lastName}.`}</h1>
+        <div className="info">
+          <p>User info</p>
+          <ul>
+            <li>
+              <p>Email address</p>
+              <p>{state.user.email}</p>
+            </li>
+            <li>
+              <p>Phone number</p>
+              <p>{state.user.number}</p>
+            </li>
+            <li>
+              <p>City</p>
+              <p>{state.user.city}</p>
+            </li>
+            <li>
+              <p>Cars rented</p>
+              <p>{state.user.city}</p>
+            </li>
+          </ul>
+        </div>
         {type === 'renter' ?? <h4>License Number:</h4>}
       </div>
-      <div className="infoCars">
+      <div className="userCard">
+        <img alt="profileImg" src="profile_icon.png" />
+        <div className="btnOptions">
+          <Link to="/profile/editprofile">
+            <button type="button">Edit profile</button>
+          </Link>
+          <Link to="/profile/uploadcar">
+            <button type="button">Upload car</button>
+          </Link>
+        </div>
+      </div>
+
+      {/* <div className="infoCars">
         {type === 'renter' ? (
           <div>Cars Rented</div>
         ) : (
@@ -41,7 +54,7 @@ export default function ProfileInfo() {
             <div>Total Earn</div>
           </>
         )}
-      </div>
+      </div> */}
     </div>
   );
 }

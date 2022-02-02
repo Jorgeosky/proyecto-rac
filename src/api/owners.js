@@ -12,11 +12,15 @@ export async function ownerSignUp(payload) {
     return error;
   }
 }
+export async function sendOwner(payload) {
+  await http.post('/owners/initSignUp', payload);
+}
 export async function ownerSignIn(payload) {
   try {
     const { data: response } = await http.post('/owners/signin', payload);
     const { meta } = response;
     const { token } = meta;
+
     setSession(token);
     return response;
   } catch (error) {
