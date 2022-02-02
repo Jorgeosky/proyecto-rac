@@ -207,7 +207,8 @@
           height: 35px;
           width: 100% !important;
           align-self: center;
-          padding: 3px 50px;
+          padding: 3px 120px;
+          padding-left: 10px;
           margin-top: 10px;
           font-family: 'Basis Grotesque Pro';
           font-size: 13px;
@@ -231,7 +232,7 @@
           gap: 15px;
 
           .field {
-            width: 49%;
+            width: 100%;
           }
         }
         .passwordField {
