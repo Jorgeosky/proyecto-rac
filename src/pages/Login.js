@@ -9,11 +9,13 @@ import UserContext from '../components/Context';
 import { types } from '../types/types';
 import { SingInSchema } from '../schemas/formSchemas';
 import { ownerSignIn } from '../api/owners';
+import { userSignIn } from '../api/users';
 
 const type = '';
 
 export default function Login() {
-  const { dispatch } = useContext(UserContext);
+  const { state, dispatch } = useContext(UserContext);
+  console.log(state);
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
   const {
@@ -29,38 +31,46 @@ export default function Login() {
   });
 
   async function OnSubmit(dataForm) {
-    try {
-      const { data } = await ownerSignIn(dataForm);
-      dispatch({
-        type: types.signin,
-        payload: {
-          user: { ...data, type },
-          isLoggedIn: true,
-        },
-      });
-      console.log(data);
-      navigate('/profile');
-    } catch (error) {
-      Swal.fire({
-        title: 'Error!',
-        text: 'No estas registrado',
-        icon: 'error',
-        confirmButtonText: 'Done',
-      });
-    }
-
-    /* if (UserExample.email === email.value && UserExample.password === password.value) {
-      dispatch({
-        type: types.signin,
-        payload: {
-          user: { ...UserExample, type },
-          isLoggedIn: true,
-        },
-      });
-      navigate('/profile');
+    if (state.type === 'renter') {
+      const { data } = await userSignIn(dataForm);
+      if (data) {
+        dispatch({
+          type: types.signin,
+          payload: {
+            user: { ...data, type },
+            isLoggedIn: true,
+          },
+        });
+        navigate('/profile');
+      } else {
+        Swal.fire({
+          title: 'Error!',
+          text: 'No estas registrado',
+          icon: 'error',
+          confirmButtonText: 'Done',
+        });
+      }
     } else {
-      // alert('email or password incorrect!');
-    } */
+      const { data } = await ownerSignIn(dataForm);
+      if (data) {
+        dispatch({
+          type: types.signin,
+          payload: {
+            user: { ...data, type },
+            isLoggedIn: true,
+          },
+        });
+        navigate('/profile');
+      } else {
+        console.log('hola');
+        Swal.fire({
+          title: 'Error!',
+          text: 'No estas registrado',
+          icon: 'error',
+          confirmButtonText: 'Done',
+        });
+      }
+    }
   }
 
   return (

@@ -47,7 +47,7 @@ body,
 
 .modal-filter {
   .modal-body {
-    max-height: 320px;
+    max-height: 300px;
     padding: 8px 12px;
   }
 
@@ -108,11 +108,12 @@ main {
     color: $white;
   }
   .vehicle-card__body {
-    padding: 15px 15px 0 15px;
+    padding: 15px 15px 10px 15px;
     .vehicle-card__title {
       font-family: 'Basis Grotesque Pro Black';
+      font-size: 20px;
     }
-    .vehicle-card__text {
+    /* .vehicle-card__text {
       color: #121214;
       font-size: 16px;
       font-family: 'Basis Grotesque Pro';
@@ -123,27 +124,32 @@ main {
         padding: 2px 0;
         color: rgb(89, 60, 251);
       }
-    }
+      p {
+        font-size: 16px;
+        font-family: 'Basis Grotesque Pro Medium';
+      }
+    } */
   }
   .vehicle-card__footer {
     border-top: 1px solid rgb(231, 231, 232);
     display: flex;
-    flex-direction: column;
-    padding: 15px 15px 10px 15px;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 15px 15px 8px 15px;
     color: #121214;
+    .vehicle-card__text p {
+      color: #121214;
+      font-size: 18px;
+      font-family: 'Basis Grotesque Pro Medium';
+      margin-bottom: 10px;
+    }
     .vehicle-card__price {
+      margin-right: 10px;
+      color: #121214;
       display: flex;
+      font-size: 18px;
       justify-content: flex-end;
       font-family: 'Basis Grotesque Pro Black';
-    }
-    .vehicle-card__total {
-      color: #7f7f80;
-      align-self: flex-end;
-      text-decoration: underline;
-      font-family: 'Basis Grotesque Pro';
-      font-size: 12px;
-
-      line-height: 24px;
     }
   }
 }
