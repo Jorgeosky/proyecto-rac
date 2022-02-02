@@ -5,6 +5,7 @@ import { ownerSignUp } from '../api/owners';
 import { userSignUp } from '../api/users';
 import UserContext from '../components/Context';
 import { types } from '../types/types';
+import '../styles/components/_emailVerified.scss'
 
 export function EmailVerified() {
   const navigate = useNavigate();
@@ -44,12 +45,14 @@ export function EmailVerified() {
     }
   };
   return (
-    <div>
-      <h1> Email Verified!!</h1>
-
-      <button onClick={handleSignUp} type="button">
-        Go to Home
-      </button>
+    <div className="contenedor">
+      <div className="card text-center bg-dark animate__animated animate__fadeInUp">
+        <h5 className="card-title">Welcome...</h5>
+        <h6 className="card-subtitle mb-2 text-muted">Email Verified!!</h6>
+        <button onClick={handleSignUp} type="button">
+          Go to Home{' '}
+        </button>
+      </div>
     </div>
   );
 }

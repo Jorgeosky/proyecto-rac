@@ -1,0 +1,30 @@
+.contenedor{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(
+    180deg,
+    rgb(134, 133, 133) 0%,
+    rgb(95, 94, 94) 15%,
+    rgb(63, 61, 62) 30%,
+    rgb(37, 36, 37) 45%,
+    rgb(8, 4, 8) 100%
+  );
+
+}
+
+.card{
+  box-shadow: 5px 10px 20px 1px rgba(235, 231, 231, 0.273) !important;
+  width: 50%;
+  font-size: 2em;
+  font-family: RlFreight, HoeflerText-Black, serif;
+  border-radius: 12px;
+  border: 1px solid black;
+  color: rgb(253, 253, 253);
+  text-align: center;
+  padding: 20px;
+  margin: 70px;
+  
+}
+
+
