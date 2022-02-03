@@ -20,6 +20,8 @@ export default function ProfileInfo({ setState }) {
   });
   const image = cld.image(user.photo);
 
+  console.log(image.publicID);
+
   return (
     <>
       <Row className="g-2 pt-5 mb-3">
@@ -31,7 +33,7 @@ export default function ProfileInfo({ setState }) {
               onClick={handleModalOpen}
               role="button"
               style={{ marginRight: '85px' }}>
-              {image ? (
+              {image.publicID ? (
                 <AdvancedImage
                   className="card-img-top"
                   cldImg={image}
@@ -94,6 +96,7 @@ export default function ProfileInfo({ setState }) {
 
           <button
             className="btn btn-primary"
+            onClick={() => setState('editDocuments')}
             style={{ height: '50px', padding: '0 30px' }}
             type="button">
             Upload Car

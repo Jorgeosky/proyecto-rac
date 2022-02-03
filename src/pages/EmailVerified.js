@@ -35,8 +35,8 @@ export function EmailVerified() {
   }, [dispatch, state.type, token]);
 
   return (
-    <div className="container center">
-      <div className="card">
+    <div className="containerEmail centerEmail">
+      <div className="cardEmail">
         <h1>Welcome!</h1>
         <hr />
         <p>Your email has been successfully verified.</p>

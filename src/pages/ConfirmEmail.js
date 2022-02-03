@@ -2,8 +2,8 @@ import React from 'react';
 
 export default function ConfirmEmail() {
   return (
-    <div className="container center">
-      <div className="card">
+    <div className="containerEmail centerEmail">
+      <div className="cardEmail">
         <img alt="Hi" src="Hi.png" />
         <hr />
         <h1>Please confirm your email.</h1>

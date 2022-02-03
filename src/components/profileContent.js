@@ -34,7 +34,7 @@ export default function ProfileContent() {
     case 'editDocuments':
       content = (
         <div className="profileContent">
-          <UploadCar />
+          <UploadCar setState={setStateProfile} />
         </div>
       );
       break;
@@ -44,29 +44,5 @@ export default function ProfileContent() {
       break;
   }
 
-  return (
-    <Container fluid>
-      {content}
-
-      {/* {stateProfile === 'profile' && (
-        <Container>
-          <div className="d-flex justify-content-around gap-5">
-            <button
-              className="btn btn-primary"
-              onClick={() => setStateProfile('editProfile')}
-              type="button">
-              Edit Profile
-            </button>
-
-            <button
-              className="btn btn-primary"
-              onClick={() => setStateProfile('editDocuments')}
-              type="button">
-              Upload Car
-            </button>
-          </div>
-        </Container>
-      )} */}
-    </Container>
-  );
+  return <Container fluid>{content}</Container>;
 }
