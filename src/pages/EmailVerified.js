@@ -35,17 +35,20 @@ export function EmailVerified() {
   }, [dispatch, state.type, token]);
 
   return (
-    <div>
-      <h1> Email Verified!!</h1>
-
-      <button
-        onClick={() => {
-          dispatch({ type: types.signout });
-          navigate('/signin');
-        }}
-        type="button">
-        Go to Home
-      </button>
+    <div className="container center">
+      <div className="card">
+        <h1>Welcome!</h1>
+        <hr />
+        <p>Your email has been successfully verified.</p>
+        <button
+          onClick={() => {
+            dispatch({ type: types.signout });
+            navigate('/signin');
+          }}
+          type="button">
+          Go to Home
+        </button>
+      </div>
     </div>
   );
 }
