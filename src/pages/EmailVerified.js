@@ -44,12 +44,16 @@ export function EmailVerified() {
     }
   };
   return (
-    <div>
-      <h1> Email Verified!!</h1>
+    <div className="container center">
+      <div className="card">
+        <h1>Welcome!</h1>
+        <hr />
 
-      <button onClick={handleSignUp} type="button">
-        Go to Home
-      </button>
+        <p>Your email has been successfully verified.</p>
+        <button onClick={handleSignUp} type="button">
+          Go to Home
+        </button>
+      </div>
     </div>
   );
 }
