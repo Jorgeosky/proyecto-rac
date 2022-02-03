@@ -1,51 +1,106 @@
-import React, { useContext } from 'react';
+import { format } from 'date-fns';
+import React, { useContext, useState } from 'react';
+import { Col, Container, Row } from 'react-bootstrap';
+import { Cloudinary } from '@cloudinary/url-gen';
+import { AdvancedImage } from '@cloudinary/react';
 import UserContext from '../Context';
+import { ModalPhoto } from './ModalPhoto';
+import { CLOUD_NAME } from '../../api/consts';
 
-export default function ProfileInfo() {
-  const type = 'renter';
-  const { state } = useContext(UserContext);
+export default function ProfileInfo({ setState }) {
+  const {
+    state: { user },
+  } = useContext(UserContext);
+  const [modalShow, setModalShow] = useState(false);
+  const handleModalOpen = () => setModalShow(true);
+  const cld = new Cloudinary({
+    cloud: {
+      cloudName: CLOUD_NAME,
+    },
+  });
+  const image = cld.image(user.photo);
+
   return (
-    <div className="profileInfo">
-      <div className="infoProfile">
-        <h1 className="username">{`${state.user.firstName} ${state.user.lastName}.`}</h1>
-        <div className="info">
-          <p>User info</p>
-          <ul>
-            <li>
-              <p>Email address</p>
-              <p>{state.user.email}</p>
-            </li>
-            <li>
-              <p>Phone number</p>
-              <p>{state.user.number}</p>
-            </li>
-            <li>
-              <p>City</p>
-              <p>{state.user.city}</p>
-            </li>
-            <li>
-              <p>Cars rented</p>
-              <p>{state.user.city}</p>
-            </li>
-          </ul>
-        </div>
-        {type === 'renter' ?? <h4>License Number:</h4>}
-      </div>
-      <div className="userCard">
-        <img alt="profileImg" src="profile_icon.png" />
-      </div>
+    <>
+      <Row className="g-2 pt-5 mb-3">
+        <Col className="p-0 " md={5} sm={6}>
+          <div className="userCard">
+            <div
+              aria-hidden="true"
+              className="align-self-center cursor-pointer"
+              onClick={handleModalOpen}
+              role="button"
+              style={{ marginRight: '85px' }}>
+              {image ? (
+                <AdvancedImage
+                  className="card-img-top"
+                  cldImg={image}
+                  style={{
+                    marginTop: '16px',
+                    width: '135px',
+                    height: '148px',
+                    borderRadius: '50%',
+                  }}
+                />
+              ) : (
+                <img alt="profileImg" src="profile_icon.png" />
+              )}
+            </div>
+            <div className="pe-5">
+              <p className="featureTitle">About</p>
+              <div className="aboutBox">
+                <p className="profileAbout">{user.about}</p>
+              </div>
+            </div>
+          </div>
+        </Col>
+        <Col className="p-0 " md={7} sm={6}>
+          <div className="infoProfile px-3">
+            <h1 className="username">{`${user.firstName} ${user.lastName[0]}.`}</h1>
+            <p className="joinedTime">Joined {format(new Date(user.createdAt), 'MMM yyyy')}</p>
+            <div className="info">
+              <p className="featureTitle">User info</p>
+              <ul>
+                <li>
+                  <p>Email address:</p>
+                  <p>{user.email}</p>
+                </li>
+                <li>
+                  <p>Phone number:</p>
+                  <p>{user.cellphone}</p>
+                </li>
+                <li>
+                  <p>Country:</p>
+                  <p>{user.country}</p>
+                </li>
+                <li>
+                  <p>State:</p>
+                  <p>{user.state}</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </Col>
+      </Row>
+      <Container>
+        <div className="d-flex justify-content-between px-2">
+          <button
+            className="btn btn-primary"
+            onClick={() => setState('editProfile')}
+            style={{ height: '50px', padding: '0 30px' }}
+            type="button">
+            Edit Profile
+          </button>
 
-      {/* <div className="infoCars">
-        {type === 'renter' ? (
-          <div>Cars Rented</div>
-        ) : (
-          <>
-            <div>Your Cars</div>
-            <div>Hired Cars</div>
-            <div>Total Earn</div>
-          </>
-        )}
-      </div> */}
-    </div>
+          <button
+            className="btn btn-primary"
+            style={{ height: '50px', padding: '0 30px' }}
+            type="button">
+            Upload Car
+          </button>
+        </div>
+      </Container>
+      <ModalPhoto setShow={setModalShow} show={modalShow} />
+    </>
   );
 }

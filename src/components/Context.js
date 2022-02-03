@@ -1,7 +1,7 @@
 import { createContext, useMemo, useReducer } from 'react';
 import { initialState, reducer } from './Reducer';
 
-const UserContext = createContext(null);
+const UserContext = createContext();
 
 function UserProvider({ children }) {
   const [state, dispatch] = useReducer(reducer, initialState);

@@ -10,6 +10,7 @@ instance.interceptors.request.use(
   (config) => {
     // Do something before request is sent
     const token = getSession();
+
     if (token) {
       config.headers.Authorization = `Bearer ${token}`;
     }

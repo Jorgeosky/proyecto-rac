@@ -41,6 +41,12 @@
         "allow": [] // add alowed variables
       }
     ],
+    "react/function-component-definition": [
+      2,
+      {
+        "namedComponents": ["function-declaration", "function-expression", "arrow-function"]
+      }
+    ],
     "no-use-before-define": 0,
     "react/react-in-jsx-scope": "off",
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
