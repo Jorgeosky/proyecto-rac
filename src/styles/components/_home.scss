@@ -1,0 +1,254 @@
+.Home {
+  position: absolute;
+  width: 100%;
+  min-height: 100%;
+  left: 0px;
+  top: 0px;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0px;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  left: 0px;
+  top: 0px;
+
+  .Header {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    background: url(http://trade-submit.com/wp-content/uploads/2019/10/How-To-Choose-The-Right-Rental-Car.jpg);
+
+    width: 100%;
+    height: 80%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    .Top {
+      margin-top: 30px;
+      background-color: rgba(255, 255, 255, 0.7);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 80%;
+      height: 40%;
+      justify-content: space-around;
+
+      .LinkText {
+        text-decoration: none;
+        background-color: lightskyblue;
+        border: 1px solid gray;
+        width: 10%;
+        height: 20%;
+        color: white;
+        border-radius: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        button {
+          background-color: transparent;
+          text-decoration: none;
+          color: white;
+          border: 0px solid transparent;
+          font-weight: bolder;
+          font-size: 20px;
+        }
+      }
+    }
+
+    #homeLogo {
+      position: static;
+
+      color: rgb(196, 171, 134);
+    }
+
+    .TransportType {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-around;
+
+      width: 340px;
+      height: 31px;
+
+      #carType {
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 19px;
+        /* identical to box height */
+
+        color: #000000;
+      }
+      #truckType {
+        color: #000000;
+      }
+      #bikeType {
+        color: #000000;
+      }
+    }
+    .UserOptions {
+      display: flex;
+      align-items: center;
+
+      .BecomeHost {
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 16px;
+
+        color: #000000;
+      }
+
+      .UserMenu {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 5px 10px;
+
+        position: static;
+        width: 73px;
+        height: 34px;
+        left: 114px;
+        top: 0px;
+
+        background: #ffffff;
+        border: 1px solid #a1a1a1;
+        box-sizing: border-box;
+        border-radius: 35px;
+
+        /* Inside Auto Layout */
+
+        flex: none;
+        order: 2;
+        flex-grow: 0;
+        margin: 0px 20px;
+
+        .dropbtn {
+          width: 18px;
+          height: 18px;
+          left: 10px;
+          top: 8px;
+        }
+
+        .dropdown {
+          position: relative;
+          display: inline-block;
+        }
+
+        .dropdown-content {
+          display: none;
+          position: absolute;
+          background-color: #f1f1f1;
+          min-width: 160px;
+          box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+          z-index: 1;
+
+          a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+          }
+          a:hover {
+            background-color: #ddd;
+          }
+        }
+
+        .User {
+          position: static;
+          width: 24px;
+          height: 24px;
+          left: 39px;
+          top: 5px;
+
+          background: #a1a1a1;
+          border-radius: 17px;
+
+          flex: none;
+          order: 1;
+          flex-grow: 0;
+          margin-left: 10px;
+        }
+      }
+
+      .UserMenu:hover .dropdown-content {
+        display: block;
+      }
+    }
+  }
+
+  .Search {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    position: static;
+    width: 834px;
+    height: 66px;
+    top: 95px;
+    background: #ffffff;
+    border-radius: 50px;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    margin: 20px 0px;
+
+    #location {
+      width: 300px;
+      height: 66px;
+
+      background: #ffffff00;
+      border-radius: 46px;
+      border-color: #ffffff00;
+
+      margin: 0px 0px 0px 10px;
+    }
+    .VLine {
+      width: 51px;
+      height: 0px;
+
+      border: 1px solid #aaaaaa;
+      transform: rotate(90deg);
+    }
+    #startDate {
+      width: 170px;
+      height: 66px;
+
+      background: #ffffff00;
+      border-radius: 46px;
+      border-color: #ffffff00;
+    }
+
+    #endDate {
+      width: 170px;
+      height: 66px;
+
+      background: #ffffff00;
+      border-radius: 46px;
+      border-color: #ffffff00;
+    }
+    .SearchButton {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-left: 10px;
+      padding-right: 10px;
+
+      width: max-content;
+      height: 47px;
+
+      background: #aaaaaa;
+      border-radius: 65px;
+      border-color: #ffffff00;
+
+      margin: 0px 5px;
+    }
+  }
+}
