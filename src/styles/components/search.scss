@@ -99,6 +99,9 @@ main {
 .main__vehicle-card {
   height: 100%;
   position: relative;
+  &:hover {
+    opacity: 0.85;
+  }
   .vehicle-card__like {
     position: absolute;
     right: 0;

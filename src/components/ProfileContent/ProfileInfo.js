@@ -20,8 +20,6 @@ export default function ProfileInfo({ setState }) {
   });
   const image = cld.image(user.photo);
 
-  console.log(image.publicID);
-
   return (
     <>
       <Row className="g-2 pt-5 mb-3">

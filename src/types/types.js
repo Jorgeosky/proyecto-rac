@@ -4,4 +4,5 @@ export const types = {
   signout: 'LOGOUT',
   type: 'TYPES',
   profile: 'PROFILE',
+  create: 'CREATECAR',
 };

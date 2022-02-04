@@ -51,6 +51,7 @@ export const reducer = (state, action) => {
         user: action.payload.user,
       };
     }
+
     default:
       return state;
   }

@@ -19,7 +19,7 @@
     align-self: center;
     padding: 0px 120px;
     padding-left: 10px;
-    margin-top: 5px;
+
     font-family: 'Basis Grotesque Pro';
     font-size: 15px;
     font-weight: bold;
@@ -31,7 +31,9 @@
     outline: none;
     border: 1px solid rgb(0, 0, 0);
   }
-
+  .inputGroup {
+    flex-wrap: nowrap;
+  }
   .doubleInput {
     width: 100%;
     display: flex;
