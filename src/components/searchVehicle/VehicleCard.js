@@ -1,7 +1,30 @@
 import React from 'react';
 import { Card, Col } from 'react-bootstrap';
+import { MERCADOPAGO_KEY, URL_URI } from '../../api/consts';
+import { useMercadoPago } from "../../hooks/mercadopago";
 
 export function VehicleCard({ model, url, price, type }) {
+  const mercadopago = useMercadoPago(MERCADOPAGO_KEY);
+
+  async function pay() {
+    console.log(MERCADOPAGO_KEY);
+    const response = await fetch(`${URL_URI}/payments`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ cars: { name: model, price } }),
+    });
+    const data = await response.json();
+
+    const checkout = mercadopago.checkout({
+      preference: {
+        id: data.preferenceId,
+      },
+    })
+    checkout.open()
+  }
+
   return (
     <Col>
       <Card className="main__vehicle-card ">
@@ -19,7 +42,7 @@ export function VehicleCard({ model, url, price, type }) {
             <p>Type: {type}</p>
           </div>
           <div className="vehicle-card__price">
-            <span>{`$ ${price}/day`}</span>
+            <span>{`$ ${price}/day`}<button onClick={pay} type='button'>comprar</button></span>
           </div>
         </div>
       </Card>
