@@ -1,0 +1,158 @@
+.carPage {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  .carCard {
+    width: 100%;
+    display: flex;
+    justify-self: center;
+    flex-direction: column;
+
+    img {
+      align-self: center;
+      width: 90%;
+      height: 408.23px;
+      object-fit: cover;
+    }
+  }
+  .carInfo {
+    align-self: center;
+    width: 83%;
+    p {
+      margin-top: 15px;
+      color: #121214;
+      margin-bottom: 0;
+      font-family: 'Basis Grotesque Pro Regular';
+      font-size: 16px;
+      font-weight: 500;
+      letter-spacing: 0;
+      line-height: 16px;
+      text-transform: none;
+    }
+
+    #model {
+      margin-top: 5px;
+      color: #121214;
+      margin-bottom: 0;
+      font-family: 'Basis Grotesque Pro Bold';
+      font-size: 38px;
+      font-weight: 900;
+      letter-spacing: -0.2px;
+      line-height: 44px;
+      text-transform: none;
+    }
+  }
+
+  .priceCar {
+    margin-top: 15px;
+    width: 100%;
+    border: 1px solid #e7e7e8;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px green 15%;
+    box-sizing: border-box;
+    min-height: 76px;
+
+    .priceCarContainer {
+      align-items: center;
+      display: flex;
+      justify-content: space-between;
+      padding-left: 100px;
+      padding-right: 100px;
+
+      p {
+        margin-top: 23px;
+        color: rgb(18, 18, 20);
+        font-family: 'Basis Grotesque Pro Bold';
+        font-size: 16px;
+        letter-spacing: 0px;
+        line-height: 20px;
+        text-transform: none;
+      }
+
+      button {
+        height: 44px;
+        width: 120px;
+        border: 1px solid #593cfb;
+        background-color: #593cfb;
+        color: #ffff;
+        margin-top: 15px;
+        font-family: 'Basis Grotesque Pro Bold';
+        font-size: 16px;
+        text-align: center;
+        padding: 0 19px;
+        cursor: pointer;
+        transition: 0.8s all ease;
+      }
+      button:hover {
+        background-color: #23108d;
+      }
+    }
+  }
+
+  .hostedInfo {
+    margin-top: 15px;
+    align-self: center;
+    width: 83%;
+
+    h2 {
+      margin: 0;
+      color: #121214;
+      margin-bottom: 8px;
+      text-align: left;
+      font-family: 'Basis Grotesque Pro Bold';
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 0.5px;
+      line-height: 16px;
+      text-transform: uppercase;
+    }
+
+    .hostedInfoCard {
+      display: flex;
+      flex-direction: row;
+      margin-top: 15px;
+      margin-bottom: 50px;
+
+      img {
+        width: 90px;
+        height: 90px;
+        border-radius: 50%;
+      }
+      ul {
+        margin-top: 15px;
+        margin-bottom: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 25%;
+
+        li {
+          list-style: none;
+          display: flex;
+          justify-content: space-between;
+
+          span {
+            color: #121214;
+            margin-bottom: 0;
+            font-family: 'Basis Grotesque Pro Bold';
+            font-size: 21px;
+            font-weight: 900;
+            letter-spacing: -0.2px;
+            line-height: 28px;
+            text-transform: none;
+            margin-bottom: 10px;
+          }
+
+          p {
+            color: rgb(18, 18, 20);
+            font-size: 16px;
+            font-weight: 400;
+            letter-spacing: 0px;
+            text-transform: none;
+          }
+        }
+      }
+    }
+  }
+}
