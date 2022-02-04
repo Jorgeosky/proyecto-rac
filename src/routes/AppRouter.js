@@ -11,6 +11,7 @@ import { EmailVerified } from '../pages/EmailVerified';
 import { NavbarSearch } from '../components/searchVehicle/NavbarSearch';
 import { UserProvider } from '../components/Context';
 import ChangePassword from '../pages/ChangePassword';
+import CarPage from '../pages/CarPage';
 
 export function AppRouter() {
   return (
@@ -25,6 +26,7 @@ export function AppRouter() {
           <Route element={<ChangePassword />} path="/changepass" />
           <Route element={<SignUp />} path="/signup" />
           <Route element={<SearchPage />} path="/search" />
+          <Route element={<CarPage />} path="/carpage" />
           <Route element={<ConfirmEmail />} path="/confirmemail" />
           <Route path="/emailverified">
             <Route element={<EmailVerified />} path=":token" />
