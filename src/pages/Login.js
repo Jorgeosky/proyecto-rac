@@ -37,7 +37,7 @@ export default function Login() {
         dispatch({
           type: types.signin,
           payload: {
-            user: { ...data, type },
+            user: { ...data },
             isLoggedIn: true,
           },
         });
@@ -56,7 +56,7 @@ export default function Login() {
         dispatch({
           type: types.signin,
           payload: {
-            user: { ...data, type },
+            user: { ...data },
             isLoggedIn: true,
           },
         });

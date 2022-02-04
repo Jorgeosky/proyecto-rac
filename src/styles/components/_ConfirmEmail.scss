@@ -5,7 +5,7 @@ $point-light: lighten($point, 5%);
 $ratio: 1.618;
 $card_width: 300px;
 $card_height: 100px;
-$card_padding: 20px;
+$card_padding: 35px;
 $card-bgcolor: white;
 $card_margin: 5px;
 $card_round: 10px;
@@ -14,7 +14,7 @@ $card-shadow: -20px -20px 0px 0px $point-light;
 $card-padding-basis: 15px;
 $card_head_padding: 0px 0px $card-padding-basis 0px;
 
-.container {
+.containerEmail {
   width: 80%;
   min-height: 100vh;
   display: flex;
@@ -25,20 +25,20 @@ $card_head_padding: 0px 0px $card-padding-basis 0px;
   margin-right: auto;
 }
 
-.center {
+.centerEmail {
   align-items: flex-start;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
 }
 
-.card {
+.cardEmail {
   width: $card_width;
   min-height: $card_height;
 
   display: flex;
   padding: $card_padding;
-  margin-top: 80px;
+  margin-top: 200px;
 
   box-shadow: $card-shadow;
   border-radius: $card_round;
@@ -93,18 +93,18 @@ $card_head_padding: 0px 0px $card-padding-basis 0px;
   }
 
   button {
-    height: 34px;
     width: 100%;
     align-self: center;
     outline: none;
     border: 1px solid #593cfb;
+    border-radius: 10px;
     background-color: #593cfb;
     color: #ffff;
-    margin-top: 15px;
+    margin-top: 25px;
     font-family: 'Basis Grotesque Pro Bold';
     font-size: 18px;
     text-align: center;
-    padding: 0 19px;
+    padding: 7px 19px;
     cursor: pointer;
     transition: 0.8s all ease;
   }

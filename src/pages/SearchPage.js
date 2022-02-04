@@ -7,7 +7,8 @@ import queryString from 'query-string';
 import { NavbarSearch } from '../components/searchVehicle/NavbarSearch';
 import { SearchButtons } from '../components/searchVehicle/SearchButtons';
 import { VehicleList } from '../components/searchVehicle/VehicleList';
-import { carData } from '../data/searchVehicle';
+import { useCars } from '../hooks/useCars';
+// import { carData } from '../data/searchVehicle';
 import {
   FilterCarsByMake,
   FilterCarsByPrice,
@@ -28,16 +29,26 @@ const center = {
 
 export default function SearchPage() {
   const location = useLocation();
-  const { price, vehicletype, vehiclemake, numberseats } = queryString.parse(location.search);
-  let carArray = carData;
+  const {
+    price_min: priceMin,
+    price_max: priceMax,
+    type,
+    make,
+    seats,
+  } = queryString.parse(location.search);
+  console.log(priceMin, priceMax, type, make, seats);
 
-  if (price) carArray = FilterCarsByPrice(carArray, price);
-  if (vehicletype) carArray = FilterCarsByType(carArray, vehicletype);
-  if (vehiclemake) carArray = FilterCarsByMake(carArray, vehiclemake);
-  if (numberseats) carArray = FilterCarsBySeats(carArray, numberseats);
-  /* if (vehiclemake) carArray = FilterCarsByPrice(carArray, price);
-  if (numberseats) carArray = FilterCarsByPrice(carArray, price); */
+  const {
+    cars: { data = [] },
+  } = useCars();
+  console.log(data);
+  let carArray = data;
 
+  if (priceMin && priceMax) carArray = FilterCarsByPrice(carArray, priceMin, priceMax);
+  if (type) carArray = FilterCarsByType(carArray, type);
+  if (make) carArray = FilterCarsByMake(carArray, make);
+  if (seats) carArray = FilterCarsBySeats(carArray, seats);
+  console.log(carArray);
   return (
     <>
       <header className="header">

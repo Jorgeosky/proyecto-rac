@@ -14,6 +14,7 @@ export default function SignUp() {
   const [terms, setTerms] = useState(false);
   const [showPassword, setShowPassword] = useState({ password1: false, password2: false });
   const { state } = useContext(UserContext);
+
   const {
     register,
     handleSubmit,

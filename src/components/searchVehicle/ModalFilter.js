@@ -4,22 +4,24 @@ import { useNavigate } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
 
 import { numberSeats, vehicleMakes, vehicleType } from '../../data/searchVehicle';
-import { PrettoSlider, useStyles } from './SliderPrice';
+import { PrettoSlider } from './SliderPrice';
 
 export function ModalFilter({ show, setShow }) {
   const handleClose = () => setShow(false);
-  const [value, setValue] = React.useState(50);
-  const classes = useStyles();
+  const [value, setValue] = React.useState([30, 200]);
+
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const slide = e.target[0].value;
-    const select1 = e.target[1].value;
-    const select2 = e.target[2].value;
-    const select3 = parseInt(e.target[3].value, 10) + 3 || '';
+    const select1 = e.target[2].value;
+    const select2 = e.target[3].value;
+    const select3 = parseInt(e.target[4].value, 10) + 3 || '';
+    console.log(select2);
     navigate(
-      `?price=${slide}&vehicletype=${select1}&vehiclemake=${select2}&numberseats=${select3.toString()}`,
+      `?price_min=${value[0]}&price_max=${
+        value[1]
+      }&type=${select1}&make=${select2}&seats=${select3.toString()}`,
     );
 
     setShow(false);
@@ -27,6 +29,7 @@ export function ModalFilter({ show, setShow }) {
   const handleSliderChange = (event, newValue) => {
     setValue(newValue);
   };
+
   return (
     <Modal className="modal-filter" onHide={handleClose} scrollable="on" show={show}>
       <div className="mt-3 me-3 text-end">
@@ -39,17 +42,23 @@ export function ModalFilter({ show, setShow }) {
         />
       </div>
       <Form className="ms-3" onSubmit={handleSubmit}>
-        <Modal.Body>
+        <Modal.Body className="pe-5">
           <Form.Group className="mb-2" controlId="formGridRating">
             <Form.Label>Price</Form.Label>
-            <p className={classes.price}>{`$50 - ${value}/day`}</p>
+            <p
+              style={{
+                fontFamily: 'Basis Grotesque Pro Medium',
+                marginLeft: '4px',
+                marginBottom: '0px',
+              }}>{`$${value[0]} - $${value[1]}/day`}</p>
             <PrettoSlider
               aria-label="pretto slider"
-              defaultValue={50}
-              max={300}
-              min={50}
+              max={200}
+              min={30}
               onChange={handleSliderChange}
               step={5}
+              value={value}
+              valueLabelDisplay="auto"
             />
           </Form.Group>
 
