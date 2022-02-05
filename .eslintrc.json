@@ -3,7 +3,8 @@
     "browser": true,
     "es2021": true,
     "jest": true,
-    "jest/globals": true
+    "jest/globals": true,
+    "cypress/globals":true
   },
   "extends": [
     "eslint:recommended",
@@ -21,9 +22,15 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "plugins": ["react", "prettier", "react-hooks", "jest", "jest-dom"],
+  "plugins": ["react", "prettier", "react-hooks", "jest", "jest-dom", "cypress"],
 
   "rules": {
+    "rules": {
+      "jest/no-standalone-expect": [
+        "error",
+        { "additionalTestBlockFunctions": ["each.test"] }
+      ]
+    }, 
     "linebreak-style": 0,
     "no-console": "off",
     "indent": ["error", 2],
@@ -116,5 +123,5 @@
     "react": {
       "version": "detect"
     }
-  }
+  } 
 }
