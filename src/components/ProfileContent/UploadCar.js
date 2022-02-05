@@ -47,7 +47,7 @@ export default function UploadCar({ setState }) {
           <Form.Group as={Col} className="mb-3" controlId="upload1">
             <Form.Label className="m-0 mb-1">Model</Form.Label>
             <Form.Control
-              className="field"
+              className="field mt-0"
               name="model"
               onChange={handleInputChange}
               placeholder="Model of Car"
@@ -63,7 +63,7 @@ export default function UploadCar({ setState }) {
 
               <Form.Control
                 aria-describedby="inputGroupPrepend"
-                className="field"
+                className="field mt-0"
                 name="price"
                 onChange={handleInputChange}
                 placeholder="price"
@@ -148,10 +148,17 @@ export default function UploadCar({ setState }) {
           </Form.Group>
         </Row>
 
-        <button className="btn btn-primary ms-4 me-5" type="submit">
+        <button
+          className="btn btn-primary btn-large ms-5 me-5"
+          style={{ width: '40%' }}
+          type="submit">
           Submit
         </button>
-        <button className="btn btn-primary" onClick={() => setState('profile')} type="button">
+        <button
+          className="btn btn-primary btn-large"
+          onClick={() => setState('profile')}
+          style={{ width: '40%' }}
+          type="button">
           Return to Profile
         </button>
       </Form>

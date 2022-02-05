@@ -12,7 +12,7 @@
 
   .Container {
     height: 100%;
-    width: 40%;
+    width: 42%;
     display: flex;
     flex-direction: column;
 
@@ -25,7 +25,7 @@
         flex-direction: column;
 
         h2 {
-          font-family: 'Basis Grotesque Pro Regular ';
+          font-family: 'Basis Grotesque Pro';
           font-size: 38px;
           letter-spacing: -0.05em;
           letter-spacing: -0.2px;
@@ -43,7 +43,7 @@
             flex-direction: column;
             border: 1px solid rgba(35, 33, 48, 0);
             align-items: center;
-            font-family: 'Basis Grotesque Pro Regular ';
+            font-family: 'Basis Grotesque Pro';
             font-size: 38px;
             letter-spacing: -0.05em;
             letter-spacing: -0.2px;
@@ -62,7 +62,7 @@
         color: #3d3333;
         margin-top: 10px;
         margin-bottom: 20px;
-        font-family: 'Basis Grotesque Pro Regular ';
+        font-family: 'Basis Grotesque Pro';
         font-size: 20px;
         letter-spacing: -0.05em;
         letter-spacing: -0.2px;
@@ -73,117 +73,94 @@
         display: none;
       }
 
-      .Middle {
+      .passwordField {
         display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
+        width: 100%;
+        position: relative;
+      }
+      .passwordEye {
+        position: absolute;
+        top: 14px;
 
-        input {
-          border: 1px solid #c7c7c7;
-          height: 35px;
-          width: 100%;
-          align-self: center;
-          padding: 15px 10px;
-          margin-bottom: 20px;
-          font-family: 'Basis Grotesque Pro';
-          font-size: 13px;
-          font-weight: bold;
-          color: #7a7a7a;
-        }
+        left: calc(100% - 2.5em);
+      }
+      .passwordEye:hover {
+        cursor: pointer;
+      }
+      .passwordEye i {
+        color: black;
+        font-size: 14px;
+      }
+      /* .submit {
+        height: 50px;
+        width: 100%;
+        align-self: center;
+        outline: none;
+        border: 1px solid #593cfb;
+        background-color: #593cfb;
+        color: #ffff;
+        margin-top: 15px;
+        font-family: 'Basis Grotesque Pro Bold';
+        font-size: 18px;
+        text-align: center;
+        padding: 0 19px;
+        cursor: pointer;
+        transition: 0.8s all ease;
+      }
 
-        input::placeholder {
-          font-style: normal;
-          color: #3d4d46;
-        }
-        .passwordField {
+      .submit:hover {
+        background-color: #23108d;
+      }
+
+      input:hover,
+      input:focus,
+      .submit:hover {
+        outline: none;
+        border: 1px solid rgb(0, 0, 0);
+      } */
+
+      .google1 {
+        height: 50px;
+        width: 100%;
+        margin-top: 30px;
+        background-color: transparent;
+        border: 1px solid #7a7a7a;
+        border-radius: 0px;
+        cursor: pointer;
+
+        transition: 0.8s all ease;
+        .google {
+          color: rgb(18, 18, 20);
           display: flex;
           width: 100%;
-          position: relative;
-        }
-        .passwordEye {
-          position: absolute;
-          top: 6px;
-          left: calc(100% - 2.5em);
-        }
-        .passwordEye:hover {
-          cursor: pointer;
-        }
-        .passwordEye i {
-          color: black;
-          font-size: 14px;
-        }
-        .submit {
-          height: 50px;
-          width: 100%;
-          align-self: center;
-          outline: none;
-          border: 1px solid #593cfb;
-          background-color: #593cfb;
-          color: #ffff;
-          margin-top: 15px;
-          font-family: 'Basis Grotesque Pro Bold';
-          font-size: 18px;
-          text-align: center;
-          padding: 0 19px;
-          cursor: pointer;
-          transition: 0.8s all ease;
-        }
+          height: 100%;
+          flex-direction: row;
+          align-items: center;
+          justify-content: center;
 
-        .submit:hover {
-          background-color: #23108d;
-        }
-
-        input:hover,
-        input:focus,
-        .submit:hover {
-          outline: none;
-          border: 1px solid rgb(0, 0, 0);
-        }
-
-        .google1 {
-          height: 50px;
-          width: 100%;
-          margin-top: 30px;
-          background-color: transparent;
-          border: 1px solid #7a7a7a;
-          border-radius: 0px;
-          cursor: pointer;
-
-          transition: 0.8s all ease;
-          .google {
-            color: rgb(18, 18, 20);
+          p {
             display: flex;
-            width: 100%;
-            height: 100%;
-            flex-direction: row;
-            align-items: center;
-            justify-content: center;
+            font-family: 'Basis Grotesque Pro';
+            font-size: 18px;
+            margin-bottom: 0;
+          }
 
-            p {
-              display: flex;
-              padding-top: 14px;
-              font-family: 'Basis Grotesque Pro ';
-              font-size: 18px;
-            }
-
-            .imgGoogle {
-              width: auto;
-              height: 50%;
-              border-radius: 10px;
-              margin-right: 10px;
-            }
+          .imgGoogle {
+            width: auto;
+            height: 50%;
+            border-radius: 10px;
+            margin-right: 10px;
           }
         }
+      }
 
-        .google1:hover {
-          outline: none;
-          border: solid #000000;
-        }
+      .google1:hover {
+        outline: none;
+        border: solid #000000;
+      }
 
-        .google1:active {
-          background-color: #1a1f29;
-        }
+      .google1:active {
+        background-color: #1a1f29;
       }
     }
 
@@ -214,5 +191,23 @@
         color: #202925;
       }
     }
+  }
+}
+
+@media only screen and (max-width: 1500px) {
+  .Login .Container {
+    width: 60%;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .Login .Container {
+    width: 70%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .Login .Container {
+    width: 80%;
   }
 }

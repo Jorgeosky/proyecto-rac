@@ -12,9 +12,6 @@ export async function userSignUp(payload) {
     return error;
   }
 }
-export async function sendUser(payload) {
-  await http.post('/users/initSignUp', payload);
-}
 
 export async function userSignIn(payload) {
   try {

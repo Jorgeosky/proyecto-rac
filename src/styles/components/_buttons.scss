@@ -1,47 +1,59 @@
 .btn {
-	background-color: transparent;
-	border: none;
-	color: $dark-grey;
-	cursor: pointer;
-	font-size: 16px;
-	font-weight: 700;
-	line-height: 33px;
-	padding: 0px 18px;
-	text-align: center;
-	white-space: nowrap;
-	vertical-align: top;
-
-	&:focus {
-		outline: none;
-	}
+  background-color: transparent;
+  border: none;
+  color: $dark-grey;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 33px;
+  padding: 0px 18px;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: top;
+  outline: none;
+  &:focus {
+    outline: none;
+  }
 }
 .btn-white {
-	background-color: $white;
-	border-radius: 5px;
-	border: 1.5px solid #e7e7e8;
-	font-family: 'Basis Grotesque Pro Black';
+  background-color: $white;
+  border-radius: 5px;
+  border: 1.5px solid #e7e7e8;
+  font-family: 'Basis Grotesque Pro Black';
 
-	transition: background-color 0.6s ease;
-	&:disabled {
-		background-color: lighten($color: $white, $amount: 20);
-	}
-	&:hover {
-		background-color: darken($color: $white, $amount: 15);
-	}
+  transition: background-color 0.6s ease;
+  &:disabled {
+    background-color: lighten($color: $white, $amount: 20);
+  }
+  &:hover {
+    background-color: darken($color: $white, $amount: 15);
+  }
 }
 .btn-primary {
-	background-color: $primary;
-	border-radius: 3px;
-	border: 1px solid $primary;
-	font-family: 'Basis Grotesque Pro Black';
-	color: $white;
-	transition: background-color 0.6s ease;
-	&:disabled {
-		background-color: lighten($color: $primary, $amount: 20);
-	}
-	&:hover,
-	&:active,
-	&:focus {
-		background-color: darken($color: $primary, $amount: 20);
-	}
+  background-color: $primary;
+  border-radius: 3px;
+  border: 1px solid $primary;
+  font-family: 'Basis Grotesque Pro Black';
+  color: $white;
+  transition: background-color 0.6s ease;
+  &:disabled {
+    background-color: lighten($color: $primary, $amount: 20);
+  }
+  &:hover,
+  &:active,
+  &:focus {
+    background-color: darken($color: $primary, $amount: 20);
+  }
+}
+
+.btn-large {
+  height: 50px;
+  align-self: center;
+  margin-top: 15px;
+  font-size: 18px;
+  padding: 0 30px;
+}
+
+.btn-block {
+  width: 100%;
 }

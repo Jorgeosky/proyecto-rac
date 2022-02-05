@@ -29,7 +29,6 @@ export default function TypeUser() {
 
   const handleRenter = () => {
     setUser(false);
-
     dispatch({
       type: types.type,
       payload: { type: 'renter' },

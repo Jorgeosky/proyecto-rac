@@ -22,7 +22,7 @@ export default function ProfileInfo({ setState }) {
 
   return (
     <>
-      <Row className="g-2 pt-5 mb-3">
+      <Row className="g-2 pt-5 mb-3 mt-2">
         <Col className="p-0 " md={5} sm={6}>
           <div className="userCard">
             <div
@@ -85,17 +85,15 @@ export default function ProfileInfo({ setState }) {
       <Container>
         <div className="d-flex justify-content-between px-2">
           <button
-            className="btn btn-primary"
+            className="btn btn-primary btn-large"
             onClick={() => setState('editProfile')}
-            style={{ height: '50px', padding: '0 30px' }}
             type="button">
             Edit Profile
           </button>
 
           <button
-            className="btn btn-primary"
+            className="btn btn-primary btn-large"
             onClick={() => setState('editDocuments')}
-            style={{ height: '50px', padding: '0 30px' }}
             type="button">
             Upload Car
           </button>
