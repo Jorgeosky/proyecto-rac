@@ -53,7 +53,7 @@
       margin: 0px 0px 16px;
       color: rgb(137, 137, 137);
       font-family: 'Basis Grotesque Pro Bold';
-      font-size: 14px;
+      font-size: 15px;
       letter-spacing: 0.5px;
       line-height: 16px;
       text-transform: uppercase;
@@ -80,7 +80,7 @@
       .profileAbout {
         color: rgb(18, 18, 20);
         font-family: 'Basis Grotesque Pro';
-        font-size: 16px;
+        font-size: 16.5px;
         font-weight: 400;
         letter-spacing: 0px;
         text-transform: none;
@@ -93,7 +93,7 @@
         margin: 16px 0px 0px;
         color: rgb(18, 18, 20);
         font-family: 'Basis Grotesque Pro Bold';
-        font-size: 38px;
+        font-size: 40px;
         font-weight: 900;
         letter-spacing: -0.2px;
         line-height: 44px;
@@ -123,7 +123,7 @@
             p {
               color: rgb(18, 18, 20);
               font-family: 'Basis Grotesque Pro';
-              font-size: 16px;
+              font-size: 16.5px;
               font-weight: 400;
               letter-spacing: 0px;
               text-transform: none;
@@ -155,78 +155,6 @@
         letter-spacing: -0.2px;
         text-align: center;
         padding-bottom: 20px;
-      }
-
-      .field {
-        border: 1px solid #c7c7c7;
-        height: 40px;
-        width: 100% !important;
-        align-self: center;
-        padding: 0px 120px;
-        padding-left: 10px;
-        margin-top: 5px;
-        font-family: 'Basis Grotesque Pro';
-        font-size: 15px;
-        font-weight: bold;
-        color: #7a7a7a;
-      }
-
-      .field:hover,
-      .field:focus {
-        outline: none;
-        border: 1px solid rgb(0, 0, 0);
-      }
-
-      .doubleInput {
-        width: 100%;
-        display: flex;
-        height: 40px;
-        flex-direction: row;
-        justify-content: space-between;
-        margin-bottom: 15px;
-        gap: 15px;
-
-        .field {
-          height: 40px;
-          width: 100%;
-        }
-      }
-      .passwordField {
-        display: flex;
-        width: 100%;
-        position: relative;
-        margin-top: 10px;
-      }
-      .passwordField input {
-        margin-top: 0;
-      }
-      .passwordEye {
-        position: absolute;
-        top: 6px;
-        left: calc(100% - 2.5em);
-      }
-      .passwordEye:hover {
-        cursor: pointer;
-      }
-      .passwordEye i {
-        color: #7a7a7a;
-        font-size: 14px;
-      }
-      button {
-        height: 50px;
-        width: 40%;
-        align-self: center;
-        outline: none;
-        border: 1px solid #593cfb;
-        background-color: #593cfb;
-        color: #ffff;
-        margin-top: 15px;
-        font-family: 'Basis Grotesque Pro Bold';
-        font-size: 18px;
-        text-align: center;
-        padding: 0 19px;
-        cursor: pointer;
-        transition: 0.8s all ease;
       }
     }
   }

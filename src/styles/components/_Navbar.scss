@@ -15,6 +15,10 @@ nav {
   }
   .header__user-icon {
     color: rgba(0, 0, 0, 0.7);
+    margin-top: 5px;
+    i {
+      font-size: 40px;
+    }
   }
   .header__user-icon:hover {
     color: rgba(0, 0, 0, 0.9);
@@ -30,10 +34,19 @@ nav {
 }
 
 .dropdown-menu {
-  display: flex;
-  width: 90px;
-  margin-right: 100px;
-  flex-direction: column;
+  padding: 0;
+}
+.dropdown-item {
+  padding: 0;
+  padding: 0.72rem;
+  color: #121214;
+  font-family: 'Basis Grotesque Pro';
+  transition: background-color 0.2s ease;
+  &:hover {
+    background-color: #573cfb;
+    color: white;
+    font-family: 'Basis Grotesque Pro Bold';
+  }
 }
 
 .dropdown.dropdown-center {
