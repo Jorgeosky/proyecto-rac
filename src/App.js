@@ -1,5 +1,6 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
+import Footer from './components/Footer';
 import { NavbarSearch } from './components/searchVehicle/NavbarSearch';
 import CarPage from './pages/CarPage';
 import ChangePassword from './pages/ChangePassword';
@@ -30,6 +31,7 @@ function App() {
           <Route element={<EmailVerified />} path=":token" />
         </Route>
       </Routes>
+      <Footer />
     </>
   );
 }
