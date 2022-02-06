@@ -24,13 +24,15 @@
   },
   "plugins": ["react", "prettier", "react-hooks", "jest", "jest-dom", "cypress"],
 
-  "rules": {
-    "rules": {
-      "jest/no-standalone-expect": [
-        "error",
-        { "additionalTestBlockFunctions": ["each.test"] }
-      ]
-    }, 
+  "rules": { 
+    "overrides": [
+      {
+        "files": ["*.spec.ts"],
+        "rules": {
+          "jest/expect-expect": "off"
+        }
+      }
+    ],
     "linebreak-style": 0,
     "no-console": "off",
     "indent": ["error", 2],
