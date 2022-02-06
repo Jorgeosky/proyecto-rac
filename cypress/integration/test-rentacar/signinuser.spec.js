@@ -1,7 +1,7 @@
 describe("RentaCar App", () => {
   // eslint-disable-next-line jest/expect-expect
   it("sign-in existent user(Renter) and redirect to Renter Profile", () => {
-    cy.visit("http://localhost:3000");
+    cy.visit("https://rentacarapp.netlify.app");
     cy.get(".dropdown-toggle").click();
     cy.get('a[href*="signin"]').click();
     cy.get(".TypeUser").click('right')
