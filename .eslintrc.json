@@ -27,9 +27,9 @@
   "rules": { 
     "overrides": [
       {
-        "files": ["*.spec.ts"],
+        "files": ["*.spec.js"],
         "rules": {
-          "jest/expect-expect": "off"
+          "jest/expect-expect":0
         }
       }
     ],
