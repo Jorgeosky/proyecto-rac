@@ -25,14 +25,6 @@
   "plugins": ["react", "prettier", "react-hooks", "jest", "jest-dom", "cypress"],
 
   "rules": { 
-    "overrides": [
-      {
-        "files": ["*.spec.js"],
-        "rules": {
-          "jest/expect-expect":0
-        }
-      }
-    ],
     "linebreak-style": 0,
     "no-console": "off",
     "indent": ["error", 2],
