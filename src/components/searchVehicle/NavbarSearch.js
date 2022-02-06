@@ -46,8 +46,8 @@ export function NavbarSearch() {
                     cldImg={cld.image(state.user.photo)}
                     style={{
                       marginTop: '5px',
-                      width: '40px',
-                      height: '43px',
+                      width: '36px',
+                      height: '38px',
                       borderRadius: '50%',
                     }}
                   />

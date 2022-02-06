@@ -29,11 +29,11 @@ export const vehicleMakes = [
 ];
 
 export const numberSeats = [
-  { value: '1', label: '4 or more' },
-  { value: '2', label: '5 or more' },
-  { value: '3', label: '6 or more' },
-  { value: '4', label: '7 or more' },
-  { value: '5', label: '8 or more' },
+  { value: '4', label: '4 or more' },
+  { value: '5', label: '5 or more' },
+  { value: '6', label: '6 or more' },
+  { value: '7', label: '7 or more' },
+  { value: '8', label: '8 or more' },
 ];
 
 export const vehicleType = [
@@ -41,7 +41,13 @@ export const vehicleType = [
   { value: 'suvs', label: 'SUVs' },
 ];
 
-export const carData = [
+export const vehicleDoors = [
+  { value: '2', label: '2' },
+  { value: '4', label: '4' },
+  { value: '6', label: '6' },
+  { value: '8', label: '8' },
+];
+/* export const carData = [
   {
     model: 'BMW 7-Series 2019',
     type: 'Cars',
@@ -123,3 +129,4 @@ export const carData = [
     url: 'https://d1zgdcrdir5wgt.cloudfront.net/media/vehicle/images/2l6jbJZmR9mZP8bpCJHOlg.730x390.jpg',
   },
 ];
+ */

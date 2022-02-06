@@ -1,27 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Form, Modal } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
-import { v4 as uuidv4 } from 'uuid';
-
+import Select from 'react-select';
 import { numberSeats, vehicleMakes, vehicleType } from '../../data/searchVehicle';
 import { PrettoSlider } from './SliderPrice';
 
 export function ModalFilter({ show, setShow }) {
   const handleClose = () => setShow(false);
-  const [value, setValue] = React.useState([30, 200]);
-
+  const [value, setValue] = useState([30, 200]);
+  const [selectedOptions, setSelectedOption] = useState({
+    make: '',
+    seats: '',
+    type: '',
+  });
+  const { make, seats, type } = selectedOptions;
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const select1 = e.target[2].value;
-    const select2 = e.target[3].value;
-    const select3 = parseInt(e.target[4].value, 10) + 3 || '';
-    console.log(select2);
     navigate(
-      `?price_min=${value[0]}&price_max=${
-        value[1]
-      }&type=${select1}&make=${select2}&seats=${select3.toString()}`,
+      `?price_min=${value[0]}&price_max=${value[1]}&type=${type.value}&make=${make.value}&seats=${seats.value}`,
     );
 
     setShow(false);
@@ -63,37 +61,46 @@ export function ModalFilter({ show, setShow }) {
           </Form.Group>
 
           <Form.Group className="mb-4" controlId="formGridRating">
-            <Form.Label>Vehicle Type</Form.Label>
-            <Form.Select aria-label="Default select example">
-              <option>{}</option>
-              {vehicleType.map((type) => (
-                <option key={uuidv4()} value={type.value}>
-                  {type.label}
-                </option>
-              ))}
-            </Form.Select>
-          </Form.Group>
-          <Form.Group className="mb-4" controlId="formGridRating">
             <Form.Label>Vehicle Makes</Form.Label>
-            <Form.Select aria-label="Default select example">
-              <option>{}</option>
-              {vehicleMakes.map((makes) => (
-                <option key={uuidv4()} value={makes.value}>
-                  {makes.label}
-                </option>
-              ))}
-            </Form.Select>
+            <Select
+              defaultValue={selectedOptions.make}
+              menuPortalTarget={document.body}
+              onChange={(options) =>
+                setSelectedOption((selected) => ({ ...selected, make: options }))
+              }
+              options={vehicleMakes}
+              styles={{
+                menuPortal: (base) => ({ ...base, zIndex: 99999 }),
+              }}
+            />
           </Form.Group>
           <Form.Group className="mb-4" controlId="formGridRating">
             <Form.Label>Number of Seats</Form.Label>
-            <Form.Select aria-label="Default select example">
-              <option>{}</option>
-              {numberSeats.map((seats) => (
-                <option key={uuidv4()} value={seats.value}>
-                  {seats.label}
-                </option>
-              ))}
-            </Form.Select>
+            <Select
+              defaultValue={selectedOptions.seats}
+              menuPortalTarget={document.body}
+              onChange={(options) =>
+                setSelectedOption((selected) => ({ ...selected, seats: options }))
+              }
+              options={numberSeats}
+              styles={{
+                menuPortal: (base) => ({ ...base, zIndex: 99999 }),
+              }}
+            />
+          </Form.Group>
+          <Form.Group className="mb-4" controlId="formGridRating">
+            <Form.Label>Vehicle Types</Form.Label>
+            <Select
+              defaultValue={selectedOptions.type}
+              menuPortalTarget={document.body}
+              onChange={(options) =>
+                setSelectedOption((selected) => ({ ...selected, type: options }))
+              }
+              options={vehicleType}
+              styles={{
+                menuPortal: (base) => ({ ...base, zIndex: 99999 }),
+              }}
+            />
           </Form.Group>
         </Modal.Body>
         <Modal.Footer className="ms-3 py-3 justify-content-start ">

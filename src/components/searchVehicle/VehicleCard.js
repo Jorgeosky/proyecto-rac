@@ -2,19 +2,23 @@ import React from 'react';
 import { Card, Col } from 'react-bootstrap';
 import { AdvancedImage } from '@cloudinary/react';
 import { Cloudinary } from '@cloudinary/url-gen';
+import { useNavigate } from 'react-router-dom';
 import { CLOUD_NAME } from '../../api/consts';
 
-export function VehicleCard({ model, carFrontPhoto, price, type }) {
+export function VehicleCard({ model, carFrontPhoto, price, type, id }) {
   const cld = new Cloudinary({
     cloud: {
       cloudName: CLOUD_NAME,
     },
   });
-
+  const navigate = useNavigate();
+  const handleClickCard = () => {
+    navigate(`/car-rental/${id}`);
+  };
   const carPhoto = cld.image(carFrontPhoto);
   return (
     <Col>
-      <Card className="main__vehicle-card ">
+      <Card className="main__vehicle-card" onClick={handleClickCard}>
         {/* <span className="vehicle-card__like pointer">
           <i className="fas fa-thumbs-up" />
         </span> */}

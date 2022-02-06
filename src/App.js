@@ -3,7 +3,6 @@ import { Route, Routes } from 'react-router-dom';
 import { NavbarSearch } from './components/searchVehicle/NavbarSearch';
 import CarPage from './pages/CarPage';
 import ChangePassword from './pages/ChangePassword';
-import ForgetPass from './pages/ForgetPass';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Profile from './pages/Profile';
@@ -34,7 +33,6 @@ function App() {
           )}
           path="/profile"
         />
-        <Route element={<ForgetPass />} path="/forgetpass" />
         <Route element={<ChangePassword />} path="/changepass" />
         <Route
           element={(
@@ -45,7 +43,11 @@ function App() {
           path="/signup"
         />
         <Route element={<SearchPage />} path="/search" />
-        <Route element={<CarPage />} path="/carpage" />
+
+        <Route path="/car-rental">
+          <Route element={<CarPage />} path=":carID" />
+        </Route>
+
         {/* <Route element={<ConfirmEmail />} path="/confirmemail" />
         <Route path="/emailverified">
           <Route element={<EmailVerified />} path=":token" />
