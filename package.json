@@ -87,7 +87,8 @@
     "eslint-plugin-react-hooks": "^4.3.0",
     "husky": "^7.0.4",
     "lint-staged": "^12.3.2",
-    "mini-css-extract-plugin": "2.4.5"
+    "mini-css-extract-plugin": "2.4.5",
+    "netlify-plugin-cypress": "^2.2.0"
   },
   "resolutions": {
     "mini-css-extract-plugin": "2.4.5"
