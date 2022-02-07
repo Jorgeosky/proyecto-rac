@@ -25,7 +25,7 @@ export function VehicleRented({ model, carFrontPhoto, price, startTrip, endTrip 
         </div>
 
         <div className="vehicle-card__footer pointer">
-          <div className="vehicle-card__text d-flex align-items-center gap-5">
+          <div className="vehicle-card__text d-flex align-items-center gap-4">
             <p>Start Trip: {format(new Date(startTrip), 'dd-MM-yyyy')}</p>
             <p>End Trip: {format(new Date(endTrip), 'dd-MM-yyyy')}</p>
           </div>
