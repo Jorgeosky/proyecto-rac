@@ -121,20 +121,20 @@ export default function Login() {
               <button className="btn btn-primary btn-large btn-block mt-4" type="submit">
                 Log in
               </button>
-              <button className="google1" type="button">
+              {/* <button className="google1" type="button">
                 <div className="google">
                   <img alt="img3" className="imgGoogle" src="Login-4.png" />
                   <p>Continue with Google</p>
                 </div>
-              </button>
+              </button> */}
             </Form>
             <div className="Down">
               <Link className="link1" to="/SignUp">
                 Not account? Sign Up...
               </Link>
-              <Link className="link1" to="/ForgetPass">
+              {/* <Link className="link1" to="/ForgetPass">
                 Forgot Password?
-              </Link>
+              </Link> */}
             </div>
           </div>
         </div>

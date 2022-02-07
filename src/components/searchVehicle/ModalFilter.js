@@ -21,7 +21,7 @@ export function ModalFilter({ show, setShow }) {
     navigate(
       `?price_min=${value[0]}&price_max=${value[1]}&type=${type.value}&make=${make.value}&seats=${seats.value}`,
     );
-
+    setSelectedOption({ make: { value: '' }, seats: { value: '' }, type: { value: '' } });
     setShow(false);
   };
   const handleSliderChange = (event, newValue) => {

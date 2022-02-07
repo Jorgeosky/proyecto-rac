@@ -31,6 +31,7 @@
     "react-router-dom": "^6.0.2",
     "react-scripts": "^5.0.0",
     "react-select": "^5.2.2",
+    "react-spinners": "^0.11.0",
     "sweetalert2": "^11.3.10",
     "swr": "^1.2.1",
     "uuid": "^8.3.2",
