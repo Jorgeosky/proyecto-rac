@@ -5,7 +5,7 @@ export default function Footer() {
     <footer className="footerContainer">
       <div className="firstContent">
         <div className="footerList">
-          <h2>Turo</h2>
+          <h2>Rent a car</h2>
           <ul>
             <li>About</li>
             <li>Team</li>
