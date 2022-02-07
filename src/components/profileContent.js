@@ -51,5 +51,9 @@ export default function ProfileContent() {
     break;
   }
 
-  return <Container fluid>{content}</Container>;
+  return (
+    <Container style={{ marginBottom: '100px' }} fluid>
+      {content}
+    </Container>
+  );
 }
