@@ -12,7 +12,7 @@ describe("RentaCar App", () => {
       cy.get('input[name="email"]').type('juan.moreno.banda@gmail.com')
       cy.get('input[name="password"]').type('Renta@Car2022')
       cy.get('input[name="confirmPassword"]').type('Renta@Car2022')
-      cy.get('.confirm').click() 
+      cy.get('input[name="checkbox"]').click() 
       cy.root().submit()    
     })
   });

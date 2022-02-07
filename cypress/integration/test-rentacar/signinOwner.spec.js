@@ -6,9 +6,9 @@ describe("RentaCar App", () => {
     cy.get('a[href*="signin"]').click();
     cy.get(".TypeUser").click('left')  
     cy.get('form').within(() => {
-      cy.get('#email').type('juan.carlos.moreno.banda@gmail.com') 
-      cy.get('#password').type('Renta@car2022')
-      cy.get('.submit').click()
+      cy.get('input[name="email"]').type('juan.carlos.moreno.banda@gmail.com') 
+      cy.get('input[name="password"]').type('Renta@car2022')
+      cy.root().submit() 
     }) 
   });
 });
