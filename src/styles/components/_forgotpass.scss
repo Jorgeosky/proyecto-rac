@@ -2,6 +2,7 @@
   height: 100%;
   width: 100%;
   display: flex;
+  margin-bottom: 50px;
 
   form {
     margin-top: 30px;
@@ -13,11 +14,10 @@
     align-items: center;
 
     h2 {
-      font-style: normal;
-      font-weight: bolder;
+      font-family: 'Basis Grotesque Pro';
+      font-size: 38px;
       letter-spacing: -0.05em;
-      color: rgba(35, 33, 48, 0.8);
-      -webkit-text-stroke: 0.5px #a5a6f6;
+      letter-spacing: -0.2px;
       text-align: center;
     }
 

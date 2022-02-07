@@ -1,19 +1,13 @@
 .Home {
-  position: absolute;
   width: 100%;
-  min-height: 100%;
   left: 0px;
   top: 0px;
   background-size: cover;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0px;
-  position: relative;
   width: 100%;
-  height: 100vh;
-  left: 0px;
-  top: 0px;
+  height: 100%;
 
   .Header {
     display: flex;
@@ -22,7 +16,7 @@
     background: url(http://trade-submit.com/wp-content/uploads/2019/10/How-To-Choose-The-Right-Rental-Car.jpg);
 
     width: 100%;
-    height: 80%;
+    height: 400px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -74,37 +68,10 @@
 
       width: 340px;
       height: 31px;
-
-      #carType {
-        font-family: Roboto;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 16px;
-        line-height: 19px;
-        /* identical to box height */
-
-        color: #000000;
-      }
-      #truckType {
-        color: #000000;
-      }
-      #bikeType {
-        color: #000000;
-      }
     }
     .UserOptions {
       display: flex;
       align-items: center;
-
-      .BecomeHost {
-        font-family: Roboto;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 14px;
-        line-height: 16px;
-
-        color: #000000;
-      }
 
       .UserMenu {
         display: flex;
@@ -184,71 +151,82 @@
     }
   }
 
-  .Search {
+  .findYourDrive {
+    font-family: 'Basis Grotesque Pro';
+    font-size: 80px;
+    font-weight: 900;
+    letter-spacing: -1px;
+    line-height: 90px;
+    text-transform: none;
+    margin-top: 50px;
+  }
+
+  .explore {
+    font-family: 'Basis Grotesque Pro Bold';
+    font-size: 20px;
+    letter-spacing: -1px;
+    text-transform: none;
+  }
+
+  .browseByMakeContainer {
+    width: 80%;
+    margin-top: 50px;
+    margin-bottom: 50px;
+
+    p {
+      font-family: 'Basis Grotesque Pro Bold';
+      font-size: 20px;
+      letter-spacing: -1px;
+      margin-top: 20px;
+      letter-spacing: 1px;
+      margin-bottom: 20px;
+    }
+  }
+
+  .browseByMake {
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding: 0px;
-    position: static;
-    width: 834px;
-    height: 66px;
-    top: 95px;
-    background: #ffffff;
-    border-radius: 50px;
-    flex: none;
-    order: 1;
-    flex-grow: 0;
-    margin: 20px 0px;
+    justify-content: space-between;
+    width: 100%;
 
-    #location {
-      width: 300px;
-      height: 66px;
-
-      background: #ffffff00;
-      border-radius: 46px;
-      border-color: #ffffff00;
-
-      margin: 0px 0px 0px 10px;
-    }
-    .VLine {
-      width: 51px;
-      height: 0px;
-
-      border: 1px solid #aaaaaa;
-      transform: rotate(90deg);
-    }
-    #startDate {
-      width: 170px;
-      height: 66px;
-
-      background: #ffffff00;
-      border-radius: 46px;
-      border-color: #ffffff00;
-    }
-
-    #endDate {
-      width: 170px;
-      height: 66px;
-
-      background: #ffffff00;
-      border-radius: 46px;
-      border-color: #ffffff00;
-    }
-    .SearchButton {
+    .cardBrowse {
       display: flex;
-      justify-content: center;
-      align-items: center;
-      padding-left: 10px;
-      padding-right: 10px;
+      flex-direction: column;
+      height: 210px;
+      width: 190px;
+      padding-bottom: 50px;
+      border-radius: 5%;
+      box-shadow: 0px 5px 28px 5px rgba(0, 0, 0, 0.72);
 
-      width: max-content;
-      height: 47px;
+      img {
+        height: 140px;
+        width: 100%;
+        object-fit: cover;
+        border-radius: 5% 5% 0% 0%;
+      }
 
-      background: #aaaaaa;
-      border-radius: 65px;
-      border-color: #ffffff00;
-
-      margin: 0px 5px;
+      p {
+        font-family: 'Basis Grotesque Pro Bold';
+        font-size: 17px;
+        letter-spacing: -1px;
+        margin-top: 20px;
+        align-self: center;
+      }
     }
+  }
+  .browseCars {
+    display: inline-block;
+    height: 50px;
+    width: 200px;
+    line-height: 49px;
+    padding: 0 18px;
+    text-align: center;
+    vertical-align: top;
+    background-color: #593cfb;
+    border: 1px solid #593cfb;
+    color: #ffffff;
+    font-family: 'Basis Grotesque Pro Bold';
+    font-size: 18px;
+    transition: 0.5s border, 0.5s background;
+    margin-bottom: 50px;
   }
 }
