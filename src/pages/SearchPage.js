@@ -1,7 +1,6 @@
 import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 
-import { GoogleMap, LoadScript } from '@react-google-maps/api';
 import { useLocation } from 'react-router-dom';
 import queryString from 'query-string';
 import { NavbarSearch } from '../components/searchVehicle/NavbarSearch';
@@ -17,17 +16,6 @@ import {
   FilterIsRented,
 } from '../utils/utils';
 
-const containerStyle = {
-  width: '100%',
-  height: '100%',
-  margin: '0',
-};
-
-const center = {
-  lat: -8.1022,
-  lng: -79.0493,
-};
-
 export default function SearchPage() {
   const location = useLocation();
   const {
@@ -37,11 +25,12 @@ export default function SearchPage() {
     make,
     seats,
   } = queryString.parse(location.search);
+  console.log(type, make, seats);
 
   const {
     cars: { data = [] },
   } = useCars();
-
+  console.log(data);
   let carArray = data;
   carArray = FilterIsRented(carArray);
   if (priceMin && priceMax) carArray = FilterCarsByPrice(carArray, priceMin, priceMax);
@@ -60,19 +49,8 @@ export default function SearchPage() {
       <main>
         <Container className="mb-5" fluid>
           <Row>
-            <Col md={8}>
+            <Col>
               <VehicleList carData={carArray} />
-            </Col>
-            <Col md={4}>
-              <div className="main__searchResultsMap">
-                <div className="main__searchResultsMap-container">
-                  <LoadScript googleMapsApiKey="AIzaSyAl7cTqz14ZfDsX376FmiAKxngvBk3CQ7A">
-                    <GoogleMap center={center} mapContainerStyle={containerStyle} zoom={16}>
-                      {/* Child components, such as markers, info windows, etc. */}
-                    </GoogleMap>
-                  </LoadScript>
-                </div>
-              </div>
             </Col>
           </Row>
         </Container>

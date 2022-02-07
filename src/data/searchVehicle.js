@@ -1,4 +1,5 @@
 export const vehicleMakes = [
+  { value: '', label: 'None' },
   { value: 'alfa_romero', label: 'Alfa Romero' },
   { value: 'audi', label: 'Audi' },
   { value: 'bmw', label: 'BMW' },
@@ -29,6 +30,7 @@ export const vehicleMakes = [
 ];
 
 export const numberSeats = [
+  { value: '', label: 'None' },
   { value: '4', label: '4 or more' },
   { value: '5', label: '5 or more' },
   { value: '6', label: '6 or more' },
@@ -37,6 +39,7 @@ export const numberSeats = [
 ];
 
 export const vehicleType = [
+  { value: '', label: 'None' },
   { value: 'cars', label: 'Cars' },
   { value: 'suvs', label: 'SUVs' },
 ];

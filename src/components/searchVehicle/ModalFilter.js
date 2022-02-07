@@ -7,11 +7,11 @@ import { PrettoSlider } from './SliderPrice';
 
 export function ModalFilter({ show, setShow }) {
   const handleClose = () => setShow(false);
-  const [value, setValue] = useState([30, 200]);
+  const [value, setValue] = useState([30, 250]);
   const [selectedOptions, setSelectedOption] = useState({
-    make: '',
-    seats: '',
-    type: '',
+    make: { value: '' },
+    seats: { value: '' },
+    type: { value: '' },
   });
   const { make, seats, type } = selectedOptions;
   const navigate = useNavigate();
@@ -51,7 +51,7 @@ export function ModalFilter({ show, setShow }) {
               }}>{`$${value[0]} - $${value[1]}/day`}</p>
             <PrettoSlider
               aria-label="pretto slider"
-              max={200}
+              max={250}
               min={30}
               onChange={handleSliderChange}
               step={5}

@@ -1,17 +1,18 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
 export function useMercadoPago(publicKey) {
   const [mercadopago, setMercadopago] = useState();
 
   useEffect(() => {
-    const script = document.createElement("script");
-    script.src = "https://sdk.mercadopago.com/js/v2";
+    const script = document.createElement('script');
+    script.src = 'https://sdk.mercadopago.com/js/v2';
 
-    script.addEventListener("load", () => {
+    script.addEventListener('load', () => {
       setMercadopago(
         new window.MercadoPago(publicKey, {
-          locale: "es-CO",
-        }));
+          locale: 'es-CO',
+        }),
+      );
     });
 
     document.body.appendChild(script);
@@ -22,9 +23,9 @@ export function useMercadoPago(publicKey) {
         document.body.removeChild(iframe);
       }
       document.body.removeChild(script);
-    }
+    };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  return mercadopago
+  return mercadopago;
 }

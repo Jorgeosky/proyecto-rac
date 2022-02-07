@@ -8,14 +8,17 @@ import AdapterDateFns from '@mui/lab/AdapterDateFns';
 import LocalizationProvider from '@mui/lab/LocalizationProvider';
 import { DatePicker } from '@mui/lab';
 import { format } from 'date-fns';
-import { CLOUD_NAME } from '../api/consts';
+import { CLOUD_NAME, MERCADOPAGO_KEY } from '../api/consts';
 import { useCarById } from '../hooks/useCarById';
 import UserContext from '../components/Context';
 import { createRentedCar } from '../api/rentedcar';
+import { useMercadoPago } from '../hooks/useMercadoPago';
+import { payment } from '../api/payment';
 
 export default function CarPage() {
   const { carID } = useParams();
   const navigate = useNavigate();
+  const mercadopago = useMercadoPago(MERCADOPAGO_KEY);
   const {
     car: { data },
   } = useCarById(carID);
@@ -50,13 +53,32 @@ export default function CarPage() {
   const [startTrip, setStartTrip] = useState(null);
   const [endTrip, setEndTrip] = useState(null);
 
+  const COP = parseInt(price, 10) * 3952;
+
+  const pay = async () => {
+    const data = await payment({ cars: { name: model, price: COP } });
+    const checkout = mercadopago.checkout({
+      preference: {
+        id: data.preferenceId,
+      },
+    });
+    checkout.open();
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (startTrip && endTrip) {
-      await createRentedCar({ startTrip, endTrip, cars: carID });
-      navigate('/profile');
+
+    if (state.isLoggedIn) {
+      if (startTrip && endTrip) {
+        await pay();
+        await createRentedCar({ startTrip, endTrip, cars: carID });
+        // navigate('/profile');
+      }
+    } else {
+      navigate('/signin');
     }
   };
+
   return (
     <div className="cardPage">
       <div className="carouselContainer">

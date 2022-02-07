@@ -5,8 +5,8 @@ import { VehicleCard } from './VehicleCard';
 
 export function VehicleList({ carData }) {
   return (
-    <Container className="mt-5 pe-3" fluid>
-      <Row className="g-4" sm={2}>
+    <Container className="mt-5 " fluid>
+      <Row className="g-5" md={2} xl={3}>
         {carData.map((car) => (
           <VehicleCard key={uuidv4()} {...car} />
         ))}
