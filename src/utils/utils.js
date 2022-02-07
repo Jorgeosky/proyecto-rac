@@ -5,11 +5,13 @@ export const FilterCarsByType = (data, type) =>
   data.filter((car) => car.type.toLowerCase() === type);
 
 export const FilterCarsByMake = (data, make) =>
-  data.filter((cars) => {
+  data.filter((car) => {
     if (make.includes('_')) {
       make = make.replace('_', ' ');
     }
-    return cars.make.toLowerCase() === make;
+    return car.make.toLowerCase() === make;
   });
 
-export const FilterCarsBySeats = (data, seats) => data.filter((cars) => cars.seats >= seats);
+export const FilterCarsBySeats = (data, seats) => data.filter((car) => car.seats >= seats);
+
+export const FilterIsRented = (data) => data.filter((car) => !car.isRented);

@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Carousel, Col, Container, Form, Row } from 'react-bootstrap';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { AdvancedImage } from '@cloudinary/react';
 import { Cloudinary } from '@cloudinary/url-gen';
 import TextField from '@mui/material/TextField';
@@ -10,9 +10,12 @@ import { DatePicker } from '@mui/lab';
 import { format } from 'date-fns';
 import { CLOUD_NAME } from '../api/consts';
 import { useCarById } from '../hooks/useCarById';
+import UserContext from '../components/Context';
+import { createRentedCar } from '../api/rentedcar';
 
 export default function CarPage() {
   const { carID } = useParams();
+  const navigate = useNavigate();
   const {
     car: { data },
   } = useCarById(carID);
@@ -35,24 +38,29 @@ export default function CarPage() {
     description = '',
     owner,
   } = !!data && data;
-
+  const { state } = useContext(UserContext);
   const { photo = '', firstName = '', lastName = '', createdAt = '2022-02-16' } = !!owner && owner;
 
-  console.log(data);
   const frontcar = cld.image(carFrontPhoto);
   const car1 = cld.image(photo1);
   const car2 = cld.image(photo2);
   const car3 = cld.image(photo3);
   const profilePhoto = cld.image(photo);
 
-  const [date, setDate] = useState(null);
-  const [date2, setDate2] = useState(null);
+  const [startTrip, setStartTrip] = useState(null);
+  const [endTrip, setEndTrip] = useState(null);
 
-  console.log(date, date2);
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (startTrip && endTrip) {
+      await createRentedCar({ startTrip, endTrip, cars: carID });
+      navigate('/profile');
+    }
+  };
   return (
     <div className="cardPage">
       <div className="carouselContainer">
-        <Carousel>
+        <Carousel fade>
           <Carousel.Item interval={null}>
             <div className="carouselSlide">
               <div className="vehicleImage">
@@ -204,12 +212,7 @@ export default function CarPage() {
                 <div className="lineSeparator" />
               </div>
             </div>
-            <Form
-              className="formRental"
-              onSubmit={(e) => {
-                e.preventDefault();
-                console.log(e);
-              }}>
+            <Form className="formRental" onSubmit={handleSubmit}>
               <Form.Group className="mt-5" controlId="validationCustom01">
                 <Form.Label
                   className="mb-2"
@@ -230,12 +233,12 @@ export default function CarPage() {
                     inputFormat="dd/MM/yyyy"
                     label="Trip Start"
                     onChange={(newValue) => {
-                      setDate(newValue);
+                      setStartTrip(newValue);
                     }}
                     renderInput={(props) => (
                       <TextField {...props} className="w-100" type="datetime-local" />
                     )}
-                    value={date}
+                    value={startTrip}
                   />
                 </LocalizationProvider>
               </Form.Group>
@@ -259,17 +262,20 @@ export default function CarPage() {
                     inputFormat="dd/MM/yyyy"
                     label="Trip End"
                     onChange={(newValue) => {
-                      setDate2(newValue);
+                      setEndTrip(newValue);
                     }}
                     renderInput={(props) => (
                       <TextField {...props} className="w-100" type="datetime-local" />
                     )}
-                    value={date2}
+                    value={endTrip}
                   />
                 </LocalizationProvider>
               </Form.Group>
 
-              <button className="btn btn-primary btn-block py-2 fs-5 mt-4" type="submit">
+              <button
+                className="btn btn-primary btn-block py-2 fs-5 mt-4"
+                disabled={!(state.type === 'renter')}
+                type="submit">
                 Rent the Car
               </button>
             </Form>

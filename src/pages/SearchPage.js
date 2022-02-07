@@ -14,6 +14,7 @@ import {
   FilterCarsByPrice,
   FilterCarsBySeats,
   FilterCarsByType,
+  FilterIsRented,
 } from '../utils/utils';
 
 const containerStyle = {
@@ -36,19 +37,18 @@ export default function SearchPage() {
     make,
     seats,
   } = queryString.parse(location.search);
-  console.log(priceMin, priceMax, type, make, seats);
 
   const {
     cars: { data = [] },
   } = useCars();
-  console.log(data);
-  let carArray = data;
 
+  let carArray = data;
+  carArray = FilterIsRented(carArray);
   if (priceMin && priceMax) carArray = FilterCarsByPrice(carArray, priceMin, priceMax);
   if (type) carArray = FilterCarsByType(carArray, type);
   if (make) carArray = FilterCarsByMake(carArray, make);
   if (seats) carArray = FilterCarsBySeats(carArray, seats);
-  console.log(carArray);
+
   return (
     <>
       <header className="header">

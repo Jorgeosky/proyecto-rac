@@ -1,10 +1,10 @@
-/* eslint-disable indent */
 import React, { useState } from 'react';
 import { Container } from 'react-bootstrap';
 import { useProfile } from '../hooks/useProfile';
 
 import EditProfile from './ProfileContent/EditProfile';
 import ProfileInfo from './ProfileContent/ProfileInfo';
+import { RentedCar } from './ProfileContent/RentedCar';
 import UploadCar from './ProfileContent/UploadCar';
 
 export default function ProfileContent() {
@@ -16,32 +16,39 @@ export default function ProfileContent() {
   let content;
 
   switch (stateProfile) {
-    case 'profile':
-      content = (
-        <div className="profileContent">
-          <ProfileInfo setState={setStateProfile} update={update} />
-        </div>
-      );
-      break;
-    case 'editProfile':
-      content = (
-        <div className="profileContent">
-          <EditProfile setState={setStateProfile} update={update} />
-        </div>
-      );
+  case 'profile':
+    content = (
+      <div className="profileContent">
+        <ProfileInfo setState={setStateProfile} />
+      </div>
+    );
+    break;
+  case 'editProfile':
+    content = (
+      <div className="profileContent">
+        <EditProfile setState={setStateProfile} update={update} />
+      </div>
+    );
 
-      break;
-    case 'editDocuments':
-      content = (
-        <div className="profileContent">
-          <UploadCar setState={setStateProfile} />
-        </div>
-      );
-      break;
+    break;
+  case 'editDocuments':
+    content = (
+      <div className="profileContent">
+        <UploadCar setState={setStateProfile} />
+      </div>
+    );
+    break;
+  case 'rentedCars':
+    content = (
+      <div className="profileContent">
+        <RentedCar setState={setStateProfile} />
+      </div>
+    );
+    break;
 
-    default:
-      content = <div className="profileContent">Hola Mundo</div>;
-      break;
+  default:
+    content = <div className="profileContent">Hola Mundo</div>;
+    break;
   }
 
   return <Container fluid>{content}</Container>;

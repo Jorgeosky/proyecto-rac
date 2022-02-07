@@ -29,15 +29,12 @@ export const SingUpSchema = object()
           'Password  must contain 8 characters, one uppercase, one lowercase, one number and one special character',
       })
       .required('Password is a required field'),
-    // eslint-disable-next-line react/sort-prop-types
   })
   .required();
 
 export const EmailSchema = object()
   .shape({
     email: string().email('Insert a valid email').trim().required('Email is a required field'),
-
-    // eslint-disable-next-line react/sort-prop-types
   })
   .required();
 
@@ -53,6 +50,5 @@ export const PassowrdlSchema = object()
           'Password  must contain 8 characters, one uppercase, one lowercase, one number and one special character',
       })
       .required('Password is a required field'),
-    // eslint-disable-next-line react/sort-prop-types
   })
   .required();

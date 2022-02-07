@@ -9,7 +9,7 @@ import { CLOUD_NAME } from '../../api/consts';
 
 export default function ProfileInfo({ setState }) {
   const {
-    state: { user },
+    state: { user, type },
   } = useContext(UserContext);
   const [modalShow, setModalShow] = useState(false);
   const handleModalOpen = () => setModalShow(true);
@@ -90,13 +90,21 @@ export default function ProfileInfo({ setState }) {
             type="button">
             Edit Profile
           </button>
-
-          <button
-            className="btn btn-primary btn-large"
-            onClick={() => setState('editDocuments')}
-            type="button">
-            Upload Car
-          </button>
+          {type === 'renter' ? (
+            <button
+              className="btn btn-primary btn-large"
+              onClick={() => setState('rentedCars')}
+              type="button">
+              Rented car
+            </button>
+          ) : (
+            <button
+              className="btn btn-primary btn-large"
+              onClick={() => setState('editDocuments')}
+              type="button">
+              Upload Car
+            </button>
+          )}
         </div>
       </Container>
       <ModalPhoto setShow={setModalShow} show={modalShow} />
