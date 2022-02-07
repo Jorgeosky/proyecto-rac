@@ -1,13 +1,17 @@
-export const FilterCarsByPrice = (data, price) => data.filter((cars) => cars.price >= price);
-export const FilterCarsByType = (data, type) =>
-  data.filter((cars) => cars.type.toLowerCase() === type);
+export const FilterCarsByPrice = (data, min, max) =>
+  data.filter((car) => car.price >= min && car.price <= max);
 
-export const FilterCarsByMake = (data, make) =>
-  data.filter((cars) => {
+export const FilterCarsByType = (data, type) =>
+  data.filter((car) => car.type.toLowerCase() === type);
+
+export const FilterCarsByMake = (data, make) => data.filter((car) => car.make === make);
+/* data.filter((car) => {
     if (make.includes('_')) {
       make = make.replace('_', ' ');
     }
-    return cars.makes.toLowerCase() === make;
-  });
+    return car.make.toLowerCase() === make;
+  }); */
 
-export const FilterCarsBySeats = (data, seats) => data.filter((cars) => cars.seats >= seats);
+export const FilterCarsBySeats = (data, seats) => data.filter((car) => car.seats >= seats);
+
+export const FilterIsRented = (data) => data.filter((car) => !car.isRented);

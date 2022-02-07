@@ -1,44 +1,44 @@
-import { makeStyles, withStyles } from '@material-ui/core';
-import Slider from '@material-ui/core/Slider';
+import Slider from '@mui/material/Slider';
+import { styled } from '@mui/material/styles';
 
-export const useStyles = makeStyles({
-  price: {
-    fontFamily: 'Basis Grotesque Pro Medium',
-    marginLeft: '4px',
-    marginBottom: '0px',
+export const PrettoSlider = styled(Slider)({
+  color: '#593cfb',
+  height: 8,
+  '& .MuiSlider-track': {
+    border: 'none',
   },
-  modalBody: {
-    paddingRight: '20px !important',
-  },
-});
-
-export const PrettoSlider = withStyles({
-  root: {
-    color: '#593cfb',
-    height: 8,
-  },
-  thumb: {
+  '& .MuiSlider-thumb': {
     height: 24,
     width: 24,
     backgroundColor: '#fff',
     border: '2px solid currentColor',
-    marginTop: -8,
-    marginLeft: -12,
-    '&:focus, &:hover, &$active': {
+    '&:focus, &:hover, &.Mui-active, &.Mui-focusVisible': {
       boxShadow: 'inherit',
     },
+    '&:before': {
+      display: 'none',
+    },
   },
-  active: {},
-  valueLabel: {
-    left: 'calc(-50% + 4px)',
+  '& .MuiSlider-valueLabel': {
+    lineHeight: 1.2,
+    fontSize: 12,
+    background: 'unset',
+    padding: 0,
+    width: 32,
+    height: 32,
+    borderRadius: '50% 50% 50% 0',
+    backgroundColor: '#593cfb',
+    transformOrigin: 'bottom left',
+    transform: 'translate(50%, -100%) rotate(-45deg) scale(0)',
+    display: 'none',
+    '&:before': {
+      display: 'none',
+    },
+    '&.MuiSlider-valueLabelOpen': {
+      transform: 'translate(50%, -100%) rotate(-45deg) scale(1)',
+    },
+    '& > *': {
+      transform: 'rotate(45deg)',
+    },
   },
-  track: {
-    height: 8,
-    borderRadius: 8,
-  },
-  rail: {
-    height: 8,
-    borderRadius: 8,
-    marginRight: '10px',
-  },
-})(Slider);
+});

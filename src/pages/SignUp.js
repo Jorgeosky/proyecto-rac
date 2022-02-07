@@ -1,20 +1,21 @@
-import React, { /* useContext */ useContext, useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useForm } from 'react-hook-form';
-import { sendUser } from '../api/users';
-import { sendOwner } from '../api/owners';
+import { Col, Form, Row } from 'react-bootstrap';
+import { ownerSignUp } from '../api/owners';
 import { SingUpSchema } from '../schemas/formSchemas';
 import TypeUser from '../components/typeuser';
 import UserContext from '../components/Context';
+import { userSignUp } from '../api/users';
+import { types } from '../types/types';
 // import UserContext from '../components/Context';
 // import { types } from '../types/types';
 
 export default function SignUp() {
   const [terms, setTerms] = useState(false);
   const [showPassword, setShowPassword] = useState({ password1: false, password2: false });
-  const { state } = useContext(UserContext);
-
+  const { state, dispatch } = useContext(UserContext);
   const {
     register,
     handleSubmit,
@@ -27,7 +28,6 @@ export default function SignUp() {
       firstName: '',
       lastName: '',
       password: '',
-      conditions: false,
     },
   });
 
@@ -36,66 +36,81 @@ export default function SignUp() {
     if (terms) {
       console.log(dataForm);
       if (state.type === 'renter') {
-        await sendUser({ ...dataForm, terms });
+        const { data } = await userSignUp({ ...dataForm, terms });
+        dispatch({
+          type: types.signup,
+          payload: {
+            user: { ...data },
+            isLoggedIn: true,
+            type: 'renter',
+          },
+        });
       } else {
-        await sendOwner({ ...dataForm, terms });
+        const { data } = await ownerSignUp({ ...dataForm, terms });
+        dispatch({
+          type: types.signup,
+          payload: {
+            user: { ...data },
+            isLoggedIn: true,
+            type: 'owner',
+          },
+        });
       }
-      navigate('/confirmemail');
+      navigate('/profile');
     }
-    /* event.preventDefault();
-    const { firstName, lastName, email, password, confirmPassword } = event.target.elements;
-
-    await sendUser({
-      firstName: firstName.value,
-      lastName: lastName.value,
-      email: email.value,
-      password: password.value,
-      confirmPassword: confirmPassword.value,
-      terms,
-    });
-    navigate('/confirmemail'); */
   };
   return (
     <main>
       <div className="SignUp">
-        {/* <div className="separator">
+        {/*         <div className="separator">
           <h2>Create Account</h2>
         </div> */}
-        <form onSubmit={handleSubmit(onSubmit)}>
+
+        <Form onSubmit={handleSubmit(onSubmit)}>
           <TypeUser />
-          <div className="names">
-            <div className="nameErrors">
-              <input
+          <Row className="mb-3">
+            <Form.Group as={Col} controlId="validationCustom01" md="6">
+              <Form.Control
                 {...register('firstName')}
                 className="field"
                 name="firstName"
                 placeholder="First Name"
                 type="text"
               />
-              <p>{errors.firstName?.message}</p>
-            </div>
-            <div className="nameErrors">
-              <input
+              <p className="my-0 mt-2 ms-2" style={{ color: 'red', fontSize: '14px' }}>
+                {errors.firstName?.message}
+              </p>
+            </Form.Group>
+            <Form.Group as={Col} controlId="validationCustom02" md="6">
+              <Form.Control
                 {...register('lastName')}
                 className="field"
                 name="lastName"
                 placeholder="Last Name"
                 type="text"
               />
-              <p>{errors.lastName?.message}</p>
-            </div>
-          </div>
-
-          <input
-            {...register('email')}
-            className="field"
-            name="email"
-            placeholder="E-mail"
-            type="email"
-          />
-          <p>{errors.email?.message}</p>
-          <div className="passwordField">
-            <input
+              <p className="my-0 mt-2 ms-2" style={{ color: 'red', fontSize: '14px' }}>
+                {errors.lastName?.message}
+              </p>
+            </Form.Group>
+          </Row>
+          <Form.Group className="mb-3" controlId="validationCustom01">
+            <Form.Control
+              {...register('email')}
+              className="field"
+              name="email"
+              placeholder="Email"
+              type="text"
+            />
+            <p className="my-0 mt-2 ms-2" style={{ color: 'red', fontSize: '14px' }}>
+              {errors.email?.message}
+            </p>
+          </Form.Group>
+          <Form.Group
+            className="mb-3"
+            controlId="validationCustom02"
+            style={{ position: 'relative' }}>
+            <Form.Control
               {...register('password')}
               className="field"
               name="password"
@@ -105,13 +120,18 @@ export default function SignUp() {
             <span
               aria-hidden="true"
               className="passwordEye"
-              onClick={() => setShowPassword({ ...showPassword, password1: true })}>
-              <i className="fas fa-eye" />
+              onClick={() =>
+                setShowPassword({ ...showPassword, password1: !showPassword.password1 })
+              }>
+              <i className="fas fa-eye fs-6" />
             </span>
-          </div>
-          <p>{errors.password?.message}</p>
-          <div className="passwordField">
-            <input
+            <p className="my-0 mt-2 ms-2" style={{ color: 'red', fontSize: '14px' }}>
+              {errors.password?.message}
+            </p>
+          </Form.Group>
+
+          <Form.Group controlId="validationCustom02" style={{ position: 'relative' }}>
+            <Form.Control
               {...register('confirmPassword')}
               className="field"
               name="confirmPassword"
@@ -121,16 +141,18 @@ export default function SignUp() {
             <span
               aria-hidden="true"
               className="passwordEye"
-              onClick={() => setShowPassword({ ...showPassword, password2: true })}>
-              <i className="fas fa-eye" />
+              onClick={() =>
+                setShowPassword({ ...showPassword, password2: !showPassword.password2 })
+              }>
+              <i className="fas fa-eye fs-6" />
             </span>
-          </div>
-
-          <p>{errors.confirmPassword?.message}</p>
+            <p className="my-0 mt-2 ms-2" style={{ color: 'red', fontSize: '14px' }}>
+              {errors.confirmPassword?.message}
+            </p>
+          </Form.Group>
           <div className="confirm">
             <label htmlFor="checkbox">
               <input
-                {...register('conditions')}
                 id="checkbox"
                 name="checkbox"
                 onChange={() => setTerms(!terms)}
@@ -139,9 +161,15 @@ export default function SignUp() {
               I acccept the terms of Use & Privacy Policy
             </label>
           </div>
-          {!terms && <p>You must to accept the term of conditions</p>}
-          <button type="submit">Sign Up</button>
-        </form>
+          {!terms && (
+            <p className="my-0 mt-2 ms-2" style={{ color: 'red', fontSize: '14px' }}>
+              You must to accept the term of conditions
+            </p>
+          )}
+          <button className="btn btn-primary btn-large btn-block mt-4" type="submit">
+            Sign Up
+          </button>
+        </Form>
       </div>
     </main>
   );

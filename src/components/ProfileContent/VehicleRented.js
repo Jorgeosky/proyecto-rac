@@ -1,24 +1,21 @@
 import React from 'react';
-import { Card, Col } from 'react-bootstrap';
+import { Card } from 'react-bootstrap';
 import { AdvancedImage } from '@cloudinary/react';
 import { Cloudinary } from '@cloudinary/url-gen';
-import { useNavigate } from 'react-router-dom';
+import { format } from 'date-fns';
 import { CLOUD_NAME } from '../../api/consts';
 
-export function VehicleCard({ model, carFrontPhoto, price, type, id }) {
+export function VehicleRented({ model, carFrontPhoto, price, startTrip, endTrip }) {
   const cld = new Cloudinary({
     cloud: {
       cloudName: CLOUD_NAME,
     },
   });
-  const navigate = useNavigate();
-  const handleClickCard = () => {
-    navigate(`/car-rental/${id}`);
-  };
+
   const carPhoto = cld.image(carFrontPhoto);
   return (
-    <Col>
-      <Card className="main__vehicle-card" onClick={handleClickCard}>
+    <div style={{ margin: '0 auto', maxWidth: '550px' }}>
+      <Card className="main__vehicle-card mb-5">
         {/* <span className="vehicle-card__like pointer">
           <i className="fas fa-thumbs-up" />
         </span> */}
@@ -28,14 +25,9 @@ export function VehicleCard({ model, carFrontPhoto, price, type, id }) {
         </div>
 
         <div className="vehicle-card__footer pointer">
-          <div className="vehicle-card__text d-flex align-items-center">
-            <p>
-              Type:{' '}
-              {type
-                .split(' ')
-                .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
-                .join(' ')}
-            </p>
+          <div className="vehicle-card__text d-flex align-items-center gap-5">
+            <p>Start Trip: {format(new Date(startTrip), 'dd-MM-yyyy')}</p>
+            <p>End Trip: {format(new Date(endTrip), 'dd-MM-yyyy')}</p>
           </div>
           <div className="vehicle-card__price">
             <span>
@@ -47,6 +39,6 @@ export function VehicleCard({ model, carFrontPhoto, price, type, id }) {
           </div>
         </div>
       </Card>
-    </Col>
+    </div>
   );
 }

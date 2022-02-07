@@ -6,10 +6,9 @@ import UserContext from '../components/Context';
 import { types } from '../types/types';
 
 export const useProfile = () => {
-  const { state } = useContext(UserContext);
+  const { state, dispatch } = useContext(UserContext);
   const path = `/${state.type === 'renter' ? 'users' : 'owners'}/profile`;
 
-  const { dispatch } = useContext(UserContext);
   const { data, error, mutate } = useSWR(path, async () => {
     const response = state.type === 'renter' ? await getUserProfile() : await getOwnerProfile();
     dispatch({

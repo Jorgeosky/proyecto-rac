@@ -1,0 +1,43 @@
+.footerContainer {
+  width: 100%;
+  background-color: #f4f4f4;
+  display: flex;
+  justify-content: center;
+  font-size: 16px;
+
+  .firstContent {
+    width: 80%;
+    padding: 40px 60px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .footerList {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+
+      h2 {
+        color: rgb(35, 31, 32);
+        font-family: 'Basis Grotesque Pro Bold';
+        font-size: 16px;
+        line-height: 1.5;
+      }
+
+      ul {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-block-start: 1em;
+        list-style: none;
+        font-family: 'Basis Grotesque Pro';
+        font-size: 14px;
+        padding-left: 0;
+
+        li {
+          margin-bottom: 4px;
+        }
+      }
+    }
+  }
+}

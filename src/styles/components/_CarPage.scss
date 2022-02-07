@@ -1,0 +1,303 @@
+.cardPage {
+  margin: 0;
+  padding: 0;
+  padding-bottom: 80px;
+  .carouselContainer {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto 40px;
+    padding: 0;
+    margin-bottom: 0;
+    .carousel {
+      display: flex;
+      position: relative;
+      .carousel-control-next {
+        opacity: 0.8;
+        justify-content: flex-end;
+        margin-right: 20px;
+      }
+      .carousel-control-prev {
+        opacity: 0.8;
+        justify-content: flex-start;
+        margin-left: 20px;
+      }
+      .carousel-control-next-icon,
+      .carousel-control-prev-icon {
+        background-color: #322d2e;
+        border: none;
+        border-radius: 25px;
+        cursor: pointer;
+        height: 50px;
+        margin: 0 20px;
+        opacity: 1;
+        outline: none;
+        padding: 0;
+        width: 50px;
+      }
+      .carousel-control-next-icon {
+        background-position: 11px 10px;
+        background-size: 34px 31px;
+      }
+      .carousel-control-prev-icon {
+        background-position: 6px 10px;
+        background-size: 34px 31px;
+      }
+      .carousel-inner {
+        flex: 1;
+        justify-content: center;
+        overflow: hidden;
+
+        .carouselSlide {
+          flex: 1;
+          min-width: 0;
+
+          .vehicleImage {
+            box-sizing: content-box;
+            height: 100px;
+            padding-bottom: 35%;
+            position: relative;
+            width: 100%;
+            .imgCar {
+              height: 100%;
+              object-fit: cover;
+              position: absolute;
+              width: 100%;
+              max-width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+  .vehicleDetails {
+    margin-top: 50px;
+    width: 100%;
+    .vehicleDetails-name {
+      margin: -10px -10px 20px -10px;
+      padding-left: 10px;
+      padding-right: 10px;
+      .vehicleModel {
+        font-family: 'Basis Grotesque Pro Black';
+        font-size: 38px;
+        font-weight: 900;
+        letter-spacing: -0.2px;
+        line-height: 44px;
+        text-transform: none;
+      }
+      .rating {
+        margin: 0;
+        padding: 0;
+        color: #121214;
+        margin-bottom: 0;
+        font-family: 'Basis Grotesque Pro Medium';
+        font-size: 21px;
+        font-weight: 900;
+        letter-spacing: -0.2px;
+        line-height: 28px;
+        text-transform: none;
+      }
+      span {
+        display: flex;
+        margin-left: 1px;
+        margin-top: -4px;
+      }
+    }
+    .vehicleFeatureIcon {
+      order: 0;
+      margin-right: 16px;
+      margin-left: 0px;
+      margin-bottom: initial;
+      display: inline-block;
+      background-image: url('https://resources.turo.com/client/v2/builds/assets/sprite.vehicledetails8dc1efcd0279ed340e73.png');
+      height: 30px;
+      vertical-align: middle;
+      width: 30px;
+    }
+    .door {
+      background-position: 0 -30px;
+      background-size: 151px 120px;
+    }
+    .vehicleFeatureText {
+      margin: 0;
+      color: #121214;
+      margin-bottom: 0;
+      font-family: 'Basis Grotesque Pro';
+      font-size: 16px;
+      font-weight: 400;
+      letter-spacing: 0;
+      line-height: 22px;
+      text-transform: none;
+    }
+    .seats {
+      background-position: -31px 0;
+      background-size: 151px 120px;
+    }
+    .subtitles {
+      margin: 0;
+      color: #121214;
+      margin-bottom: 8px;
+      text-align: left;
+      font-family: 'Basis Grotesque Pro Black';
+      font-size: 13px;
+      letter-spacing: 0.5px;
+      line-height: 16px;
+      text-transform: uppercase;
+    }
+    .ownerPhotoContainer {
+      flex: 0 0 auto;
+      max-height: 102px;
+      order: 0;
+      margin-right: 8px;
+      margin-left: 0px;
+      margin-bottom: initial;
+
+      .ownerPhoto {
+        padding-bottom: 10px;
+        position: relative;
+      }
+
+      img {
+        max-width: initial;
+        width: 78px;
+        height: 84px;
+        background-size: 80px 80px;
+        display: inline-block;
+        box-sizing: content-box;
+        border: 5px solid #ffffff;
+        border-radius: 999em;
+        overflow: hidden;
+      }
+      .ratingPhotoContainer {
+        position: absolute;
+        line-height: 16px;
+        margin: 4px 0;
+        bottom: 10px;
+        .ratingBoxProfile {
+          padding: 2px 12px;
+          background-color: #ffffff;
+          border-radius: 20px;
+          box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.13);
+        }
+        .ratingPhoto {
+          margin: 0;
+          color: #121214;
+          margin-bottom: 0;
+          font-family: 'Basis Grotesque Pro';
+          font-size: 16px;
+          font-weight: 400;
+          letter-spacing: 0;
+          line-height: 22px;
+          text-transform: none;
+        }
+        span {
+          margin-top: 1px;
+        }
+      }
+    }
+    .profileDescription {
+      flex: 1 1 auto;
+      max-width: 100%;
+      text-align: left;
+      align-self: flex-start;
+      margin-top: 5px;
+
+      .profileName {
+        margin: 0;
+        color: #121214;
+        margin-bottom: 5px;
+        font-family: 'Basis Grotesque Pro Black';
+        font-size: 21px;
+        font-weight: 900;
+        letter-spacing: -0.2px;
+        line-height: 28px;
+        text-transform: none;
+      }
+      .joinedTime {
+        margin: 0;
+        color: #121214;
+        margin-bottom: 0;
+        font-family: 'Basis Grotesque Pro';
+        font-size: 16px;
+        font-weight: 400;
+        letter-spacing: 0;
+        line-height: 22px;
+        text-transform: none;
+      }
+    }
+    .carDescription {
+      margin: 0;
+      color: #121214;
+      margin-bottom: 12px;
+      font-family: 'Basis Grotesque Pro';
+      font-size: 16px;
+      font-weight: 400;
+      letter-spacing: 0;
+      line-height: 24px;
+      text-transform: none;
+      text-align: justify;
+      padding-right: 10px;
+    }
+  }
+  .infoContainer {
+    width: 940px;
+
+    .reservationBox {
+      margin-top: 32px;
+      border-bottom: 1px solid #e6e6e6;
+      display: flex;
+      flex-direction: column;
+      padding-bottom: 5px;
+      width: 100%;
+      .priceTitle {
+        margin: 0px 0px 16px;
+        color: rgb(18, 18, 20);
+        font-family: 'Basis Grotesque Pro';
+        font-size: 21px;
+        font-weight: 600;
+        letter-spacing: -0.2px;
+        line-height: 28px;
+        text-transform: none;
+      }
+      .priceValue {
+        margin: 0px 0px 16px;
+        color: rgb(18, 18, 20);
+        font-family: 'Basis Grotesque Pro Black';
+        font-size: 21px;
+        font-weight: 900;
+        letter-spacing: -0.2px;
+        line-height: 28px;
+        text-transform: none;
+      }
+      .priceDay {
+        margin: 0;
+        color: #121214;
+        margin-bottom: 16px;
+        font-family: 'Basis Grotesque Pro';
+        font-size: 18px;
+        font-weight: 400;
+        letter-spacing: 0;
+        line-height: 24px;
+        text-transform: none;
+      }
+      .lineSeparator {
+        background: transparent;
+        border: 0;
+        border-bottom: 1px solid #e6e6e6;
+        height: 0;
+        overflow: hidden;
+        margin-bottom: 15px;
+        margin-top: 15px;
+      }
+      .formRental {
+        display: block;
+        width: 100%;
+      }
+    }
+  }
+}
+@media only screen and (max-width: 576px) {
+  .carousel-control-next,
+  .carousel-control-prev {
+    display: none;
+  }
+}

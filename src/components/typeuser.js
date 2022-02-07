@@ -29,7 +29,6 @@ export default function TypeUser() {
 
   const handleRenter = () => {
     setUser(false);
-
     dispatch({
       type: types.type,
       payload: { type: 'renter' },
@@ -46,7 +45,7 @@ export default function TypeUser() {
   return (
     <>
       <div className="Up">
-        <h2>Chosse account type</h2>
+        <h2>Choose account type</h2>
         <div className="TypeUser">
           <div aria-hidden="true" className="Icon" onClick={handleOwner} role="button" tabIndex={0}>
             <img alt="img1" src="Login-2.png" style={user ? Aux1 : Aux2} />

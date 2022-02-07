@@ -1,0 +1,64 @@
+[33m34e74e9[m[33m ([m[1;36mHEAD -> [m[1;32mJuanda-dev[m[33m, [m[1;31morigin/Juanda-dev[m[33m)[m Merge branch 'Jdiego-dev' of https://github.com/Jorgeosky/proyecto-rac into Juanda-dev
+[33me111453[m add footer
+[33md71ea94[m[33m ([m[1;31morigin/Jdiego-dev[m[33m)[m Refactor Styles signin and signup FORMS Add Private and Public routes Refactor signup axios Add profile photo in the NavSearch
+[33m8ec5721[m Merge branch 'jdiego-dev' of https://github.com/Jorgeosky/proyecto-rac into Juanda-dev
+[33m6b374bd[m Fix merge conflict cardpage
+[33m6e8d804[m Add upload cars form Refactor search page Add filters
+[33m353ab18[m Delete App AppRouter Refactor BrowseRouter and UseContext in the index
+[33m9c479a9[m add CarPage
+[33mae42adf[m Add inputs upload cars
+[33m0cfa200[m Merge Juanda-dev and fix merge conflicts
+[33mfeacbb0[m Add SignUp and SignIn for users and owners Add Profiles for users and owners Add edit profile Add upload photo profile Add SWR to profile, changes real time
+[33m547b52d[m Add card confirmEmail and EmailVerified
+[33m7d0c566[m add uploadCar to profile
+[33m7f27303[m fix inputs styles
+[33mcb9c676[m Fix EditProfile & Nav /profile
+[33me77a379[m[33m ([m[1;31morigin/Jorge-dev[m[33m)[m Merge remote-tracking branch 'origin/Jdiego-dev' into Jorge-dev
+[33m9be5cf3[m Config Navbar Update search filters
+[33m2a8b1fa[m fix profile page, add editProfile
+[33ma2b0ab5[m Add signin and singup config Add yup and react hook form Add type 'owner' or 'renter' context provider variable Add confirmemail and changepassword pages
+[33m77ec896[m[33m ([m[1;31morigin/juanca-dev[m[33m)[m add route email verification
+[33mfd10dde[m Merge pull request #7 from Jorgeosky/Jdiego-dev
+[33m994a357[m Add signup with backend
+[33m64718c8[m Add husky eslint prettier and lint-staged config Add autofix eslint Add axios config
+[33m21bd0fd[m add carpage
+[33md05f739[m add reducer for signin and design
+[33me1c30cd[m fix bugs and design and waiting fix Navbar context
+[33me7f2b20[m Merge pull request #6 from Jorgeosky/Jorge-dev
+[33mf96d1ed[m Login/Signup styles Update
+[33m9bcbdbc[m New profile page and fix design
+[33m8e50943[m Merge remote-tracking branch 'origin/JoseO-Dev' into Jorge-dev
+[33m62fbead[m fix libraries and components
+[33m841e1f3[m Merge remote-tracking branch 'origin/Jdiego-dev' into Jorge-dev
+[33m83e5c55[m Merge branch 'Jorge-dev' of https://github.com/Jorgeosky/proyecto-rac into Jorge-dev
+[33m700f958[m create components and structure
+[33m3bbe862[m fix libraries
+[33mb433935[m create components and structure
+[33me412208[m add Home Page
+[33me2febe8[m Add search page
+[33md23ae93[m[33m ([m[1;31morigin/JoseO-Dev[m[33m)[m "formulario SingUp"
+[33m1815f16[m fix libraries
+[33mdf91b42[m Merge pull request #4 from Jorgeosky/master
+[33m3b7992a[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m Merge pull request #3 from Jorgeosky/juanca-dev
+[33mb7dd9fa[m Merge pull request #2 from Jorgeosky/Jorge-dev
+[33mc0264a1[m Delete package-lock.json
+[33m6b7fb60[m[33m ([m[1;32mJorge-dev[m[33m)[m Delete items unused
+[33m2386b8f[m Merge branch 'Jorge-dev' into Jorge-dev
+[33m7690eec[m New Design structure items and fixs
+[33ma758adb[m Design Script using UseState
+[33m97125b0[m Design Script using UseState
+[33mcb7f3c9[m Merge branch origin/Jorge-dev into Jorge-dev
+[33m16749ae[m Design Script using UseState
+[33m2526cde[m Design Script using UseState
+[33me06dd65[m Merge branch 'Jdiego-dev' of github.com:Jorgeosky/proyecto-rac into Jdiego-dev
+[33m3e15a12[m File sorting
+[33m1840e3c[m File sorting
+[33m981ce17[m Merge Jorge branch (Design Login Screens)
+[33m5021cd4[m Merge pull request #1 from Jorgeosky/Jdiego-dev
+[33m7ce046f[m update gitignore
+[33mf3a093a[m Delete yarn.lock
+[33m603560e[m Init Project
+[33m40d95c4[m create ForgetPassPage, SignUp and design
+[33m0ddf41f[m Create LoginPage and Design
+[33mb5365aa[m npm install
+[33m34464b3[m Initialize project using Create React App

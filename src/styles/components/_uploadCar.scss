@@ -11,76 +11,7 @@
     text-align: center;
     padding-bottom: 20px;
   }
-
-  .field {
-    border: 1px solid #c7c7c7;
-    height: 40px;
-    width: 100% !important;
-    align-self: center;
-    padding: 0px 120px;
-    padding-left: 10px;
-    margin-top: 5px;
-    font-family: 'Basis Grotesque Pro';
-    font-size: 15px;
-    font-weight: bold;
-    color: #7a7a7a;
-  }
-
-  .field:hover,
-  .field:focus {
-    outline: none;
-    border: 1px solid rgb(0, 0, 0);
-  }
-
-  .doubleInput {
-    width: 100%;
-    display: flex;
-    height: 40px;
-    flex-direction: row;
-    justify-content: space-between;
-    margin-bottom: 15px;
-    gap: 15px;
-
-    .field {
-      height: 40px;
-      width: 100%;
-    }
-  }
-  .passwordField {
-    display: flex;
-    width: 100%;
-    position: relative;
-    margin-top: 10px;
-  }
-  .passwordField input {
-    margin-top: 0;
-  }
-  .passwordEye {
-    position: absolute;
-    top: 6px;
-    left: calc(100% - 2.5em);
-  }
-  .passwordEye:hover {
-    cursor: pointer;
-  }
-  .passwordEye i {
-    color: #7a7a7a;
-    font-size: 14px;
-  }
-  button {
-    height: 50px;
-    width: 40%;
-    align-self: center;
-    outline: none;
-    border: 1px solid #593cfb;
-    background-color: #593cfb;
-    color: #ffff;
-    margin-top: 15px;
-    font-family: 'Basis Grotesque Pro Bold';
-    font-size: 18px;
-    text-align: center;
-    padding: 0 19px;
-    cursor: pointer;
-    transition: 0.8s all ease;
+  .inputGroup {
+    flex-wrap: nowrap;
   }
 }

@@ -1,12 +1,28 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
+import { Cloudinary } from '@cloudinary/url-gen';
+import { AdvancedImage } from '@cloudinary/react';
 import UserContext from '../Context';
 import { types } from '../../types/types';
+import { CLOUD_NAME } from '../../api/consts';
 
 export function NavbarSearch() {
   const { state, dispatch } = useContext(UserContext);
+  const navigate = useNavigate();
 
+  const onSignOut = () => {
+    dispatch({ type: types.signout });
+    navigate('/signin');
+  };
+
+  const cld = new Cloudinary({
+    cloud: {
+      cloudName: CLOUD_NAME,
+    },
+  });
+
+  // const image = cld.image(state.user.photo);
   return (
     <Navbar expand="sm" collapseOnSelect>
       <Container fluid>
@@ -22,27 +38,46 @@ export function NavbarSearch() {
           </Nav>
           <NavDropdown
             id="basic-nav-dropdown"
-            title={(
-              <div className="header__user-icon fs-2 me-5 align-self-end">
-                <i className="far fa-user-circle" />
-              </div>
-            )}
+            title={
+              state.isLoggedIn ? (
+                state.user.photo ? (
+                  <AdvancedImage
+                    className="card-img-top"
+                    cldImg={cld.image(state.user.photo)}
+                    style={{
+                      marginTop: '5px',
+                      width: '36px',
+                      height: '38px',
+                      borderRadius: '50%',
+                    }}
+                  />
+                ) : (
+                  <div className="header__user-icon fs-2 me-4 align-self-end">
+                    <i className="far fa-user-circle" />
+                  </div>
+                )
+              ) : (
+                <div className="header__user-icon fs-2 me-4 align-self-end">
+                  <i className="far fa-user-circle" />
+                </div>
+              )
+            }
             type="button">
             {!state.isLoggedIn ? (
               <>
-                <NavDropdown.Item className="dropItem" href="/signin">
+                <NavDropdown.Item as={Link} className="dropItem" to="/signin">
                   Sign In
                 </NavDropdown.Item>
-                <NavDropdown.Item className="dropItem" href="/signup">
+                <NavDropdown.Item as={Link} className="dropItem" to="/signup">
                   Sign Up
                 </NavDropdown.Item>
               </>
             ) : (
               <>
-                <NavDropdown.Item href="/profile">Profile</NavDropdown.Item>
-                <NavDropdown.Item href="/signin" onClick={() => dispatch({ type: types.signout })}>
-                  Sign Out
+                <NavDropdown.Item as={Link} to="/profile">
+                  Profile
                 </NavDropdown.Item>
+                <NavDropdown.Item onClick={onSignOut}>Sign Out</NavDropdown.Item>
               </>
             )}
           </NavDropdown>

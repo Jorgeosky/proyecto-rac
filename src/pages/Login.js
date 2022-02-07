@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useForm } from 'react-hook-form';
+import { Form } from 'react-bootstrap';
 import TypeUser from '../components/typeuser';
 // import UserExample from '../components/UserExample';
 import UserContext from '../components/Context';
@@ -39,6 +40,7 @@ export default function Login() {
           payload: {
             user: { ...data },
             isLoggedIn: true,
+            type: 'renter',
           },
         });
         navigate('/profile');
@@ -58,6 +60,7 @@ export default function Login() {
           payload: {
             user: { ...data },
             isLoggedIn: true,
+            type: 'owner',
           },
         });
         navigate('/profile');
@@ -79,46 +82,52 @@ export default function Login() {
       <main>
         <div className="Login">
           <div className="Container">
-            <form onSubmit={handleSubmit(OnSubmit)}>
+            <Form onSubmit={handleSubmit(OnSubmit)}>
               <TypeUser type={type} />
               <h4>Hello, please fill the form to start</h4>
-              <div className="Middle">
-                <input
-                  {...register('email')}
-                  id="email"
-                  name="email"
-                  placeholder="E-mail"
-                  type="email"
-                />
-                <p>{errors.email?.message}</p>
-                <div className="passwordField">
-                  <input
-                    {...register('password')}
-                    id="password"
-                    name="password"
-                    placeholder="Password"
-                    type={showPassword ? 'text' : 'password'}
-                  />
-                  <span
-                    aria-hidden="true"
-                    className="passwordEye"
-                    onClick={() => setShowPassword(!showPassword)}>
-                    <i className="fas fa-eye" />
-                  </span>
-                </div>
 
-                <p>{errors.password?.message}</p>
-                <button className="submit" type="submit">
-                  Log in
-                </button>
-                <button className="google1" type="button">
-                  <div className="google">
-                    <img alt="img3" className="imgGoogle" src="Login-4.png" />
-                    <p>Continue with Google</p>
-                  </div>
-                </button>
-              </div>
-            </form>
+              <Form.Group className="mb-3" controlId="validationCustom01">
+                <Form.Control
+                  {...register('email')}
+                  className="field"
+                  name="email"
+                  placeholder="Email"
+                  type="text"
+                />
+                <p className="my-0 mt-2 ms-2" style={{ color: 'red', fontSize: '14px' }}>
+                  {errors.email?.message}
+                </p>
+              </Form.Group>
+
+              <Form.Group controlId="validationCustom02" style={{ position: 'relative' }}>
+                <Form.Control
+                  {...register('password')}
+                  className="field"
+                  name="password"
+                  placeholder="Password"
+                  type={showPassword ? 'text' : 'password'}
+                />
+                <span
+                  aria-hidden="true"
+                  className="passwordEye"
+                  onClick={() => setShowPassword(!showPassword)}>
+                  <i className="fas fa-eye fs-6" />
+                </span>
+                <p className="my-0 mt-2 ms-2" style={{ color: 'red', fontSize: '14px' }}>
+                  {errors.password?.message}
+                </p>
+              </Form.Group>
+
+              <button className="btn btn-primary btn-large btn-block mt-4" type="submit">
+                Log in
+              </button>
+              <button className="google1" type="button">
+                <div className="google">
+                  <img alt="img3" className="imgGoogle" src="Login-4.png" />
+                  <p>Continue with Google</p>
+                </div>
+              </button>
+            </Form>
             <div className="Down">
               <Link className="link1" to="/SignUp">
                 Not account? Sign Up...

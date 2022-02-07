@@ -4,9 +4,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 50px;
 
   form {
-    width: 40%;
+    width: 42%;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -16,7 +17,7 @@
       flex-direction: column;
       margin-bottom: 15px;
       h2 {
-        font-family: 'Basis Grotesque Pro Bold';
+        font-family: 'Basis Grotesque Pro';
         font-size: 38px;
         letter-spacing: -0.05em;
         letter-spacing: -0.2px;
@@ -51,36 +52,6 @@
     .typecar {
       display: none;
     }
-    p {
-      margin-left: 12px;
-    }
-    .nameErrors {
-      width: 100%;
-    }
-    .nameErrors input {
-      margin-top: 0;
-    }
-    .nameErrors p {
-      margin-left: 12px;
-    }
-    .field {
-      border: 1px solid #c7c7c7;
-      height: 35px;
-      width: 100% !important;
-      align-self: center;
-      padding: 3px 10px;
-      margin-top: 10px;
-      font-family: 'Basis Grotesque Pro';
-      font-size: 13px;
-      font-weight: bold;
-      color: #7a7a7a;
-    }
-
-    .field:hover,
-    .field:focus {
-      outline: none;
-      border: 1px solid rgb(0, 0, 0);
-    }
 
     .passwordField {
       display: flex;
@@ -94,7 +65,7 @@
     }
     .passwordEye {
       position: absolute;
-      top: 6px;
+      top: 13px;
       left: calc(100% - 2.5em);
     }
     .passwordEye:hover {
@@ -126,7 +97,8 @@
       justify-content: flex-start;
       align-items: center;
       margin-top: 15px;
-      font-family: 'Basis Grotesque Pro Regular';
+      font-family: 'Basis Grotesque Pro';
+      font-size: 15px;
 
       label {
         display: flex;
@@ -135,6 +107,7 @@
 
         input {
           margin-right: 10px;
+
           background: rgba(71, 50, 50, 0.19);
         }
       }
@@ -160,5 +133,23 @@
     button:hover {
       background-color: #23108d;
     }
+  }
+}
+
+@media only screen and (max-width: 1500px) {
+  .SignUp form {
+    width: 60%;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .SignUp form {
+    width: 70%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .SignUp form {
+    width: 80%;
   }
 }
