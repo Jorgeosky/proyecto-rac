@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { Col, Form, Row } from 'react-bootstrap';
+import { PropagateLoader } from 'react-spinners';
 import PhoneInput from 'react-phone-number-input';
 import 'react-phone-number-input/style.css';
 
 export default function EditProfile({ setState, update }) {
+  const [loading, setLoading] = useState(false);
   const [phone, setPhone] = useState();
   const [photo, setPhoto] = useState();
   const [inputs, setInputs] = useState({
@@ -26,6 +28,7 @@ export default function EditProfile({ setState, update }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
     const formData = new FormData();
     if (photo) formData.append('file', photo);
     if (firstName) formData.append('firstName', firstName);
@@ -35,6 +38,7 @@ export default function EditProfile({ setState, update }) {
     if (about) formData.append('about', about);
     if (phone) formData.append('cellphone', phone);
     await update(formData);
+    setLoading(false);
     setState('profile');
   };
 
@@ -42,7 +46,7 @@ export default function EditProfile({ setState, update }) {
     <div>
       <div className="editProfile mx-auto">
         <h1>Edit profile</h1>
-        <Form onSubmit={handleSubmit}>
+        <Form onSubmit={handleSubmit} style={{ opacity: loading ? '0.6' : '1' }}>
           <Row className="mb-3">
             <Form.Group as={Col} controlId="validationCustom01" md="6">
               <Form.Label className="m-0">First Name</Form.Label>
@@ -84,6 +88,12 @@ export default function EditProfile({ setState, update }) {
                 onChange={handleInputChange}
                 placeholder="State"
                 type="text"
+              />
+              <PropagateLoader
+                color="#593cfb"
+                loading={loading}
+                size={25}
+                style={{ marginTop: '600px' }}
               />
             </Form.Group>
           </Row>

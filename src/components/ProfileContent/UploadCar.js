@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Col, Form, InputGroup, Row } from 'react-bootstrap';
 import Select from 'react-select';
+import { PropagateLoader } from 'react-spinners';
 import { numberSeats, vehicleDoors, vehicleMakes, vehicleType } from '../../data/searchVehicle';
 import { useCars } from '../../hooks/useCars';
 
@@ -19,7 +20,7 @@ export default function UploadCar({ setState }) {
   const { model, price, description } = inputs;
 
   const [images, setImages] = useState({});
-
+  const [loading, setLoading] = useState(false);
   const {
     actions: { create },
   } = useCars();
@@ -30,7 +31,7 @@ export default function UploadCar({ setState }) {
 
   const handleUploadSubmit = async (e) => {
     e.preventDefault();
-
+    setLoading(true);
     const formData = new FormData();
     formData.append('model', model);
     formData.append('price', price);
@@ -44,12 +45,13 @@ export default function UploadCar({ setState }) {
     formData.append('photo2', images[2]);
     formData.append('photo3', images[3]);
     await create(formData);
+    setLoading(false);
     setState('profile');
   };
   return (
     <div className="uploadCar mx-auto">
       <h1>Upload car</h1>
-      <Form onSubmit={handleUploadSubmit}>
+      <Form onSubmit={handleUploadSubmit} style={{ opacity: loading ? '0.6' : '1' }}>
         <Row>
           <Form.Group as={Col} className="mb-3" controlId="upload1">
             <Form.Label className="m-0 mb-1">Model</Form.Label>
@@ -119,6 +121,12 @@ export default function UploadCar({ setState }) {
               onChange={({ target }) => setImages({ ...images, 3: target.files[0] })}
               type="file"
               required
+            />
+            <PropagateLoader
+              color="#593cfb"
+              loading={loading}
+              size={25}
+              style={{ marginTop: '600px' }}
             />
           </Form.Group>
         </Row>
