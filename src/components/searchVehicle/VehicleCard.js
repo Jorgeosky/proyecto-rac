@@ -38,7 +38,12 @@ export function VehicleCard({ model, carFrontPhoto, price, type, id }) {
             </p>
           </div>
           <div className="vehicle-card__price">
-            <span>{`$ ${price}/day`}</span>
+            <span>
+              {`$ ${price}/day`}
+              {/*  <button onClick={pay} type="button">
+                comprar
+              </button> */}
+            </span>
           </div>
         </div>
       </Card>
