@@ -5,7 +5,7 @@ const UserExample = {
   password: '12345678',
   number: '31945603324',
   cartype: 'Renter',
-  city: 'Neiva - Huila',
+  city: 'Neiva - Huil',
 };
 
 export default UserExample;

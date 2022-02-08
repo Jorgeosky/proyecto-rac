@@ -187,21 +187,21 @@ export default function UploadCar({ setState }) {
           />
         </Form.Group>
 
-       <div className="buttonsContainer">
-        <button
-          className="btn btn-primary btn-large ms-5 me-5"
-          style={{ width: '40%' }}
-          type="submit">
+        <div className="buttonsContainer">
+          <button
+            className="btn btn-primary btn-large ms-5 me-5"
+            style={{ width: '40%' }}
+            type="submit">
           Submit
-        </button>
-        <button
-          className="btn btn-primary btn-large" id="returnProfile"
-          onClick={() => setState('profile')}
-          style={{ width: '40%' }}
-          type="button">
+          </button>
+          <button
+            className="btn btn-primary btn-large" id="returnProfile"
+            onClick={() => setState('profile')}
+            style={{ width: '40%' }}
+            type="button">
           Return to Profile
-        </button>
-       </div>
+          </button>
+        </div>
 
       </Form>
     </div>
