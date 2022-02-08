@@ -40,7 +40,7 @@ export const carArray = [
 export const recomendationData = [
   {
     url: 'https://resources.turo.com/f/81934/416x284/7c424a07d5/image_unwind_416x285.jpg',
-    title2: 'to unwind for the weekend',
+    title: 'to unwind for the weekend',
     text: 'From daily drivers to spirited sports cars, ditch the grind with convenient nearby cars.',
   },
   {
