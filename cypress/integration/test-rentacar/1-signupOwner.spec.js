@@ -15,6 +15,7 @@ describe("RentaCar App", () => {
       cy.get('input[name="checkbox"]').click() 
       cy.root().submit()
     })
+    cy.wait(5000)
   });
 });
 
