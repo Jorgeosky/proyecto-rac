@@ -116,21 +116,22 @@ export default function EditProfile({ setState, update }) {
               style={{ height: '80px' }}
             />
           </Form.Group>
-          <div className="buttonsContainer">
-            <button
-              className="btn btn-primary btn-large ms-4 me-5"
-              style={{ width: '40%' }}
-              type="submit">
-              Submit
-            </button>
-            <button
-              className="btn btn-primary btn-large px-5"
-              onClick={() => setState('profile')}
-              style={{ width: '40%' }}
-              type="button">
-              Return to Profile
-            </button>
-          </div>
+         <div className="buttonsContainer">
+          <button
+            className="btn btn-primary btn-large ms-4 me-5"
+            style={{ width: '40%' }}
+            type="submit">
+            Submit
+          </button>
+          <button
+            className="btn btn-primary btn-large px-5" id="returnProfile"
+            onClick={() => setState('profile')}
+            style={{ width: '40%' }}
+            type="button">
+            Return to Profile
+          </button>
+         </div>
+
         </Form>
       </div>
     </div>

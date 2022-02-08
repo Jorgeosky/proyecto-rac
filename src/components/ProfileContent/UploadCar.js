@@ -84,7 +84,7 @@ export default function UploadCar({ setState }) {
           </Form.Group>
         </Row>
         <Row className="mb-1">
-          <Form.Group as={Col} className="mb-3" controlId="photo" md="6">
+          <Form.Group as={Col} className="mb-3" controlId="photo1" md="6">
             <Form.Label>Car Front Photo</Form.Label>
             <Form.Control
               accept=".jpg,.jpeg,.png"
@@ -94,7 +94,7 @@ export default function UploadCar({ setState }) {
               required
             />
           </Form.Group>
-          <Form.Group as={Col} className="mb-3" controlId="photo" md="6">
+          <Form.Group as={Col} className="mb-3" controlId="photo2" md="6">
             <Form.Label>Photo 1</Form.Label>
             <Form.Control
               accept=".jpg,.jpeg,.png"
@@ -105,7 +105,7 @@ export default function UploadCar({ setState }) {
           </Form.Group>
         </Row>
         <Row className="mb-1">
-          <Form.Group as={Col} className="mb-3" controlId="photo" md="6">
+          <Form.Group as={Col} className="mb-3" controlId="photo3" md="6">
             <Form.Label>Photo 2</Form.Label>
             <Form.Control
               accept=".jpg,.jpeg,.png"
@@ -114,7 +114,7 @@ export default function UploadCar({ setState }) {
               required
             />
           </Form.Group>
-          <Form.Group as={Col} className="mb-3" controlId="photo" md="6">
+          <Form.Group as={Col} className="mb-3" controlId="photo4" md="6">
             <Form.Label>Photo 3</Form.Label>
             <Form.Control
               accept=".jpg,.jpeg,.png"
@@ -186,21 +186,23 @@ export default function UploadCar({ setState }) {
             style={{ height: '80px' }}
           />
         </Form.Group>
-        <div className="buttonsContainer">
-          <button
-            className="btn btn-primary btn-large ms-5 me-5"
-            style={{ width: '40%' }}
-            type="submit">
-            Submit
-          </button>
-          <button
-            className="btn btn-primary btn-large"
-            onClick={() => setState('profile')}
-            style={{ width: '40%' }}
-            type="button">
-            Return to Profile
-          </button>
-        </div>
+
+       <div className="buttonsContainer">
+        <button
+          className="btn btn-primary btn-large ms-5 me-5"
+          style={{ width: '40%' }}
+          type="submit">
+          Submit
+        </button>
+        <button
+          className="btn btn-primary btn-large" id="returnProfile"
+          onClick={() => setState('profile')}
+          style={{ width: '40%' }}
+          type="button">
+          Return to Profile
+        </button>
+       </div>
+
       </Form>
     </div>
   );

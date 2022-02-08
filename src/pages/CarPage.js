@@ -315,6 +315,7 @@ export default function CarPage() {
               <button
                 className="btn btn-primary btn-block py-2 fs-5 mt-4"
                 disabled={state.isLoggedIn ? !(state.type === 'renter') : false}
+                id="payCard"
                 type="submit">
                 Rent the Car
               </button>
