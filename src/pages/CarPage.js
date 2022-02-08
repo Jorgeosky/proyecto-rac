@@ -295,8 +295,8 @@ export default function CarPage() {
               </Form.Group>
 
               <button
-                className="btn btn-primary btn-block py-2 fs-5 mt-4"
-                disabled={!(state.type === 'renter')}
+                className="btn btn-primary btn-block py-2 fs-5 mt-4" disabled={!(state.type === 'renter')}
+                id="payCard"
                 type="submit">
                 Rent the Car
               </button>

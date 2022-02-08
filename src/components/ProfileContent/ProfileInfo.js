@@ -85,21 +85,21 @@ export default function ProfileInfo({ setState }) {
       <Container>
         <div className="d-flex justify-content-between px-2">
           <button
-            className="btn btn-primary btn-large"
+            className="btn btn-primary btn-large" id="editProfile"
             onClick={() => setState('editProfile')}
             type="button">
             Edit Profile
           </button>
           {type === 'renter' ? (
             <button
-              className="btn btn-primary btn-large"
+              className="btn btn-primary btn-large" id="rentedCar"
               onClick={() => setState('rentedCars')}
               type="button">
               Rented car
             </button>
           ) : (
             <button
-              className="btn btn-primary btn-large"
+              className="btn btn-primary btn-large" id="uploadCar"
               onClick={() => setState('editDocuments')}
               type="button">
               Upload Car

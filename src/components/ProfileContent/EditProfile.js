@@ -123,7 +123,7 @@ export default function EditProfile({ setState, update }) {
             Submit
           </button>
           <button
-            className="btn btn-primary btn-large px-5"
+            className="btn btn-primary btn-large px-5" id="returnProfile"
             onClick={() => setState('profile')}
             style={{ width: '40%' }}
             type="button">
