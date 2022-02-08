@@ -1,30 +1,31 @@
 import React from 'react';
+import { Col, Row } from 'react-bootstrap';
 
 export default function Footer() {
   return (
     <footer className="footerContainer">
-      <div className="firstContent">
-        <div className="footerList">
+      <Row className="mt-4 footerContent">
+        <Col className="footerList" md={3} sm={6}>
           <h2>Rent a car</h2>
           <ul>
             <li>About</li>
             <li>Team</li>
             <li>Policies</li>
-            <li>Careers</li>
+            <li>Careers</li> sm={3}
             <li>Press</li>
             <li>OpenRoad</li>
             <li>Turo shop</li>
           </ul>
-        </div>
-        <div className="footerList">
+        </Col>
+        <Col className="footerList" md={3} sm={6}>
           <h2>Locations</h2>
           <ul>
             <li>Colombia</li>
             <li>Peru</li>
             <li>Mexico</li>
           </ul>
-        </div>
-        <div className="footerList">
+        </Col>
+        <Col className="footerList" md={3} sm={6}>
           <h2>Explore</h2>
           <ul>
             <li>Book a car</li>
@@ -34,8 +35,8 @@ export default function Footer() {
             <li>FAQs</li>
             <li>Get help</li>
           </ul>
-        </div>
-        <div className="footerList">
+        </Col>
+        <Col className="footerList" md={3} sm={6}>
           <h2>Hosting</h2>
           <ul>
             <li>List your car</li>
@@ -45,8 +46,8 @@ export default function Footer() {
             <li>Insurance and protection</li>
             <li>FAQs</li>
           </ul>
-        </div>
-      </div>
+        </Col>
+      </Row>
     </footer>
   );
 }
