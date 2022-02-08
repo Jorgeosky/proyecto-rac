@@ -24,3 +24,17 @@
     }
   }
 }
+
+@media only screen and (max-width: 576px) {
+  .editProfile {
+    .buttonsContainer {
+      margin-top: 40px;
+      display: flex;
+      flex-direction: column;
+
+      button {
+        width: inherit !important;
+      }
+    }
+  }
+}

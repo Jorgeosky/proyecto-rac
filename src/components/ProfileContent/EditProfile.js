@@ -116,6 +116,7 @@ export default function EditProfile({ setState, update }) {
               style={{ height: '80px' }}
             />
           </Form.Group>
+         <div className="buttonsContainer">
           <button
             className="btn btn-primary btn-large ms-4 me-5"
             style={{ width: '40%' }}
@@ -129,6 +130,8 @@ export default function EditProfile({ setState, update }) {
             type="button">
             Return to Profile
           </button>
+         </div>
+
         </Form>
       </div>
     </div>

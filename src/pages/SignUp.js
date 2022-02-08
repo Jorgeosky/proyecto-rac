@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useForm } from 'react-hook-form';
 import { Col, Form, Row } from 'react-bootstrap';
+import Swal from 'sweetalert2';
 import { ownerSignUp } from '../api/owners';
 import { SingUpSchema } from '../schemas/formSchemas';
 import TypeUser from '../components/typeuser';
@@ -37,26 +38,44 @@ export default function SignUp() {
       console.log(dataForm);
       if (state.type === 'renter') {
         const { data } = await userSignUp({ ...dataForm, terms });
-        dispatch({
-          type: types.signup,
-          payload: {
-            user: { ...data },
-            isLoggedIn: true,
-            type: 'renter',
-          },
-        });
+        if (data) {
+          dispatch({
+            type: types.signup,
+            payload: {
+              user: { ...data },
+              isLoggedIn: true,
+              type: 'renter',
+            },
+          });
+          navigate('/profile');
+        } else {
+          Swal.fire({
+            title: 'Error!',
+            text: 'Esta cuenta ya esta registrada',
+            icon: 'error',
+            confirmButtonText: 'Done',
+          });
+        }
       } else {
         const { data } = await ownerSignUp({ ...dataForm, terms });
-        dispatch({
-          type: types.signup,
-          payload: {
-            user: { ...data },
-            isLoggedIn: true,
-            type: 'owner',
-          },
-        });
+        if (data) {
+          dispatch({
+            type: types.signup,
+            payload: {
+              user: { ...data },
+              isLoggedIn: true,
+              type: 'owner',
+            },
+          });
+        } else {
+          Swal.fire({
+            title: 'Error!',
+            text: 'Esta cuenta ya esta registrada',
+            icon: 'error',
+            confirmButtonText: 'Done',
+          });
+        }
       }
-      navigate('/profile');
     }
   };
   return (

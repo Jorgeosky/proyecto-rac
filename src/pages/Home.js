@@ -1,65 +1,78 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useRef /* useState */ } from 'react';
+import Carousel from 'react-elastic-carousel';
+import { v4 as uuidv4 } from 'uuid';
+import { HomeCard } from '../components/Home/HomeCard';
+import { RecomendationCard } from '../components/Home/recomendationCard';
+import { breakPoints, carArray, recomendationData } from '../data/homeData';
 
 export default function Home() {
+  // const { restart, setRestart } = useState({});
+  const carouselRef = useRef(null);
+  const carouselRef2 = useRef(null);
+
+  const onNextStart = (currentItem, nextItem) => {
+    if (currentItem.index === 2) {
+      carouselRef.current.goTo(0);
+    }
+  };
+  const onNextStart2 = (currentItem, nextItem) => {
+    if (currentItem.index === 4) {
+      carouselRef2.current.goTo(0);
+    }
+  };
+
+  const onPrevStart = (currentItem, nextItem) => {
+    if (currentItem.index === 0) {
+      carouselRef.current.goTo(6);
+    }
+  };
+  const onPrevStart2 = (currentItem, nextItem) => {
+    if (currentItem.index === 0) {
+      carouselRef2.current.goTo(4);
+    }
+  };
+
   return (
     <div className="Home">
-      <div className="Header">
-        {/* <div className="Search">
-          <input type="text" placeholder="Selecciona la ciudad" id="location" />
-          <div className="VLine"></div>
-          <input type="date" id="startDate" />
-          <div className="VLine"></div>
-          <input type="date" id="endDate" />
-          <Link style={{ textDecoration: "none", color: "black" }} to="/search" className="SearchButton">Search</Link>
-        </div> */}
-        {/* </div>
-      <footer className="footer">
-        about us...
-      </footer> */}
-      </div>
+      <div className="Header" />
+
       <p className="findYourDrive">Find your drive</p>
-      <p className="explore">Explore the world&apos;s largest car sharing marketplace</p>
-      <div className="browseByMakeContainer">
-        <p className="pBrowse">Browse by make</p>
-        <div className="browseByMake">
-          <div className="cardBrowse">
-            <div>
-              <img alt="jeep" src="jeep.jpg" />
-            </div>
-            <p>Jeep</p>
-          </div>
-          <div className="cardBrowse">
-            <div>
-              <img alt="bmw" src="bmw.jpg" />
-            </div>
-            <p>BMW</p>
-          </div>
-          <div className="cardBrowse">
-            <div>
-              <img alt="ford" src="ford.jpeg" />
-            </div>
-            <p>Ford</p>
-          </div>
-          <div className="cardBrowse">
-            <div>
-              <img alt="nissan" src="nissan.jpg" />
-            </div>
-            <p>nissan</p>
-          </div>
-          <div className="cardBrowse">
-            <div>
-              <img alt="tesla" src="tesla.jpg" />
-            </div>
-            <p>Tesla</p>
-          </div>
-        </div>
+      <div className="exploreContainer">
+        <p className="explore">Explore the world&apos;s largest car sharing marketplace</p>
       </div>
-      <Link to="/search">
-        <button className="browseCars" type="button">
-          Browse cars
-        </button>
-      </Link>
+      <div className="ContentBox mb-5">
+        <div className="TitleBox">
+          <p className="pBrowse">Browse by make</p>
+        </div>
+        <Carousel
+          ref={carouselRef}
+          breakPoints={breakPoints}
+          className="carouselBox"
+          disableArrowsOnEnd={false}
+          disableArrowsOnStart={false}
+          onNextStart={onNextStart}
+          onPrevStart={onPrevStart}
+          pagination={false}>
+          {carArray.map((car) => (
+            <HomeCard key={uuidv4()} model={car.model} url={car.url} />
+          ))}
+        </Carousel>
+      </div>
+      <div className="recomendationBox">
+        <Carousel
+          ref={carouselRef2}
+          className="recomendationCarousel"
+          disableArrowsOnEnd={false}
+          disableArrowsOnStart={false}
+          itemsToShow={1}
+          onNextStart={onNextStart2}
+          onPrevStart={onPrevStart2}
+          pagination={false}>
+          {recomendationData.map((data) => (
+            <RecomendationCard key={uuidv4()} {...data} />
+          ))}
+        </Carousel>
+      </div>
     </div>
   );
 }

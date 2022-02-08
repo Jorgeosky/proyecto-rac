@@ -42,7 +42,13 @@ export default function CarPage() {
     owner,
   } = !!data && data;
   const { state } = useContext(UserContext);
-  const { photo = '', firstName = '', lastName = '', createdAt = '2022-02-16' } = !!owner && owner;
+  const {
+    photo = '',
+    firstName = '',
+    lastName = '',
+    createdAt = '2022-02-16',
+    cellphone,
+  } = !!owner && owner;
 
   const frontcar = cld.image(carFrontPhoto);
   const car1 = cld.image(photo1);
@@ -54,6 +60,13 @@ export default function CarPage() {
   const [endTrip, setEndTrip] = useState(null);
 
   const COP = parseInt(price, 10) * 3952;
+
+  const handleContact = () => {
+    window.open(
+      // eslint-disable-next-line max-len
+      `https://api.whatsapp.com/send?phone=${cellphone}&text=Hi%20${firstName},%20can%20you%20give%20me%20more%20information%20about%20the%20model%20of%20your%20car%20${model}%3F%20`,
+    );
+  };
 
   const pay = async () => {
     const data = await payment({ cars: { name: model, price: COP } });
@@ -81,6 +94,11 @@ export default function CarPage() {
 
   return (
     <div className="cardPage">
+      <button className="whatsAppButton" onClick={handleContact} type="button">
+        <span>
+          <i className="fab fa-whatsapp" />
+        </span>
+      </button>
       <div className="carouselContainer">
         <Carousel fade>
           <Carousel.Item interval={null}>
@@ -149,13 +167,13 @@ export default function CarPage() {
                 </div>
               </div>
               <Row>
-                <Col md={6}>
+                <Col className="vehicleFeatures" md={6}>
                   <div className="d-flex align-items-center mb-2">
                     <span className="vehicleFeatureIcon door" />
                     <p className="vehicleFeatureText">{doors} doors</p>
                   </div>
                 </Col>
-                <Col md={6}>
+                <Col className="vehicleFeatures" md={6}>
                   <div className="d-flex align-items-center mb-2">
                     <span className="vehicleFeatureIcon seats" />
                     <p className="vehicleFeatureText">{seats} seats</p>
@@ -223,7 +241,7 @@ export default function CarPage() {
               </section>
             </div>
           </Col>
-          <Col md={4}>
+          <Col id="forms" md={4}>
             <div className="reservationBox">
               <div className="m-0 p-0  d-flex gap-4 justify-content-start ms-2">
                 <span className="priceTitle">Price:</span>
@@ -295,7 +313,8 @@ export default function CarPage() {
               </Form.Group>
 
               <button
-                className="btn btn-primary btn-block py-2 fs-5 mt-4" disabled={!(state.type === 'renter')}
+                className="btn btn-primary btn-block py-2 fs-5 mt-4"
+                disabled={state.isLoggedIn ? !(state.type === 'renter') : false}
                 id="payCard"
                 type="submit">
                 Rent the Car
