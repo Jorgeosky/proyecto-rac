@@ -84,7 +84,7 @@ export default function UploadCar({ setState }) {
           </Form.Group>
         </Row>
         <Row className="mb-1">
-          <Form.Group as={Col} className="mb-3" controlId="photo" md="6">
+          <Form.Group as={Col} className="mb-3" controlId="photo1" md="6">
             <Form.Label>Car Front Photo</Form.Label>
             <Form.Control
               accept=".jpg,.jpeg,.png"
@@ -94,7 +94,7 @@ export default function UploadCar({ setState }) {
               required
             />
           </Form.Group>
-          <Form.Group as={Col} className="mb-3" controlId="photo" md="6">
+          <Form.Group as={Col} className="mb-3" controlId="photo2" md="6">
             <Form.Label>Photo 1</Form.Label>
             <Form.Control
               accept=".jpg,.jpeg,.png"
@@ -105,7 +105,7 @@ export default function UploadCar({ setState }) {
           </Form.Group>
         </Row>
         <Row className="mb-1">
-          <Form.Group as={Col} className="mb-3" controlId="photo" md="6">
+          <Form.Group as={Col} className="mb-3" controlId="photo3" md="6">
             <Form.Label>Photo 2</Form.Label>
             <Form.Control
               accept=".jpg,.jpeg,.png"
@@ -114,7 +114,7 @@ export default function UploadCar({ setState }) {
               required
             />
           </Form.Group>
-          <Form.Group as={Col} className="mb-3" controlId="photo" md="6">
+          <Form.Group as={Col} className="mb-3" controlId="photo4" md="6">
             <Form.Label>Photo 3</Form.Label>
             <Form.Control
               accept=".jpg,.jpeg,.png"
