@@ -13,13 +13,13 @@
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    background: url(http://trade-submit.com/wp-content/uploads/2019/10/How-To-Choose-The-Right-Rental-Car.jpg);
-
     width: 100%;
     height: 400px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    background-position-x: center;
+    background-position-y: center;
 
     .Top {
       margin-top: 30px;
@@ -152,84 +152,377 @@
   }
 
   .findYourDrive {
-    font-family: 'Basis Grotesque Pro';
-    font-size: 80px;
+    margin: 0;
+    color: #121214;
+    margin-bottom: 20px;
+    margin-top: 24px;
+    text-align: center;
+    font-family: 'FreightText-Bold-Regular';
+    font-size: 38px;
     font-weight: 900;
-    letter-spacing: -1px;
-    line-height: 90px;
+    letter-spacing: -0.1px;
+    line-height: 38px;
     text-transform: none;
-    margin-top: 50px;
-    padding: 0 30px;
   }
-
-  .explore {
-    font-family: 'Basis Grotesque Pro Bold';
-    font-size: 20px;
-    letter-spacing: -1px;
-    text-transform: none;
-    padding: 0 30px;
-  }
-
-  .browseByMakeContainer {
-    width: 80%;
-    margin-top: 50px;
-    margin-bottom: 50px;
-
-    p {
-      font-family: 'Basis Grotesque Pro Bold';
-      font-size: 20px;
-      letter-spacing: -1px;
-      margin-top: 20px;
-      letter-spacing: 1px;
-      margin-bottom: 20px;
+  .exploreContainer {
+    margin-right: auto;
+    margin-left: auto;
+    padding: 0;
+    position: relative;
+    .explore {
+      margin: 10px;
+      color: #121214;
+      margin-bottom: 32px;
+      margin-top: 8px;
+      text-align: center;
+      font-size: 18px;
+      font-weight: 900;
+      letter-spacing: 0;
+      line-height: 20px;
+      text-transform: none;
     }
   }
-
-  .browseByMake {
-    display: flex;
-    justify-content: space-around;
+  .ContentBox {
+    margin-top: 88px;
+    padding: 0;
     width: 100%;
-    flex-wrap: wrap;
-    gap: 40px;
-    .cardBrowse {
-      display: flex;
-      flex-direction: column;
-      height: 210px;
-      width: 220px;
-      padding-bottom: 50px;
-      border-radius: 5%;
-      box-shadow: 0px 5px 28px 5px rgba(0, 0, 0, 0.72);
-
-      img {
-        height: 140px;
-        width: 100%;
-        object-fit: cover;
-        border-radius: 5% 5% 0% 0%;
-      }
-
+    .TitleBox {
+      margin: 0 auto;
       p {
+        margin: 0;
+        color: #121214;
+        margin-bottom: 8px;
         font-family: 'Basis Grotesque Pro Bold';
         font-size: 18px;
-        letter-spacing: -1px;
-        margin-top: 20px;
-        align-self: center;
+        font-weight: 900;
+        letter-spacing: 0;
+        line-height: 20px;
+        text-transform: none;
+        margin-left: 24px;
+      }
+    }
+    .carouselBox {
+      display: flex;
+      justify-content: center;
+      margin: 0 auto;
+      padding-left: 16px;
+      position: relative;
+      max-width: 1160px;
+      width: 100%;
+      button {
+        line-height: 52px !important;
+      }
+      .jMNKZk {
+        height: 220px !important;
+        button {
+          background-color: white !important;
+          color: black !important;
+          &:hover {
+            background-color: rgba(103, 58, 183, 1) !important;
+            box-shadow: 0 0 2px 0 #333 !important;
+            color: white !important;
+          }
+        }
+      }
+      .izuVIe {
+        overflow: visible !important;
+      }
+      .carCard {
+        transition: color 0.15s ease-in-out, box-shadow 0.15s ease-in-out,
+          transform 0.15s ease-in-out;
+        background-color: #ffffff;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px 0 rgba(35, 31, 32, 0.2), 0 0 1px 0 rgba(35, 31, 32, 0.1);
+        color: #231f20;
+        flex: 1 0 auto;
+        margin: 0 8px;
+        overflow: hidden;
+        position: relative;
+        text-align: center;
+        user-select: none;
+        max-width: 190px;
+        .cardPhoto {
+          height: 154px;
+          width: 190px;
+          img {
+            max-width: 100%;
+            width: 100%;
+            object-fit: cover;
+          }
+        }
+        p {
+          margin: 0;
+          font-size: 16px;
+          font-weight: bold;
+          line-height: 1.5;
+          padding: 16px;
+          text-align: center;
+        }
+        &::after {
+          transition: 0.15s ease-in-out;
+        }
       }
     }
   }
-  .browseCars {
-    display: inline-block;
-    height: 50px;
-    width: 200px;
-    line-height: 49px;
-    padding: 0 18px;
-    text-align: center;
-    vertical-align: top;
-    background-color: #593cfb;
-    border: 1px solid #593cfb;
-    color: #ffffff;
-    font-family: 'Basis Grotesque Pro Bold';
-    font-size: 18px;
-    transition: 0.5s border, 0.5s background;
-    margin-bottom: 50px;
+  .recomendationBox {
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 100%;
+    margin-top: 48px;
+    margin-bottom: 36px;
+    .jMNKZk {
+      button {
+        height: 50px !important;
+        line-height: 52px !important;
+        background-color: white !important;
+        color: black !important;
+        &:hover {
+          background-color: rgba(103, 58, 183, 1) !important;
+          box-shadow: 0 0 2px 0 #333 !important;
+          color: white !important;
+        }
+      }
+    }
+    .recomendationWrapper {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      width: 100%;
+      flex: 0 0 auto;
+      gap: 50px;
+
+      .reco__imageContainer {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        margin-right: 50px;
+        margin-left: 50px;
+
+        .imageWrapper {
+          margin-right: 44px;
+          margin-left: 0px;
+          img {
+            max-width: 100%;
+            width: 100%;
+          }
+        }
+      }
+      .reco__textContainer {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        .reco__textWrapper {
+          margin-top: 8px;
+          margin-right: 16px;
+          margin-left: 16px;
+          .textWrapper {
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            .reco__title {
+              margin: 0;
+              color: #121214;
+              margin-bottom: 16px;
+              text-align: left;
+              font-family: 'Basis Grotesque Pro Black';
+              font-size: 23px;
+              font-weight: 900;
+              letter-spacing: -0.2px;
+              line-height: 28px;
+              text-transform: none;
+            }
+            .reco__text {
+              margin: 0;
+              color: #121214;
+              margin-bottom: 32px;
+              text-align: left;
+              font-family: 'Basis Grotesque Pro';
+              font-size: 16px;
+              font-weight: 400;
+              letter-spacing: 0;
+              line-height: 22px;
+              text-transform: none;
+            }
+            .buttonContainer {
+              display: flex;
+              flex-direction: row;
+              position: relative;
+              justify-content: center;
+              .buttonLink {
+                display: inline-block;
+                height: 50px;
+                line-height: 49px;
+                padding: 0 18px;
+                text-align: center;
+                vertical-align: top;
+                background-color: #593cfb;
+                border: 1px solid #593cfb;
+                color: #ffffff;
+                font-size: 18px;
+                transition: 0.5s border, 0.5s background;
+                text-decoration: none;
+                font-family: 'Basis Grotesque Pro Bold';
+              }
+            }
+          }
+        }
+      }
+    }
   }
 }
+
+@media only screen and (max-width: 768px) {
+  .Home {
+    .Header {
+      background-image: url('https://resources.turo.com/f/81934/480x422/2707e26be2/480-us.jpg');
+      background-position: 0 0;
+      background-repeat: no-repeat;
+      height: 500px;
+      background-position-x: center;
+      background-position-y: center;
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+      width: 100%;
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .Home {
+    .Header {
+      background-image: url('https://resources.turo.com/f/81934/768x400/ab15ab38b7/768-us.jpg');
+    }
+    .findYourDrive {
+      font-family: 'FreightText-Bold-Regular';
+      font-size: 90px;
+      font-weight: 900;
+      letter-spacing: -1px;
+      line-height: 90px;
+      text-transform: none;
+      margin-top: 50px;
+      padding: 0 30px;
+    }
+    .exploreContainer .explore {
+      margin-top: 10px;
+      font-family: 'Basis Grotesque Pro';
+      font-size: 21px;
+      letter-spacing: 0.2px;
+      text-transform: none;
+      line-height: 28px;
+      padding: 0 30px;
+      font-weight: 900;
+    }
+    .ContentBox .TitleBox {
+      width: 618px;
+      p {
+        font-family: 'Basis Grotesque Pro';
+        font-size: 21px;
+        font-weight: 900;
+        letter-spacing: -0.2px;
+        line-height: 28px;
+        text-transform: none;
+      }
+    }
+    .recomendationBox {
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 0px;
+      padding-right: 0px;
+      width: 750px;
+      margin-top: 88px;
+      margin-bottom: 72px;
+      .recomendationWrapper {
+        justify-content: center;
+        align-items: start;
+
+        .reco__imageContainer {
+          display: flex;
+          flex-direction: column;
+          position: relative;
+          width: 100%;
+          justify-content: center;
+          align-items: center;
+
+          .imageWrapper {
+            margin-right: 44px;
+            margin-left: 0px;
+            img {
+              width: 416px;
+            }
+          }
+        }
+        .reco__textContainer .reco__textWrapper {
+          margin-top: 0px;
+          margin-right: 0px;
+          margin-left: 44px;
+          .textWrapper .reco__title {
+            font-family: 'Basis Grotesque Pro Black';
+            font-size: 29px;
+            font-weight: 900;
+            letter-spacing: -0.2px;
+            line-height: 32px;
+            text-transform: none;
+          }
+          .textWrapper .buttonContainer {
+            justify-content: left;
+          }
+        }
+      }
+    }
+  }
+}
+@media only screen and (min-width: 992px) {
+  .Home {
+    .Header {
+      background-image: url('https://resources.turo.com/f/81934/992x400/2ab23dd472/992-us.jpg');
+    }
+    .ContentBox .TitleBox {
+      width: 992px;
+    }
+    .recomendationBox {
+      padding-left: 0;
+      padding-right: 0;
+      width: 900px;
+      .recomendationWrapper {
+        flex-direction: row;
+        gap: 0px;
+        .reco__imageContainer {
+          width: 50%;
+          margin-right: 44px;
+          margin-left: 0px;
+        }
+      }
+    }
+    .reco__textContainer {
+      width: 42%;
+      .reco__textWrapper {
+        margin-left: 44px;
+      }
+    }
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .Home {
+    .Header {
+      background-image: url('https://resources.turo.com/f/81934/1200x400/0d64b7f287/1200-us.jpg');
+    }
+    .recomendationBox {
+      width: 1112px;
+    }
+  }
+}
+@media only screen and (min-width: 1500px) {
+  .Home {
+    .ContentBox .TitleBox {
+      width: 1025px;
+    }
+    .Header {
+      background-image: url('https://resources.turo.com/f/81934/1500x400/dcc9e61b39/1500-us.jpg');
+    }
+  }
+}
+
+/*  */
